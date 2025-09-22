@@ -40,7 +40,10 @@
             <div class="card">
               <h3>Kontaktformular</h3>
               <div class="spacer-sm"></div>
-              <form action="mailto:hello@mind-studio.me" method="post" enctype="text/plain">
+              <form action="https://formsubmit.co/hello@mind-studio.me" method="POST">
+                <input type="hidden" name="_subject" value="Neue Anfrage über mind-studio.me">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="/danke.html">
                 <div class="field">
                   <label for="name">Name</label>
                   <input id="name" name="Name" required>

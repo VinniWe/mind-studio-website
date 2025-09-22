@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Über mich – Mind Studio</title>
+    <meta name="description" content="Über mich: Elisa Wendler-Rabbiolo – Systemische Psychologie, Haltung und Hintergrund.">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <script defer src="assets/js/site.js?v=2"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="nav-left">
+          <a class="brand" href="./"><span class="brand-mark"></span><span>Mind Studio</span></a>
+          <button class="mobile-toggle" aria-label="Menü öffnen" data-mobile-toggle>☰</button>
+        </div>
+        <nav class="nav-links" aria-label="Hauptnavigation">
+          <a href="./">Start</a>
+          <a href="leistungen-einzel.html">Einzel</a>
+          <a href="leistungen-organisationen.html">Organisationen</a>
+          <a href="ansatz.html">Ansatz</a>
+          <a class="active" href="ueber-mich.html">Über mich</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <div class="lang-switch"><span>DE</span><span class="muted">/</span><a href="en/">EN</a></div>
+      </div>
+      <div class="mobile-menu" data-mobile-menu>
+        <a href="./">Start</a>
+        <a href="leistungen-einzel.html">Einzel</a>
+        <a href="leistungen-organisationen.html">Organisationen</a>
+        <a href="ansatz.html">Ansatz</a>
+        <a class="active" href="ueber-mich.html">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+        <hr style="border-color: var(--color-border); opacity: .4;">
+        <a href="en/">English</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="eyebrow">Über mich</div>
+          <h1>Elisa Wendler‑Rabbiolo</h1>
+          <p class="lead">Systemische Psychologin – klar, empathisch und ressourcenorientiert. Mein Fokus: hilfreiche Bewegung in komplexen Situationen ermöglichen – für Menschen und Organisationen.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container grid-2">
+          <div class="card">
+            <h3>Kurzbiografie</h3>
+            <p class="muted">Ausbildung und Praxis in systemischer Beratung und Organisationsentwicklung. Berufserfahrung in Beratung, Produkt & Organisation. Arbeit mit Teams und Einzelpersonen – vor Ort in Hamburg und online.</p>
+            <ul class="feature-list">
+              <li>Systemische Weiterbildung (Details nach Wunsch einfügbar)</li>
+              <li>Schwerpunkte: Kommunikation, Führung, Veränderung</li>
+              <li>Arbeitsweise: strukturiert, transparent, wertschätzend</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Haltung</h3>
+            <p class="muted">Ich arbeite kontextsensibel und lösungsfokussiert – mit Blick auf Beziehungsmuster und Ressourcen. Gemeinsam entwickeln wir nächste, passende Schritte.</p>
+            <div class="spacer"></div>
+            <a class="btn btn-primary" href="kontakt.html">Erstgespräch anfragen</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>© <span id="year"></span> Mind Studio</div>
+        <nav class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+  </html>
+
+

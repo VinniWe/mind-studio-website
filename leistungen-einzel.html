@@ -7,11 +7,15 @@
     <meta name="description" content="Systemische Therapie und Coaching für Einzelpersonen. Präsenztermine in München und online.">
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <script defer src="/assets/js/site.js"></script>
   </head>
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="/"><span class="brand-mark"></span><span>Mind Studio</span></a>
+        <div class="nav-left">
+          <a class="brand" href="/"><span class="brand-mark"></span><span>Mind Studio</span></a>
+          <button class="mobile-toggle" aria-label="Menü öffnen" data-mobile-toggle>☰</button>
+        </div>
         <nav class="nav-links" aria-label="Hauptnavigation">
           <a href="/">Start</a>
           <a class="active" href="/leistungen-einzel.html">Einzel</a>
@@ -20,6 +24,15 @@
           <a href="/kontakt.html">Kontakt</a>
         </nav>
         <div class="lang-switch"><span>DE</span><span class="muted">/</span><a href="/en/">EN</a></div>
+      </div>
+      <div class="mobile-menu" data-mobile-menu>
+        <a href="/">Start</a>
+        <a class="active" href="/leistungen-einzel.html">Einzel</a>
+        <a href="/leistungen-organisationen.html">Organisationen</a>
+        <a href="/ansatz.html">Ansatz</a>
+        <a href="/kontakt.html">Kontakt</a>
+        <hr style="border-color: var(--color-border); opacity: .4;">
+        <a href="/en/">English</a>
       </div>
     </header>
 

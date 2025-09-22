@@ -12,14 +12,18 @@
     <meta property="og:image" content="/assets/img/social.png">
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <script defer src="/assets/js/site.js"></script>
   </head>
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="/">
+        <div class="nav-left">
+          <a class="brand" href="/">
           <span class="brand-mark" aria-hidden="true"></span>
           <span>Mind Studio</span>
-        </a>
+          </a>
+          <button class="mobile-toggle" aria-label="Menü öffnen" data-mobile-toggle>☰</button>
+        </div>
         <nav class="nav-links" aria-label="Hauptnavigation">
           <a class="active" href="/">Start</a>
           <a href="/leistungen-einzel.html">Einzel</a>
@@ -32,6 +36,15 @@
           <span class="muted">/</span>
           <a href="/en/">EN</a>
         </div>
+      </div>
+      <div class="mobile-menu" data-mobile-menu>
+        <a class="active" href="/">Start</a>
+        <a href="/leistungen-einzel.html">Einzel</a>
+        <a href="/leistungen-organisationen.html">Organisationen</a>
+        <a href="/ansatz.html">Ansatz</a>
+        <a href="/kontakt.html">Kontakt</a>
+        <hr style="border-color: var(--color-border); opacity: .4;">
+        <a href="/en/">English</a>
       </div>
     </header>
 
@@ -57,6 +70,12 @@
             <div class="spacer"></div>
             <a class="btn" href="/kontakt.html">Kontaktformular</a>
           </aside>
+        </div>
+        <div class="container">
+          <div class="visual">
+            <div class="blob"></div>
+            <div class="ring"></div>
+          </div>
         </div>
       </section>
 

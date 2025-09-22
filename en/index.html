@@ -7,16 +7,24 @@
     <meta name="description" content="Systemic psychology for individuals and organizations. Therapy, coaching, workshops and organizational development in Munich and online.">
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <script defer src="/assets/js/site.js"></script>
   </head>
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="/en/"><span class="brand-mark"></span><span>Mind Studio</span></a>
+        <div class="nav-left">
+          <a class="brand" href="/en/"><span class="brand-mark"></span><span>Mind Studio</span></a>
+          <button class="mobile-toggle" aria-label="Open menu" data-mobile-toggle>☰</button>
+        </div>
         <nav class="nav-links" aria-label="Main navigation">
           <a class="active" href="/en/">Home</a>
           <a href="/">DE</a>
         </nav>
         <div class="lang-switch"><a href="/">DE</a><span class="muted">/</span><span>EN</span></div>
+      </div>
+      <div class="mobile-menu" data-mobile-menu>
+        <a class="active" href="/en/">Home</a>
+        <a href="/">Deutsch</a>
       </div>
     </header>
 

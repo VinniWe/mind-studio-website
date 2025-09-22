@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontakt – Mind Studio</title>
+    <meta name="description" content="Kontakt zu Mind Studio – Anfrage per E‑Mail oder Kontaktformular.">
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/"><span class="brand-mark"></span><span>Mind Studio</span></a>
+        <nav class="nav-links" aria-label="Hauptnavigation">
+          <a href="/">Start</a>
+          <a href="/leistungen-einzel.html">Einzel</a>
+          <a href="/leistungen-organisationen.html">Organisationen</a>
+          <a href="/ansatz.html">Ansatz</a>
+          <a class="active" href="/kontakt.html">Kontakt</a>
+        </nav>
+        <div class="lang-switch"><span>DE</span><span class="muted">/</span><a href="/en/">EN</a></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="eyebrow">Kontakt</div>
+          <h1>Melden Sie sich gern</h1>
+          <p class="muted">Ich antworte in der Regel innerhalb von 1–2 Werktagen.</p>
+          <div class="spacer"></div>
+          <div class="grid-2">
+            <div class="card">
+              <h3>Direkt</h3>
+              <div class="spacer-sm"></div>
+              <div><a href="mailto:hello@mind-studio.me">hello@mind-studio.me</a></div>
+              <div><a href="tel:+4912345678901">+49 123 45678901</a></div>
+            </div>
+            <div class="card">
+              <h3>Kontaktformular</h3>
+              <div class="spacer-sm"></div>
+              <form action="mailto:hello@mind-studio.me" method="post" enctype="text/plain">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="Name" required>
+                </div>
+                <div class="spacer-sm"></div>
+                <div class="field">
+                  <label for="email">E‑Mail</label>
+                  <input id="email" type="email" name="Email" required>
+                </div>
+                <div class="spacer-sm"></div>
+                <div class="field">
+                  <label for="anliegen">Ihr Anliegen</label>
+                  <textarea id="anliegen" name="Anliegen" required></textarea>
+                </div>
+                <div class="spacer"></div>
+                <button class="btn btn-primary" type="submit">Senden</button>
+              </form>
+              <div class="spacer-sm"></div>
+              <p class="muted" style="font-size: 12px;">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben gemäß <a href="/datenschutz.html">Datenschutz</a> zu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>© <span id="year"></span> Mind Studio</div>
+        <nav class="footer-links">
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+  </html>
+
+

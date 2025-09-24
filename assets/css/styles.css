@@ -56,12 +56,8 @@ header.site-header {
   font-weight: 700;
   letter-spacing: 0.5px;
 }
-.brand-mark {
-  width: 28px; height: 28px;
-  border-radius: 8px;
-  background: radial-gradient(120% 120% at 20% 20%, var(--color-accent), var(--color-accent-600));
-  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.25);
-}
+.brand-mark { display: inline-flex; align-items: center; }
+.brand-mark img { height: 28px; display: block; }
 .nav-links { display: flex; gap: 22px; }
 .nav-links a { color: var(--color-muted); transition: color .2s ease, opacity .2s ease; }
 .nav-links a:hover, .nav-links a.active { color: #fff; }

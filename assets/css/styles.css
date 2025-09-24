@@ -57,7 +57,7 @@ header.site-header {
   letter-spacing: 0.5px;
 }
 .brand-mark { display: inline-flex; align-items: center; }
-.brand-mark img { height: 28px; display: block; }
+.brand-mark img { height: 34px; display: block; }
 .nav-links { display: flex; gap: 22px; }
 .nav-links a { color: var(--color-muted); transition: color .2s ease, opacity .2s ease; }
 .nav-links a:hover, .nav-links a.active { color: #fff; }

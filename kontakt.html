@@ -74,6 +74,11 @@
                   <label for="anliegen">Ihr Anliegen</label>
                   <textarea id="anliegen" name="Anliegen" required></textarea>
                 </div>
+                <div class="spacer-sm"></div>
+                <div class="field">
+                  <label for="captcha">Sicherheitsfrage: <span id="captcha-question"></span></label>
+                  <input id="captcha" name="captcha" type="number" required>
+                </div>
                 <div class="spacer"></div>
                 <button class="btn btn-primary" type="submit">Senden</button>
               </form>
@@ -94,7 +99,58 @@
         </nav>
       </div>
     </footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // CAPTCHA functionality
+      let captchaAnswer = 0;
+      
+      function generateCaptcha() {
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        const operations = ['+', '-', '*'];
+        const operation = operations[Math.floor(Math.random() * operations.length)];
+        
+        let question = '';
+        let answer = 0;
+        
+        switch(operation) {
+          case '+':
+            question = `${num1} + ${num2}`;
+            answer = num1 + num2;
+            break;
+          case '-':
+            // Ensure positive result
+            const larger = Math.max(num1, num2);
+            const smaller = Math.min(num1, num2);
+            question = `${larger} - ${smaller}`;
+            answer = larger - smaller;
+            break;
+          case '*':
+            question = `${num1} × ${num2}`;
+            answer = num1 * num2;
+            break;
+        }
+        
+        document.getElementById('captcha-question').textContent = question + ' = ?';
+        captchaAnswer = answer;
+      }
+      
+      // Generate CAPTCHA on page load
+      generateCaptcha();
+      
+      // Form validation
+      document.querySelector('form').addEventListener('submit', function(e) {
+        const userAnswer = parseInt(document.getElementById('captcha').value);
+        if (userAnswer !== captchaAnswer) {
+          e.preventDefault();
+          alert('Die Antwort auf die Sicherheitsfrage ist falsch. Bitte versuchen Sie es erneut.');
+          generateCaptcha(); // Generate new CAPTCHA
+          document.getElementById('captcha').value = '';
+          return false;
+        }
+      });
+    </script>
   </body>
   </html>
 

@@ -3,14 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
 
 :root {
-  --color-bg: #FEFEFE; /* pure white */
-  --color-surface: #F8FAFC; /* soft gray-white */
-  --color-text: #2D3748; /* warm dark gray */
-  --color-muted: #718096; /* medium gray */
-  --color-accent: #B8E6E8; /* soft mint */
-  --color-accent-600: #81D4D6; /* medium mint */
-  --color-border: #E2E8F0; /* light gray */
-  --color-highlight: #F0F9FF; /* very light blue */
+  --color-bg: #F7F9FC; /* soft blue-gray background */
+  --color-surface: #FFFFFF; /* pure white for cards */
+  --color-text: #2C3E50; /* deep slate for readability */
+  --color-muted: #6B7280; /* medium gray for secondary text */
+  --color-accent: #A7D4D1; /* soft sage green */
+  --color-accent-600: #7AB8B4; /* deeper sage for buttons */
+  --color-border: #E5E7EB; /* subtle border */
+  --color-highlight: #F0FDF4; /* very light green tint */
+  --color-card-bg: rgba(255,255,255,0.85); /* semi-transparent card background */
   --max-w: 1100px;
 }
 
@@ -21,7 +22,7 @@ html, body { height: 100%; }
 body {
   margin: 0;
   color: var(--color-text);
-  background: radial-gradient(60% 80% at 20% 10%, var(--color-highlight) 0%, var(--color-bg) 60%), linear-gradient(180deg, var(--color-bg), var(--color-surface));
+  background: radial-gradient(60% 80% at 20% 10%, var(--color-highlight) 0%, var(--color-bg) 60%), linear-gradient(180deg, var(--color-bg), #F1F5F9);
   font-family: 'Inter', 'Helvetica Neue Light', 'Helvetica Light', Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 300;
   line-height: 1.7;
@@ -40,9 +41,10 @@ header.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(254, 254, 254, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 .nav {
   display: flex;
@@ -70,7 +72,7 @@ header.site-header {
   width: 40px; height: 40px;
   border-radius: 10px;
   border: 1px solid var(--color-border);
-  background: rgba(248,250,252,0.9);
+  background: rgba(255,255,255,0.9);
   color: var(--color-text);
 }
 .mobile-menu {
@@ -78,9 +80,10 @@ header.site-header {
   position: fixed; inset: 64px 16px auto 16px;
   border: 1px solid var(--color-border);
   border-radius: 16px;
-  background: rgba(254,254,254,0.98);
+  background: rgba(255,255,255,0.98);
   backdrop-filter: blur(10px);
   padding: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 .mobile-menu a { display: block; padding: 10px 6px; color: var(--color-muted); }
 .mobile-menu a:hover, .mobile-menu a.active { color: var(--color-text); }
@@ -125,9 +128,10 @@ header.site-header {
 .card {
   border: 1px solid var(--color-border);
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(240,249,255,0.6), rgba(248,250,252,0.8));
+  background: var(--color-card-bg);
   padding: 22px;
-  box-shadow: 0 8px 24px rgba(113,128,150,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+  backdrop-filter: blur(8px);
 }
 
 .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
@@ -165,7 +169,7 @@ footer.site-footer {
 /* Forms */
 form .field { display: grid; gap: 6px; }
 input, textarea {
-  background: rgba(248,250,252,0.9);
+  background: rgba(255,255,255,0.9);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   padding: 12px 14px;

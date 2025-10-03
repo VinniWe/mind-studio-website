@@ -108,7 +108,7 @@ header.site-header {
 .lang-switch a { color: var(--color-muted); }
 .lang-switch a:hover { color: var(--color-text); }
 
-/* Hero */
+/* Hero Slider */
 .hero {
   padding: 160px 0 120px;
   text-align: center;
@@ -129,6 +129,44 @@ header.site-header {
 }
 .hero-cta {
   margin-top: 60px;
+}
+
+/* Slider in hero section */
+.hero .slider-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero .slide-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  text-align: left;
+}
+
+.hero .slide-text {
+  text-align: left;
+}
+
+.hero .slide-text .hero-title {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.0;
+  margin: 0 0 10px;
+}
+
+.hero .slide-text .hero-subtitle {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.0;
+  margin: 0 0 30px;
+}
+
+.hero .slide-text .lead {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 0 0 30px;
 }
 .hero .visual {
   position: relative;
@@ -203,7 +241,22 @@ h3 { font-size: 28px; font-weight: 600; line-height: 1.3; margin: 0 0 12px; }
 .lead { font-size: 24px; line-height: 1.6; color: var(--color-muted); margin: 0 0 32px; }
 
 /* Sections */
-section { padding: 80px 0; }
+section { 
+  padding: 80px 0; 
+  margin: 0;
+  border: none;
+}
+
+/* Remove any default margins/padding that could create white breaks */
+main {
+  margin: 0;
+  padding: 0;
+}
+
+section + section {
+  margin-top: 0;
+  padding-top: 80px;
+}
 
 /* Section-specific backgrounds */
 .section-hero { background: var(--color-hero); }
@@ -462,6 +515,25 @@ label { color: var(--color-muted); font-size: 14px; }
   .hero { padding: 120px 0 80px; }
   .hero-title { font-size: 48px; }
   .hero-subtitle { font-size: 48px; }
+  
+  /* Hero slider mobile */
+  .hero .slide-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .hero .slide-text {
+    text-align: center;
+  }
+  
+  .hero .slide-text .hero-title {
+    font-size: 48px;
+  }
+  
+  .hero .slide-text .hero-subtitle {
+    font-size: 48px;
+  }
   
   .stats-grid { grid-template-columns: 1fr; gap: 24px; }
   .stats-section { padding: 80px 0; }

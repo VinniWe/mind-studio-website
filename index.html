@@ -12,8 +12,8 @@
     <meta property="og:image" content="assets/img/social.png">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css?v=8">
-    <script defer src="assets/js/site.js?v=8"></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=9">
+    <script defer src="assets/js/site.js?v=9"></script>
   </head>
   <body>
     <header class="site-header">
@@ -49,12 +49,68 @@
     </header>
 
     <main>
+      <!-- Hero Slider Section -->
       <section class="hero section-hero">
         <div class="container">
-          <h1 class="hero-title">Die Beziehung zu Dir bestimmt die Qualität</h1>
-          <h2 class="hero-subtitle">Deines Lebens.</h2>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Erstgespräch Buchen</a>
+          <div class="slider-container">
+            <div class="slider">
+              <div class="slide">
+                <div class="slide-content">
+                  <div class="slide-image">
+                    <img src="assets/img/slider-placeholder-1.svg" alt="Mind Studio - Systemische Therapie" class="desktop-only">
+                    <img src="assets/img/slider-placeholder-1.svg" alt="Mind Studio - Systemische Therapie" class="mobile-only">
+                  </div>
+                  <div class="slide-text">
+                    <h1 class="hero-title">Die Beziehung zu Dir bestimmt die Qualität</h1>
+                    <h2 class="hero-subtitle">Deines Lebens.</h2>
+                    <div class="hero-cta">
+                      <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Erstgespräch Buchen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="slide-content">
+                  <div class="slide-image">
+                    <img src="assets/img/therapy-session.svg" alt="Therapie-Sitzung - Ein sicherer Raum für persönliche Entwicklung" class="desktop-only">
+                    <img src="assets/img/therapy-session.svg" alt="Therapie-Sitzung - Ein sicherer Raum für persönliche Entwicklung" class="mobile-only">
+                  </div>
+                  <div class="slide-text">
+                    <div class="slide-meta">Einzelpersonen</div>
+                    <h1 class="hero-title">Individuelle Therapie</h1>
+                    <p class="lead">Gemeinsam entwickeln wir Lösungsansätze für mehr Lebensqualität und persönliche Entwicklung.</p>
+                    <div class="hero-cta">
+                      <a class="btn btn-primary" href="leistungen-einzel.html">Mehr erfahren</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="slide-content">
+                  <div class="slide-image">
+                    <img src="assets/img/slider-placeholder-3.svg" alt="Team-Entwicklung" class="desktop-only">
+                    <img src="assets/img/slider-placeholder-3.svg" alt="Team-Entwicklung" class="mobile-only">
+                  </div>
+                  <div class="slide-text">
+                    <div class="slide-meta">Organisationen</div>
+                    <h1 class="hero-title">Team-Entwicklung</h1>
+                    <p class="lead">Workshops und Moderation für starke Teams und gesunde Unternehmenskultur.</p>
+                    <div class="hero-cta">
+                      <a class="btn btn-primary" href="leistungen-organisationen.html">Mehr erfahren</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-controls">
+              <button class="slider-btn" data-direction="prev" aria-label="Vorheriger Slide">‹</button>
+              <button class="slider-btn" data-direction="next" aria-label="Nächster Slide">›</button>
+            </div>
+            <div class="slider-dots">
+              <div class="slider-dot active"></div>
+              <div class="slider-dot"></div>
+              <div class="slider-dot"></div>
+            </div>
           </div>
         </div>
       </section>

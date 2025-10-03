@@ -50,7 +50,8 @@ header.site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 16px 20px;
+  gap: 16px;
 }
 .nav-left { display: flex; align-items: center; gap: 16px; }
 .brand {
@@ -77,7 +78,7 @@ header.site-header {
 }
 .mobile-menu {
   display: none;
-  position: fixed; inset: 64px 16px auto 16px;
+  position: fixed; inset: 64px 20px auto 20px;
   border: 1px solid var(--color-border);
   border-radius: 16px;
   background: rgba(255,248,243,0.98);
@@ -191,7 +192,31 @@ label { color: var(--color-muted); font-size: 14px; }
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
   .nav-links { display: none; }
+  .lang-switch { display: none; }
   .mobile-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  
+  /* Mobile header layout: menu on left, logo centered */
+  .nav {
+    position: relative;
+    justify-content: center;
+    padding: 16px 20px;
+  }
+  .nav-left {
+    position: absolute;
+    left: 20px;
+  }
+  .brand {
+    /* Logo is centered by parent justify-content: center */
+  }
+  .brand-mark img {
+    height: 44px; /* Slightly smaller logo on mobile */
+  }
+  
+  /* Add spacing on mobile for all content */
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 

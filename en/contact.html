@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact – Mind Studio</title>
+    <meta name="description" content="Contact Mind Studio – Elisa Wendler-Rabbiolo. Request an appointment or send us a message.">
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <script defer src="../assets/js/site.js?v=2"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="nav-left">
+          <a class="brand" href="./"><span class="brand-mark"><img src="../assets/img/logo.svg" alt="Mind Studio"></span></a>
+          <button class="mobile-toggle" aria-label="Open menu" data-mobile-toggle>☰</button>
+        </div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="./">Home</a>
+          <a href="services-individual.html">Individual</a>
+          <a href="services-organizations.html">Organizations</a>
+          <a href="approach.html">Approach</a>
+          <a href="about.html">About</a>
+          <a class="active" href="contact.html">Contact</a>
+        </nav>
+        <div class="lang-switch"><a href="../">DE</a><span class="muted">/</span><span>EN</span></div>
+      </div>
+      <div class="mobile-menu" data-mobile-menu>
+        <a href="./">Home</a>
+        <a href="services-individual.html">Individual</a>
+        <a href="services-organizations.html">Organizations</a>
+        <a href="approach.html">Approach</a>
+        <a href="about.html">About</a>
+        <a class="active" href="contact.html">Contact</a>
+        <hr style="border-color: var(--color-border); opacity: .4;">
+        <a href="../">Deutsch</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="eyebrow">Contact</div>
+          <h1>Get in touch</h1>
+          <p class="lead">I look forward to your message. You can reach me via email, phone or the contact form below.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container grid-2">
+          <div class="card">
+            <h3>Direct contact</h3>
+            <div class="spacer-sm"></div>
+            <div class="muted">Elisa Wendler-Rabbiolo</div>
+            <div class="spacer-sm"></div>
+            <div><a href="mailto:hello@mind-studio.me">hello@mind-studio.me</a></div>
+            <div><a href="tel:+4912345678901">+49 123 45678901</a></div>
+            <div class="spacer"></div>
+            <p class="muted">For urgent matters, please call directly. For appointment requests, you can also use the contact form.</p>
+          </div>
+          <div class="card">
+            <h3>Contact form</h3>
+            <form action="https://formsubmit.co/hello@mind-studio.me" method="POST" target="_blank">
+              <input type="hidden" name="_subject" value="Contact from Mind Studio Website (EN)">
+              <input type="hidden" name="_next" value="https://vinniwe.github.io/mind-studio-website/danke.html">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" type="text" name="Name" required>
+              </div>
+              <div class="spacer-sm"></div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="Email" required>
+              </div>
+              <div class="spacer-sm"></div>
+              <div class="field">
+                <label for="anliegen">Your inquiry</label>
+                <textarea id="anliegen" name="Inquiry" required></textarea>
+              </div>
+              <div class="spacer-sm"></div>
+              <div class="field">
+                <label for="captcha">Security question: <span id="captcha-question"></span></label>
+                <input id="captcha" name="captcha" type="number" required>
+              </div>
+              <div class="spacer"></div>
+              <button class="btn btn-primary" type="submit">Send</button>
+            </form>
+            <div class="spacer-sm"></div>
+            <p class="muted" style="font-size: 12px;">By submitting, you agree to the processing of your data according to our <a href="../datenschutz.html">Privacy Policy (DE)</a>.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>© <span id="year"></span> Mind Studio</div>
+        <nav class="footer-links">
+          <a href="../impressum.html">Imprint (DE)</a>
+          <a href="../datenschutz.html">Privacy (DE)</a>
+        </nav>
+      </div>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // CAPTCHA functionality
+      let captchaAnswer = 0;
+      
+      function generateCaptcha() {
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        const operations = ['+', '-', '*'];
+        const operation = operations[Math.floor(Math.random() * operations.length)];
+        
+        let question = '';
+        let answer = 0;
+        
+        switch(operation) {
+          case '+':
+            question = `${num1} + ${num2}`;
+            answer = num1 + num2;
+            break;
+          case '-':
+            // Ensure positive result
+            const larger = Math.max(num1, num2);
+            const smaller = Math.min(num1, num2);
+            question = `${larger} - ${smaller}`;
+            answer = larger - smaller;
+            break;
+          case '*':
+            question = `${num1} × ${num2}`;
+            answer = num1 * num2;
+            break;
+        }
+        
+        document.getElementById('captcha-question').textContent = question + ' = ?';
+        captchaAnswer = answer;
+      }
+      
+      // Generate CAPTCHA on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        generateCaptcha();
+      });
+      
+      // Form validation
+      document.querySelector('form').addEventListener('submit', function(e) {
+        const userAnswer = parseInt(document.getElementById('captcha').value);
+        if (userAnswer !== captchaAnswer) {
+          e.preventDefault();
+          alert('The answer to the security question is incorrect. Please try again.');
+          generateCaptcha(); // Generate new CAPTCHA
+          document.getElementById('captcha').value = '';
+          return false;
+        }
+      });
+    </script>
+  </body>
+  </html>

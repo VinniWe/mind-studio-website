@@ -83,7 +83,7 @@
                 <button class="btn btn-primary" type="submit">Senden</button>
               </form>
               <div class="spacer-sm"></div>
-              <p class="muted" style="font-size: 12px;">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben gemäß <a href="/datenschutz.html">Datenschutz</a> zu.</p>
+              <p class="muted" style="font-size: 12px;">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben gemäß <a href="datenschutz.html">Datenschutz</a> zu.</p>
             </div>
           </div>
         </div>
@@ -137,7 +137,9 @@
       }
       
       // Generate CAPTCHA on page load
-      generateCaptcha();
+      document.addEventListener('DOMContentLoaded', function() {
+        generateCaptcha();
+      });
       
       // Form validation
       document.querySelector('form').addEventListener('submit', function(e) {

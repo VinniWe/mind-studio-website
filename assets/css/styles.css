@@ -3,15 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
 
 :root {
-  --color-bg: #E8EDF3; /* deeper blue-gray background */
-  --color-surface: #FFFFFF; /* pure white for cards */
-  --color-text: #1A202C; /* darker slate for readability */
-  --color-muted: #4A5568; /* darker gray for secondary text */
-  --color-accent: #68B5A8; /* deeper sage green */
-  --color-accent-600: #4A8B7F; /* much deeper sage for buttons */
-  --color-border: #CBD5E0; /* more visible border */
-  --color-highlight: #E6FFFA; /* light teal tint */
-  --color-card-bg: rgba(255,255,255,0.9); /* less transparent card background */
+  --color-bg: #F0F4F8; /* warm blue-gray background */
+  --color-surface: #FFF8F3; /* warm cream for cards */
+  --color-text: #2D3748; /* dark slate for readability */
+  --color-muted: #5A6C7D; /* blue-gray for secondary text */
+  --color-accent: #7B9CB0; /* soft blue-gray */
+  --color-accent-600: #5A7A8C; /* deeper blue-gray for buttons */
+  --color-border: #E2E8F0; /* soft border */
+  --color-highlight: #F7FAFC; /* very light blue tint */
+  --color-card-bg: rgba(255,248,243,0.85); /* warm cream card background */
   --max-w: 1100px;
 }
 
@@ -22,7 +22,7 @@ html, body { height: 100%; }
 body {
   margin: 0;
   color: var(--color-text);
-  background: radial-gradient(60% 80% at 20% 10%, var(--color-highlight) 0%, var(--color-bg) 60%), linear-gradient(180deg, var(--color-bg), #D1DAE0);
+  background: radial-gradient(60% 80% at 20% 10%, var(--color-highlight) 0%, var(--color-bg) 60%), linear-gradient(180deg, var(--color-bg), #E8F0F5);
   font-family: 'Inter', 'Helvetica Neue Light', 'Helvetica Light', Helvetica, Arial, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 300;
   line-height: 1.7;
@@ -41,7 +41,7 @@ header.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 248, 243, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -72,7 +72,7 @@ header.site-header {
   width: 40px; height: 40px;
   border-radius: 10px;
   border: 1px solid var(--color-border);
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,248,243,0.9);
   color: var(--color-text);
 }
 .mobile-menu {
@@ -80,7 +80,7 @@ header.site-header {
   position: fixed; inset: 64px 16px auto 16px;
   border: 1px solid var(--color-border);
   border-radius: 16px;
-  background: rgba(255,255,255,0.98);
+  background: rgba(255,248,243,0.98);
   backdrop-filter: blur(10px);
   padding: 16px;
   box-shadow: 0 12px 32px rgba(0,0,0,0.15);
@@ -169,7 +169,7 @@ footer.site-footer {
 /* Forms */
 form .field { display: grid; gap: 6px; }
 input, textarea {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,248,243,0.9);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   padding: 12px 14px;

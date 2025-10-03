@@ -3,14 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
 
 :root {
-  --color-bg: #FFFFFF; /* clean white background */
-  --color-surface: #FAFAFA; /* very light gray for cards */
-  --color-text: #1A1A1A; /* dark charcoal for readability */
-  --color-muted: #666666; /* medium gray for secondary text */
-  --color-accent: #F4A261; /* warm orange accent */
-  --color-accent-600: #E76F51; /* deeper orange for buttons */
-  --color-border: #E5E5E5; /* light gray border */
-  --color-highlight: #F8F9FA; /* very light gray tint */
+  --color-bg: #FFF8F3; /* warm cream background */
+  --color-surface: #FFFFFF; /* clean white for cards */
+  --color-text: #2D1B00; /* warm dark brown for readability */
+  --color-muted: #8B6F47; /* warm brown for secondary text */
+  --color-accent: #E67E22; /* warm orange accent */
+  --color-accent-600: #D35400; /* deeper orange for buttons */
+  --color-border: #F4E6D7; /* warm sand border */
+  --color-highlight: #FEF9F5; /* very light cream tint */
   --color-card-bg: rgba(255,255,255,0.95); /* clean white card background */
   --max-w: 1200px;
 }
@@ -41,7 +41,7 @@ header.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 248, 243, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
@@ -73,7 +73,7 @@ header.site-header {
   width: 40px; height: 40px;
   border-radius: 10px;
   border: 1px solid var(--color-border);
-  background: rgba(255,248,243,0.9);
+  background: var(--color-surface);
   color: var(--color-text);
 }
 .mobile-menu {
@@ -81,7 +81,7 @@ header.site-header {
   position: fixed; inset: 64px 20px auto 20px;
   border: 1px solid var(--color-border);
   border-radius: 16px;
-  background: rgba(255,248,243,0.98);
+  background: var(--color-surface);
   backdrop-filter: blur(10px);
   padding: 16px;
   box-shadow: 0 12px 32px rgba(0,0,0,0.15);
@@ -248,7 +248,7 @@ footer.site-footer {
 /* Forms */
 form .field { display: grid; gap: 6px; }
 input, textarea {
-  background: rgba(255,248,243,0.9);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   color: var(--color-text);
   padding: 12px 14px;

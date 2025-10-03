@@ -3,12 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --color-bg: #0e1624; /* softened slate */
-  --color-surface: #0f1b2a; /* deep blue-slate */
-  --color-text: #e7ecf2; /* soft off-white */
+  --color-bg: #FDFCFB; /* softened slate */
+  --color-surface: #A8DADC; /* deep blue-slate */
+  --color-text: #1D3557; /* soft off-white */
   --color-muted: #9aa9bd; /* slate-400 warmer */
-  --color-accent: #1bb6a7; /* teal-500 */
-  --color-accent-600: #109b8f; /* teal-600 */
+  --color-accent: #457b9d; /* teal-500 */
+  --color-accent-600: #305871; /* teal-600 */
   --color-border: #223146; /* slate-800 softer */
   --max-w: 1100px;
 }
@@ -57,7 +57,7 @@ header.site-header {
   letter-spacing: 0.5px;
 }
 .brand-mark { display: inline-flex; align-items: center; }
-.brand-mark img { height: 34px; display: block; }
+.brand-mark img { height: 52px; display: block; }
 .nav-links { display: flex; gap: 22px; }
 .nav-links a { color: var(--color-muted); transition: color .2s ease, opacity .2s ease; }
 .nav-links a:hover, .nav-links a.active { color: #fff; }

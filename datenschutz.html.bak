@@ -13,10 +13,19 @@
   <body>
     <header class="site-header">
       <div class="container nav">
+        <div class="nav-left">
+          <a class="brand" href="./"><span class="brand-mark"><img src="assets/img/logo.svg" alt="Mind Studio"></span></a>
         <button class="mobile-toggle" aria-label="Menü öffnen" data-mobile-toggle>☰</button>
         <a class="brand" href="./">
-          <span class="brand-mark"><img src="assets/img/logo.svg" alt="Mind Studio"></span>
-        </a>      </div>
+        <nav class="nav-links" aria-label="Hauptnavigation">
+          <a href="./">Start</a>
+          <a href="leistungen-einzel.html">Einzel</a>
+          <a href="leistungen-organisationen.html">Organisationen</a>
+          <a href="ansatz.html">Ansatz</a>
+          <a href="kontakt.html">Kontakt</a>
+        </nav>
+        <div class="lang-switch"><span>DE</span><span class="muted">/</span><a href="en/">EN</a></div>
+      </div>
       <div class="mobile-menu" data-mobile-menu>
         <a href="./">Start</a>
         <a href="leistungen-einzel.html">Einzel</a>

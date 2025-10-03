@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Individual – Therapy & Coaching | Mind Studio</title>
+    <meta name="description" content="Systemic therapy and coaching for individuals. In-person sessions in Hamburg and online.">
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=2">
+    <script defer src="../assets/js/site.js?v=2"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="nav-left">
+          <a class="brand" href="./"><span class="brand-mark"><img src="../assets/img/logo.svg" alt="Mind Studio"></span></a>
+          <button class="mobile-toggle" aria-label="Open menu" data-mobile-toggle>☰</button>
+        </div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="./">Home</a>
+          <a class="active" href="services-individual.html">Individual</a>
+          <a href="services-organizations.html">Organizations</a>
+          <a href="approach.html">Approach</a>
+          <a href="about.html">About</a>
+          <a href="../kontakt.html">Contact (DE)</a>
+        </nav>
+        <div class="lang-switch"><a href="../">DE</a><span class="muted">/</span><span>EN</span></div>
+      </div>
+      <div class="mobile-menu" data-mobile-menu>
+        <a href="./">Home</a>
+        <a class="active" href="services-individual.html">Individual</a>
+        <a href="services-organizations.html">Organizations</a>
+        <a href="approach.html">Approach</a>
+        <a href="about.html">About</a>
+        <a href="../kontakt.html">Contact (DE)</a>
+        <hr style="border-color: var(--color-border); opacity: .4;">
+        <a href="../">Deutsch</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="eyebrow">For Individuals</div>
+          <h1>Therapy & Coaching</h1>
+          <p class="lead">Guidance, relief and development in challenging life phases.</p>
+          <div class="spacer"></div>
+          <div class="grid-2">
+            <div class="card">
+              <h3>Typical Topics</h3>
+              <ul class="feature-list">
+                <li>Relationships & Communication</li>
+                <li>Stress, exhaustion, burn-out prevention</li>
+                <li>Anxiety, self-worth, perfectionism</li>
+                <li>Decisions & change</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Process</h3>
+              <ul class="feature-list">
+                <li>Initial consultation (30 min, online)</li>
+                <li>Individual sessions (50 min), weekly or bi-weekly</li>
+                <li>In-person in Hamburg or online</li>
+              </ul>
+            </div>
+          </div>
+          <div class="spacer"></div>
+          <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Request appointment</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>© <span id="year"></span> Mind Studio</div>
+        <nav class="footer-links">
+          <a href="../impressum.html">Imprint (DE)</a>
+          <a href="../datenschutz.html">Privacy (DE)</a>
+        </nav>
+      </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+  </html>

@@ -1,0 +1,11 @@
+# Allow image files only
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Deny all other files
+<FilesMatch "^(?!.*\.(jpg|jpeg|png|gif|webp|svg)$).*$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>

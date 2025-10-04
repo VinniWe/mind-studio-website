@@ -1,0 +1,69 @@
+{
+  "slider": [
+    {
+      "id": 1,
+      "title": "Die Beziehung zu Dir bestimmt die Qualität",
+      "subtitle": "Deines Lebens.",
+      "description": "Systemische Therapie und psychologische Beratung für Einzelpersonen und Organisationen.",
+      "meta": "Herzlich Willkommen",
+      "image_desktop": "",
+      "image_mobile": "",
+      "active": true,
+      "order": 0
+    },
+    {
+      "id": 2,
+      "title": "Individuelle Therapie",
+      "subtitle": "",
+      "description": "Gemeinsam entwickeln wir Lösungsansätze für mehr Lebensqualität und persönliche Entwicklung.",
+      "meta": "Einzelpersonen",
+      "image_desktop": "",
+      "image_mobile": "",
+      "active": true,
+      "order": 1
+    },
+    {
+      "id": 3,
+      "title": "Team-Entwicklung",
+      "subtitle": "",
+      "description": "Workshops und Moderation für starke Teams und gesunde Unternehmenskultur.",
+      "meta": "Organisationen",
+      "image_desktop": "",
+      "image_mobile": "",
+      "active": true,
+      "order": 2
+    }
+  ],
+  "pages": {
+    "home": {
+      "stats": [
+        {
+          "text": "1 von 4 Personen kämpft mit psychischen Herausforderungen im Jahr.",
+          "source": "Statistisches Bundesamt (2023)"
+        },
+        {
+          "text": "Systemische Therapie zeigt nachweislich positive Effekte auf Lebensqualität.",
+          "source": "DGSF (2022)"
+        },
+        {
+          "text": "Weil wir alle unsere Themen haben.",
+          "source": "Mind Studio"
+        }
+      ],
+      "services": {
+        "title": "Angebot",
+        "subtitle": "Zwei Wege, ein Ziel: mehr Klarheit, Verbindung und Wirksamkeit.",
+        "individual": {
+          "title": "FÜR EINZELPERSONEN",
+          "heading": "Therapie & psychologische Beratung",
+          "description": "Systemische Therapie, Beratung und Begleitung in herausfordernden Lebensphasen – persönlich und online."
+        },
+        "organizations": {
+          "title": "FÜR ORGANISATIONEN",
+          "heading": "Teams & Organisationen",
+          "description": "Workshops, Moderation und Organisationsentwicklung – für Zusammenarbeit, Kultur und gesunde Leistung."
+        }
+      }
+    }
+  }
+}

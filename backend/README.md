@@ -1,179 +1,149 @@
-# Mind Studio Backend
+# Mind Studio CMS
 
-A simple content management system for the Mind Studio website, built with Node.js and Express.
+A simple, web-based Content Management System for the Mind Studio website, similar to TYPO3 but lightweight and easy to use.
 
-## Features
+## 🚀 Quick Setup
 
-- **Slider Management**: Add, edit, delete, and reorder slider content with images
-- **File Upload**: Secure image upload with validation
-- **Admin Interface**: Web-based admin panel for content management
-- **API Endpoints**: RESTful API for frontend integration
-- **Security**: Password-based authentication and rate limiting
-- **CORS Support**: Configured for cross-origin requests
-
-## Quick Start
-
-### 1. Setup
-
-```bash
-# Navigate to backend directory
-cd backend
-
-# Run setup script
-npm run setup
-
-# Install dependencies
-npm install
+### 1. Access the CMS
+Visit your website's backend:
+```
+https://vinniwe.github.io/mind-studio-website/backend/
 ```
 
-### 2. Start the Server
+### 2. Login Credentials
+- **Username**: `admin`
+- **Password**: `mindstudio2024`
 
-```bash
-# Development mode (with auto-restart)
-npm run dev
+⚠️ **Important**: Change the password in `backend/index.php` and `backend/login.php`!
 
-# Production mode
-npm start
-```
+## 🎯 Features
 
-The server will start on `http://localhost:3001`
+### Slider Management
+- ✅ **Add/Edit/Delete Slides**: Manage your homepage slider content
+- ✅ **Image Upload**: Upload desktop and mobile images for each slide
+- ✅ **Drag & Drop Reordering**: Easily reorder slides
+- ✅ **Activate/Deactivate**: Turn slides on/off
+- ✅ **Responsive Images**: Separate images for desktop and mobile
 
-### 3. Access Admin Panel
+### Content Management
+- ✅ **Homepage Statistics**: Edit the three statistics on your homepage
+- ✅ **Services Content**: Manage service descriptions
+- ✅ **Real-time Preview**: See changes immediately
+- ✅ **Backup**: All content is stored in JSON files
 
-Visit `http://localhost:3001/admin` and login with:
-- **Password**: `admin123` (default)
-
-## API Endpoints
-
-### Public Endpoints
-
-- `GET /api/slider` - Get all slider content
-- `GET /api/settings` - Get website settings
-- `GET /api/health` - Health check
-
-### Admin Endpoints (require authentication)
-
-- `POST /api/admin/slider` - Create new slide
-- `PUT /api/admin/slider/:id` - Update slide
-- `DELETE /api/admin/slider/:id` - Delete slide
-- `PUT /api/admin/settings` - Update settings
-
-## File Structure
+## 📁 File Structure
 
 ```
 backend/
-├── server.js              # Main server file
-├── setup.js               # Setup script
-├── package.json           # Dependencies
-├── data/                  # JSON data files
-│   ├── slider.json        # Slider content
-│   └── settings.json      # Website settings
-├── uploads/               # Uploaded files
-│   └── slider/            # Slider images
-└── public/                # Admin interface
-    └── index.html         # Admin panel
+├── index.php          # Main CMS interface
+├── login.php          # Login page
+├── api.php            # API endpoints for frontend
+└── README.md          # This file
+
+data/
+└── content.json       # All website content
+
+uploads/
+└── slider/           # Uploaded images
 ```
 
-## Configuration
+## 🔧 How It Works
 
-Copy `config.example.env` to `.env` and customize:
+### 1. Content Storage
+All content is stored in `data/content.json` - a simple JSON file that's easy to backup and version control.
 
-```env
-PORT=3001
-ADMIN_PASSWORD=your-secure-password
-CORS_ORIGIN=http://localhost:3000,https://yourdomain.com
-MAX_FILE_SIZE=5242880
+### 2. Frontend Integration
+The frontend can optionally load content from the CMS via the API:
+- `GET /backend/api.php?action=slider` - Get slider content
+- `GET /backend/api.php?action=homepage` - Get homepage content
+
+### 3. Static Fallback
+If the CMS is not available, the website falls back to static HTML content.
+
+## 🛠️ Customization
+
+### Change Admin Password
+Edit these files and update the password:
+```php
+// In backend/index.php and backend/login.php
+$config = [
+    'admin_username' => 'admin',
+    'admin_password' => 'your-new-password',
+];
 ```
 
-## Slider Content Structure
+### Enable CMS Integration
+To make your frontend use CMS content instead of static HTML:
 
-Each slide contains:
+1. Open `assets/js/cms-loader.js`
+2. Change `this.useCMS = false;` to `this.useCMS = true;`
+3. The website will now load content from the CMS
 
-```json
-{
-  "id": "unique-id",
-  "title": "Slide Title",
-  "description": "Slide description text",
-  "meta": "Category or meta information",
-  "image": "/uploads/slider/filename.jpg",
-  "order": 0,
-  "active": true,
-  "createdAt": "2024-01-01T00:00:00.000Z",
-  "updatedAt": "2024-01-01T00:00:00.000Z"
-}
-```
+### Add New Content Types
+You can extend the CMS by:
+1. Adding new fields to the admin interface in `index.php`
+2. Updating the `content.json` structure
+3. Creating new API endpoints in `api.php`
 
-## Frontend Integration
+## 🔒 Security
 
-The frontend can fetch slider content using:
+### File Upload Security
+- Only image files are allowed (jpg, jpeg, png, gif, webp, svg)
+- File size limit: 5MB
+- Files are stored in `uploads/` directory with secure naming
 
-```javascript
-fetch('http://localhost:3001/api/slider')
-  .then(response => response.json())
-  .then(slides => {
-    // Use slides data
-  });
-```
+### Access Control
+- Password-protected admin area
+- Session-based authentication
+- No database required - uses simple JSON files
 
-## Security Features
+## 📱 Mobile Responsive
 
-- **Rate Limiting**: 100 requests per 15 minutes per IP
-- **File Validation**: Only images allowed, size limits enforced
-- **CORS Protection**: Configurable allowed origins
-- **Helmet Security**: Security headers
-- **Authentication**: Password-based admin access
+The CMS interface is fully responsive and works on:
+- ✅ Desktop computers
+- ✅ Tablets
+- ✅ Mobile phones
 
-## Deployment
+## 🚀 Deployment
 
-### Local Development
+### GitHub Pages
+The CMS works with GitHub Pages because:
+- Uses PHP (supported by GitHub Pages)
+- No database required
+- Simple file-based storage
+- Static assets served normally
 
-```bash
-npm run dev
-```
+### Backup
+Your content is automatically backed up in version control since `data/content.json` is part of your repository.
 
-### Production
+## 🆘 Troubleshooting
 
-1. Set `NODE_ENV=production` in `.env`
-2. Use a process manager like PM2:
+### Can't Access CMS
+1. Check that PHP is enabled on your hosting
+2. Verify file permissions (755 for directories, 644 for files)
+3. Ensure `data/` and `uploads/` directories are writable
 
-```bash
-npm install -g pm2
-pm2 start server.js --name "mind-studio-backend"
-```
+### Images Not Uploading
+1. Check `uploads/` directory permissions
+2. Verify file size is under 5MB
+3. Ensure file type is supported (jpg, png, gif, webp, svg)
 
-### Docker (Optional)
+### Content Not Updating
+1. Clear browser cache
+2. Check browser console for JavaScript errors
+3. Verify API endpoints are accessible
 
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-EXPOSE 3001
-CMD ["npm", "start"]
-```
+## 🔄 Updates
 
-## Troubleshooting
+To update the CMS:
+1. Replace the backend files with new versions
+2. Keep your `data/content.json` file
+3. Test the admin interface
 
-### Common Issues
+## 📞 Support
 
-1. **Port already in use**: Change `PORT` in `.env`
-2. **Permission errors**: Ensure write permissions for `data/` and `uploads/` directories
-3. **CORS errors**: Update `CORS_ORIGIN` in `.env`
-4. **File upload fails**: Check `MAX_FILE_SIZE` and file permissions
+This is a custom CMS built specifically for Mind Studio. For issues or enhancements, contact your developer.
 
-### Logs
+---
 
-The server logs all requests and errors to console. For production, consider using a logging service.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## License
-
-MIT License - see LICENSE file for details.
+**Mind Studio CMS** - Simple, Secure, Effective

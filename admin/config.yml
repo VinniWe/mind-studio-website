@@ -1,7 +1,9 @@
 backend:
-  name: github
-  repo: VinniWe/mind-studio-website
+  name: git-gateway
   branch: main
+
+# This uses Netlify Identity with GitHub login
+# No OAuth setup needed - just enable Identity in Netlify
 
 media_folder: "uploads" # Media files will be stored in the repo under uploads
 public_folder: "/uploads" # The src attribute for uploaded media

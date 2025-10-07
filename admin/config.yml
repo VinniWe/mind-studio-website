@@ -11,9 +11,26 @@ public_folder: "/uploads" # The src attribute for uploaded media
 locale: "de" # Set German as default language
 
 collections:
-  # Slider Collection
+  # Direct HTML Editing (Sofort sichtbar!)
+  - name: "pages-direct"
+    label: "🎯 Seiten (Direkt bearbeiten)"
+    files:
+      - label: "Homepage (DE)"
+        name: "index-de"
+        file: "index.html"
+        fields:
+          - {label: "Slider Slide 1 - Titel", name: "slide1_title", widget: "string", hint: "Zeile 64"}
+          - {label: "Slider Slide 1 - Untertitel", name: "slide1_subtitle", widget: "string", hint: "Zeile 65"}
+          - {label: "Slider Slide 2 - Titel", name: "slide2_title", widget: "string", hint: "Zeile 80"}
+          - {label: "Slider Slide 2 - Text", name: "slide2_text", widget: "text", hint: "Zeile 81"}
+          - {label: "Slider Slide 3 - Titel", name: "slide3_title", widget: "string", hint: "Zeile 96"}
+          - {label: "Slider Slide 3 - Text", name: "slide3_text", widget: "text", hint: "Zeile 97"}
+          - {label: "Angebot - Überschrift", name: "services_heading", widget: "string", hint: "Zeile 138"}
+          - {label: "Angebot - Untertitel", name: "services_subtitle", widget: "text", hint: "Zeile 139"}
+
+  # Slider Collection (für Fortgeschrittene)
   - name: "slider"
-    label: "Slider"
+    label: "📸 Slider (Content-Dateien)"
     label_singular: "Slide"
     folder: "content/slider"
     create: true

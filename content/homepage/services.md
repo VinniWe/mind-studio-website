@@ -1,6 +1,6 @@
 ---
 title: Angebot
-subtitle: Zwei Wege, ein Ziel: mehr Klarheit, Verbindung und Wirksamkeit.
+subtitle: "Zwei Wege, ein Ziel: mehr Klarheit, Verbindung und Wirksamkeit."
 individual:
   category: FÜR EINZELPERSONEN
   heading: Therapie & psychologische Beratung

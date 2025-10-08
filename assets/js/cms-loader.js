@@ -70,27 +70,20 @@ async function loadSliderContent() {
     sliderContainerParent.classList.add('loading');
   }
   
-  console.log('🔄 Loading slider content from CMS...');
+  console.log('🔄 Loading slider content from JSON...');
   
   try {
-    // Lade alle Slider-Dateien dynamisch (versuche bis zu 20 Slides)
-    const slides = [];
-    for (let i = 1; i <= 20; i++) {
-      const content = await loadMarkdownContent(`content/slider/slide-${i}.md`);
-      if (content && content.frontmatter) {
-        // Nur aktive Slides hinzufügen
-        if (content.frontmatter.active !== false) {
-          slides.push({ ...content.frontmatter, index: i });
-        }
-      } else {
-        // Wenn keine Datei gefunden, versuche weiter (für Lücken)
-        // Aber stoppe nach 3 aufeinanderfolgenden Fehlern
-        if (i > 3 && slides.length === 0) break;
-      }
+    // Load slides from JSON file
+    const response = await fetch('data/slides.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    const slides = await response.json();
     
-    // Filtere leere Einträge
-    const validSlides = slides.filter(slide => slide.title || slide.description);
+    // Filter nur aktive Slides
+    const validSlides = slides.filter(slide => 
+      slide.active !== false && (slide.title || slide.description)
+    );
     
     // Sortiere nach order-Feld
     validSlides.sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -121,8 +114,8 @@ async function loadSliderContent() {
     
     // Baue Slider neu auf mit allen CMS-Feldern
     sliderContainer.innerHTML = validSlides.map((slide, index) => {
-      const desktopImage = slide.image_desktop || `assets/img/slider-placeholder-${slide.index}.svg`;
-      const mobileImage = slide.image_mobile || slide.image_desktop || `assets/img/slider-placeholder-${slide.index}.svg`;
+      const desktopImage = slide.image_desktop || `assets/img/slider-placeholder-${index + 1}.svg`;
+      const mobileImage = slide.image_mobile || slide.image_desktop || `assets/img/slider-placeholder-${index + 1}.svg`;
       
       console.log(`📄 Slide ${index + 1}: ${slide.title}`);
       

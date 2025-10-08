@@ -7,6 +7,4 @@ stats:
     source: DGSF (2022)
   - text: Weil wir alle unsere Themen haben.
     source: Mind Studio
-  - text: 9 von 7/18 testen ihre. psychische gesundheit nicht
-    source: testtesttest
 ---

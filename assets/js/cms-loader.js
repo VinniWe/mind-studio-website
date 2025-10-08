@@ -96,8 +96,20 @@ async function loadSliderContent() {
     validSlides.sort((a, b) => (a.order || 0) - (b.order || 0));
     
     if (validSlides.length === 0) {
-      console.log('⚠️ No CMS slides found, keeping HTML content');
-      // Remove loading class and show original content
+      console.log('⚠️ No CMS slides found');
+      // Show error message
+      if (sliderContainer) {
+        sliderContainer.innerHTML = `
+          <div class="slide">
+            <div class="slide-content">
+              <div class="slide-text" style="background: white; padding: 60px; border-radius: 16px; text-align: center;">
+                <h1 class="hero-title" style="color: #333;">Slider wird geladen...</h1>
+                <p style="color: #666;">Bitte warten Sie einen Moment oder aktualisieren Sie die Seite.</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
       if (sliderContainerParent) {
         sliderContainerParent.classList.remove('loading');
         sliderContainerParent.classList.add('loaded');
@@ -187,6 +199,24 @@ async function loadSliderContent() {
     }
   } catch (error) {
     console.error('❌ Error loading slider content:', error);
+    // Show error message
+    if (sliderContainer) {
+      sliderContainer.innerHTML = `
+        <div class="slide">
+          <div class="slide-content">
+            <div class="slide-text" style="background: white; padding: 60px; border-radius: 16px; text-align: center; margin: 100px auto; max-width: 600px;">
+              <h1 class="hero-title" style="color: #333;">Fehler beim Laden</h1>
+              <p style="color: #666;">Der Slider konnte nicht geladen werden. Bitte laden Sie die Seite neu.</p>
+              <button onclick="location.reload()" style="margin-top: 20px; padding: 12px 24px; background: #E67E22; color: white; border: none; border-radius: 8px; cursor: pointer;">Seite neu laden</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    if (sliderContainerParent) {
+      sliderContainerParent.classList.remove('loading');
+      sliderContainerParent.classList.add('loaded');
+    }
   }
 }
 

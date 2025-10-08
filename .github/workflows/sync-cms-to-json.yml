@@ -1,0 +1,73 @@
+name: Sync CMS Content to JSON
+
+on:
+  push:
+    paths:
+      - 'content/**/*.md'
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install js-yaml
+        run: npm install js-yaml
+      
+      - name: Convert Markdown to JSON
+        run: |
+          node -e "
+          const fs = require('fs');
+          const yaml = require('js-yaml');
+          const path = require('path');
+          
+          // Function to parse markdown with frontmatter
+          function parseMarkdown(content) {
+            const match = content.match(/^---\s*\n([\s\S]*?)\n---/);
+            if (!match) return null;
+            return yaml.load(match[1]);
+          }
+          
+          // Read all slide files
+          const sliderDir = 'content/slider';
+          const slides = [];
+          
+          if (fs.existsSync(sliderDir)) {
+            const files = fs.readdirSync(sliderDir)
+              .filter(f => f.endsWith('.md'))
+              .sort();
+            
+            files.forEach(file => {
+              const content = fs.readFileSync(path.join(sliderDir, file), 'utf8');
+              const data = parseMarkdown(content);
+              if (data) {
+                slides.push(data);
+              }
+            });
+          }
+          
+          // Write to JSON
+          fs.mkdirSync('data', { recursive: true });
+          fs.writeFileSync('data/slides.json', JSON.stringify(slides, null, 2));
+          console.log(\`✅ Converted \${slides.length} slides to JSON\`);
+          "
+      
+      - name: Commit JSON file
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/slides.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync: Update slides.json from CMS content [skip ci]" && git push)
+

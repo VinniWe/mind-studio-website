@@ -1,61 +1,9 @@
 /**
  * CMS Content Loader
- * Lädt Inhalte aus Markdown-Dateien und fügt sie dynamisch in die HTML-Seiten ein
+ * Loads slider content from JSON and updates the website dynamically
  */
 
-// Funktion zum Laden und Parsen von Markdown-Dateien
-async function loadMarkdownContent(filepath) {
-  try {
-    const response = await fetch(filepath);
-    if (!response.ok) {
-      console.warn('Content file not found:', filepath);
-      return null;
-    }
-    const text = await response.text();
-    
-    // Parse Frontmatter
-    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
-    const match = text.match(frontmatterRegex);
-    
-    if (!match) return { content: text };
-    
-    const frontmatter = {};
-    const frontmatterText = match[1];
-    const content = match[2];
-    
-    // Parse YAML frontmatter (verbessertes Parsing)
-    const lines = frontmatterText.split('\n');
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-      const colonIndex = line.indexOf(':');
-      if (colonIndex > -1) {
-        const key = line.substring(0, colonIndex).trim();
-        let value = line.substring(colonIndex + 1).trim();
-        
-        // Remove quotes
-        value = value.replace(/^["']|["']$/g, '');
-        
-        // Handle boolean values
-        if (value === 'true') value = true;
-        if (value === 'false') value = false;
-        
-        // Handle numbers
-        if (!isNaN(value) && value !== '') {
-          value = Number(value);
-        }
-        
-        frontmatter[key] = value;
-      }
-    }
-    
-    return { frontmatter, content };
-  } catch (error) {
-    console.error('Error loading content:', filepath, error);
-    return null;
-  }
-}
-
-// Slider-Inhalte laden
+// Load slider content
 async function loadSliderContent() {
   const sliderContainer = document.querySelector('.slider');
   const sliderContainerParent = document.querySelector('.slider-container');

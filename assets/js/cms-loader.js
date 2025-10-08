@@ -65,11 +65,7 @@ async function loadSliderContent() {
     return;
   }
   
-  // Add loading class to hide content during load
-  if (sliderContainerParent) {
-    sliderContainerParent.classList.add('loading');
-  }
-  
+  // DON'T hide during load - keep HTML visible
   console.log('🔄 Loading slider content from JSON...');
   
   try {
@@ -89,24 +85,8 @@ async function loadSliderContent() {
     validSlides.sort((a, b) => (a.order || 0) - (b.order || 0));
     
     if (validSlides.length === 0) {
-      console.log('⚠️ No CMS slides found');
-      // Show error message
-      if (sliderContainer) {
-        sliderContainer.innerHTML = `
-          <div class="slide">
-            <div class="slide-content">
-              <div class="slide-text" style="background: white; padding: 60px; border-radius: 16px; text-align: center;">
-                <h1 class="hero-title" style="color: #333;">Slider wird geladen...</h1>
-                <p style="color: #666;">Bitte warten Sie einen Moment oder aktualisieren Sie die Seite.</p>
-              </div>
-            </div>
-          </div>
-        `;
-      }
-      if (sliderContainerParent) {
-        sliderContainerParent.classList.remove('loading');
-        sliderContainerParent.classList.add('loaded');
-      }
+      console.log('⚠️ No CMS slides found - keeping HTML fallback');
+      // Keep the HTML fallback content, don't replace it
       return;
     }
     
@@ -165,13 +145,10 @@ async function loadSliderContent() {
       
       // Reinitialize slider
       if (sliderContainerParent && window.Slider) {
+        sliderContainerParent.dataset.initialized = 'true';
         setTimeout(() => {
           new window.Slider(sliderContainerParent);
-          console.log('✅ Slider reinitialized');
-          
-          // Show slider after initialization
-          sliderContainerParent.classList.remove('loading');
-          sliderContainerParent.classList.add('loaded');
+          console.log('✅ Slider reinitialized from CMS');
         }, 100);
       }
     } else {
@@ -183,33 +160,11 @@ async function loadSliderContent() {
         controlsContainer.style.display = 'none';
       }
       console.log('✅ Single slide mode - controls hidden');
-      
-      // Show slider
-      if (sliderContainerParent) {
-        sliderContainerParent.classList.remove('loading');
-        sliderContainerParent.classList.add('loaded');
-      }
     }
   } catch (error) {
     console.error('❌ Error loading slider content:', error);
-    // Show error message
-    if (sliderContainer) {
-      sliderContainer.innerHTML = `
-        <div class="slide">
-          <div class="slide-content">
-            <div class="slide-text" style="background: white; padding: 60px; border-radius: 16px; text-align: center; margin: 100px auto; max-width: 600px;">
-              <h1 class="hero-title" style="color: #333;">Fehler beim Laden</h1>
-              <p style="color: #666;">Der Slider konnte nicht geladen werden. Bitte laden Sie die Seite neu.</p>
-              <button onclick="location.reload()" style="margin-top: 20px; padding: 12px 24px; background: #E67E22; color: white; border: none; border-radius: 8px; cursor: pointer;">Seite neu laden</button>
-            </div>
-          </div>
-        </div>
-      `;
-    }
-    if (sliderContainerParent) {
-      sliderContainerParent.classList.remove('loading');
-      sliderContainerParent.classList.add('loaded');
-    }
+    // Keep HTML fallback on error
+    return;
   }
 }
 

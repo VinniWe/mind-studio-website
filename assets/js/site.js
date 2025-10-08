@@ -262,17 +262,26 @@ class ResponsiveSlider extends Slider {
 }
 
 // Initialize slider when DOM is ready
+// NOTE: Slider initialization is now handled by cms-loader.js
+// This ensures CMS content loads first, then slider initializes
 document.addEventListener('DOMContentLoaded', function() {
   const sliderContainer = document.querySelector('.slider-container');
   if (sliderContainer) {
-    // Check if we have API URL (for dynamic content)
-    const apiUrl = sliderContainer.dataset.apiUrl || '';
-    
-    if (apiUrl) {
-      new ResponsiveSlider(sliderContainer, apiUrl);
-    } else {
-      new Slider(sliderContainer);
-    }
+    // Only initialize if CMS loader hasn't already done it
+    // Wait a bit to let CMS loader run first
+    setTimeout(() => {
+      if (!sliderContainer.dataset.initialized) {
+        console.log('🎯 Initializing slider from site.js (fallback)');
+        const apiUrl = sliderContainer.dataset.apiUrl || '';
+        
+        if (apiUrl) {
+          new ResponsiveSlider(sliderContainer, apiUrl);
+        } else {
+          new Slider(sliderContainer);
+        }
+        sliderContainer.dataset.initialized = 'true';
+      }
+    }, 500); // Wait for CMS loader
   }
 });
 

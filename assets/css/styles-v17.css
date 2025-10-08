@@ -349,18 +349,9 @@ label { color: var(--color-muted); font-size: 14px; }
   position: relative !important;
 }
 
-/* Slider transitions */
+/* Slider always visible - no opacity transitions */
 .slider-container .slider {
-  opacity: 1; /* Show by default */
-  transition: opacity 0.5s ease-in;
-}
-
-.slider-container.loading .slider {
-  opacity: 0; /* Hide only when loading */
-}
-
-.slider-container.loaded .slider {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 /* Remove gap between header and slider */

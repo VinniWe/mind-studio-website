@@ -349,6 +349,17 @@ label { color: var(--color-muted); font-size: 14px; }
   position: relative !important;
 }
 
+/* Hide slider during CMS loading to prevent flash */
+.slider-container.loading .slider {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.slider-container.loaded .slider {
+  opacity: 1;
+  transition: opacity 0.3s ease-in;
+}
+
 /* Remove gap between header and slider */
 main {
   margin: 0 !important;

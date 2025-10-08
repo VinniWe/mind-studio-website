@@ -58,9 +58,16 @@ async function loadMarkdownContent(filepath) {
 // Slider-Inhalte laden
 async function loadSliderContent() {
   const sliderContainer = document.querySelector('.slider');
+  const sliderContainerParent = document.querySelector('.slider-container');
+  
   if (!sliderContainer) {
     console.log('Slider container not found');
     return;
+  }
+  
+  // Add loading class to hide content during load
+  if (sliderContainerParent) {
+    sliderContainerParent.classList.add('loading');
   }
   
   console.log('🔄 Loading slider content from CMS...');
@@ -90,6 +97,11 @@ async function loadSliderContent() {
     
     if (validSlides.length === 0) {
       console.log('⚠️ No CMS slides found, keeping HTML content');
+      // Remove loading class and show original content
+      if (sliderContainerParent) {
+        sliderContainerParent.classList.remove('loading');
+        sliderContainerParent.classList.add('loaded');
+      }
       return;
     }
     
@@ -147,11 +159,14 @@ async function loadSliderContent() {
       }
       
       // Reinitialize slider
-      const sliderContainerParent = document.querySelector('.slider-container');
       if (sliderContainerParent && window.Slider) {
         setTimeout(() => {
           new window.Slider(sliderContainerParent);
           console.log('✅ Slider reinitialized');
+          
+          // Show slider after initialization
+          sliderContainerParent.classList.remove('loading');
+          sliderContainerParent.classList.add('loaded');
         }, 100);
       }
     } else {
@@ -163,6 +178,12 @@ async function loadSliderContent() {
         controlsContainer.style.display = 'none';
       }
       console.log('✅ Single slide mode - controls hidden');
+      
+      // Show slider
+      if (sliderContainerParent) {
+        sliderContainerParent.classList.remove('loading');
+        sliderContainerParent.classList.add('loaded');
+      }
     }
   } catch (error) {
     console.error('❌ Error loading slider content:', error);

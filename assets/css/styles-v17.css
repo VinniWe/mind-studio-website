@@ -351,8 +351,12 @@ label { color: var(--color-muted); font-size: 14px; }
 
 /* Slider transitions */
 .slider-container .slider {
-  opacity: 0;
+  opacity: 1; /* Show by default */
   transition: opacity 0.5s ease-in;
+}
+
+.slider-container.loading .slider {
+  opacity: 0; /* Hide only when loading */
 }
 
 .slider-container.loaded .slider {

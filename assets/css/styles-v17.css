@@ -260,7 +260,7 @@ section + section {
 }
 
 /* Section-specific backgrounds */
-.section-hero { background: var(--color-hero); }
+.section-hero { background: transparent; } /* No background - slider has its own images */
 .section-stats { background: var(--color-stats); }
 .section-services { background: var(--color-services); }
 .section-approach { background: var(--color-approach); }

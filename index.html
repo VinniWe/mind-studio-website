@@ -12,9 +12,9 @@
     <meta property="og:image" content="assets/img/social.png">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" href="assets/css/styles-v17.css?v=26">
-    <script defer src="assets/js/site.js?v=26"></script>
-    <script defer src="assets/js/cms-loader.js?v=26"></script>
+    <link rel="stylesheet" href="assets/css/styles-v17.css?v=27">
+    <script defer src="assets/js/site.js?v=27"></script>
+    <script defer src="assets/js/cms-loader.js?v=27"></script>
   </head>
   <body>
     <header class="site-header">
@@ -52,14 +52,49 @@
     <main>
         <!-- Hero Slider Section - Content loaded dynamically from CMS -->
         <section class="hero section-hero">
-          <div class="slider-container loading">
-            <!-- Slider content will be loaded from CMS -->
-            <div class="slider"></div>
-            <div class="slider-controls" style="display: none;">
+          <div class="slider-container">
+            <div class="slider">
+              <!-- Fallback content if CMS doesn't load -->
+              <div class="slide">
+                <div class="slide-content">
+                  <div class="slide-image">
+                    <img src="/uploads/screenshot-2025-09-25-at-11.44.26.png" alt="Mind Studio" class="desktop-only">
+                    <img src="/uploads/screenshot-2025-09-25-at-11.44.26.png" alt="Mind Studio" class="mobile-only">
+                  </div>
+                  <div class="slide-text">
+                    <h1 class="hero-title">Die Beziehung zu Dir bestimmt die Qualität</h1>
+                    <h2 class="hero-subtitle">Deines Lebens.</h2>
+                    <div class="hero-cta">
+                      <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Erstgespräch Buchen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="slide-content">
+                  <div class="slide-image">
+                    <img src="assets/img/therapy-session.svg" alt="Therapie" class="desktop-only">
+                    <img src="assets/img/therapy-session.svg" alt="Therapie" class="mobile-only">
+                  </div>
+                  <div class="slide-text">
+                    <div class="slide-meta">Einzelpersonen</div>
+                    <h1 class="hero-title">Individuelle Therapie</h1>
+                    <p class="lead">Gemeinsam entwickeln wir Lösungsansätze für mehr Lebensqualität und persönliche Entwicklung.</p>
+                    <div class="hero-cta">
+                      <a class="btn btn-primary" href="leistungen-einzel.html">Mehr erfahren</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider-controls">
               <button class="slider-btn" data-direction="prev" aria-label="Vorheriger Slide">‹</button>
               <button class="slider-btn" data-direction="next" aria-label="Nächster Slide">›</button>
             </div>
-            <div class="slider-dots" style="display: none;"></div>
+            <div class="slider-dots">
+              <div class="slider-dot active"></div>
+              <div class="slider-dot"></div>
+            </div>
           </div>
         </section>
 

@@ -1,6 +1,6 @@
 ---
 title: TEST Die Beziehung zu Dir bestimmt die Qualität
-subtitle: Deines Lebens.
+subtitle: Deines Lebens!
 description: ""
 meta: ""
 image_desktop: /uploads/screenshot-2025-09-25-at-11.44.26.png

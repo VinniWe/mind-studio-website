@@ -14,14 +14,23 @@ async function loadContent() {
   if (contentData) return contentData;
   
   try {
-    const response = await fetch('data/content.json');
+    console.log('📥 Fetching content.json...');
+    const response = await fetch('/data/content.json');
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      console.warn(`⚠️ content.json returned ${response.status}, trying relative path...`);
+      const altResponse = await fetch('data/content.json');
+      if (!altResponse.ok) {
+        throw new Error(`HTTP error! status: ${altResponse.status}`);
+      }
+      contentData = await altResponse.json();
+    } else {
+      contentData = await response.json();
     }
-    contentData = await response.json();
+    console.log('✅ content.json loaded successfully');
     return contentData;
   } catch (error) {
-    console.error('❌ Error loading content:', error);
+    console.error('❌ Error loading content.json:', error);
+    console.log('💡 Using HTML fallback content');
     return null;
   }
 }
@@ -40,10 +49,14 @@ async function loadSliderContent() {
   console.log('🔄 Loading slider content from JSON...');
   
   try {
-    // Load slides from JSON file
-    const response = await fetch('data/slides.json');
+    // Load slides from JSON file - try absolute path first, then relative
+    let response = await fetch('/data/slides.json');
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      console.warn(`⚠️ slides.json returned ${response.status}, trying relative path...`);
+      response = await fetch('data/slides.json');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
     }
     const slides = await response.json();
     

@@ -53,15 +53,30 @@
         <!-- Hero Slider Section - Content loaded dynamically from CMS -->
         <section class="hero section-hero">
           <div class="slider-container">
-            <div class="slider">
-              <!-- Content loaded from CMS - no static fallback to prevent flash -->
+            <div class="slider" data-cms-content="slider">
+              <!-- Minimal fallback - will be replaced by CMS content -->
+              <div class="slide">
+                <div class="slide-content">
+                  <div class="slide-image">
+                    <img src="/uploads/screenshot-2025-09-25-at-11.44.26.png" alt="Mind Studio" class="desktop-only">
+                    <img src="/uploads/screenshot-2025-09-25-at-11.44.26.png" alt="Mind Studio" class="mobile-only">
+                  </div>
+                  <div class="slide-text">
+                    <h1 class="hero-title">Die Beziehung zu Dir bestimmt die Qualität</h1>
+                    <h2 class="hero-subtitle">Deines Lebens.</h2>
+                    <div class="hero-cta">
+                      <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Erstgespräch Buchen</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="slider-controls">
+            <div class="slider-controls" style="display: none;">
               <button class="slider-btn" data-direction="prev" aria-label="Vorheriger Slide">‹</button>
               <button class="slider-btn" data-direction="next" aria-label="Nächster Slide">›</button>
             </div>
-            <div class="slider-dots">
-              <!-- Dots populated by CMS loader -->
+            <div class="slider-dots" style="display: none;">
+              <div class="slider-dot active"></div>
             </div>
           </div>
         </section>

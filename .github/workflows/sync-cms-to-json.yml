@@ -24,13 +24,10 @@ jobs:
           node-version: '20'
       
       - name: Install dependencies
-        run: npm install js-yaml
-      
-      - name: Make script executable
-        run: chmod +x scripts/sync-content.js
+        run: npm install --production
       
       - name: Convert Markdown to JSON
-        run: node scripts/sync-content.js
+        run: npm run sync
       
       - name: Commit JSON files
         run: |

@@ -1,0 +1,13 @@
+{
+  "name": "mind-studio-website",
+  "version": "1.0.0",
+  "description": "Mind Studio website with CMS integration",
+  "private": true,
+  "scripts": {
+    "sync": "node scripts/sync-content.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
+

@@ -1,6 +1,6 @@
 ---
 hero:
-  eyebrow: TEST FÜR EINZELPERSONEN
+  eyebrow: FÜR EINZELPERSONEN
   title: Therapie & psychologische Beratung
   lead: Orientierung, Entlastung und Entwicklung in herausfordernden Lebensphasen.
   cta_text: Termin anfragen

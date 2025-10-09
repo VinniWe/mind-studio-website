@@ -1,6 +1,6 @@
 ---
 hero:
-  eyebrow: FÜR EINZELPERSONEN
+  eyebrow: TEST FÜR EINZELPERSONEN
   title: Therapie & psychologische Beratung
   lead: Orientierung, Entlastung und Entwicklung in herausfordernden Lebensphasen.
   cta_text: Termin anfragen
@@ -19,4 +19,3 @@ process:
     - Einzel-Sessions (50 Min), wöchentlich oder zweiwöchentlich
     - In Präsenz in Hamburg oder online
 ---
-

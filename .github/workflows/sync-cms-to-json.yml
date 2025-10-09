@@ -24,10 +24,27 @@ jobs:
           node-version: '20'
       
       - name: Install dependencies
-        run: npm install --production
+        run: |
+          echo "📦 Installing dependencies..."
+          npm install --production
+          echo "✓ Dependencies installed"
+          ls -la node_modules/ | head -10
+      
+      - name: Debug - Check files
+        run: |
+          echo "📁 Checking repository structure..."
+          ls -la
+          echo ""
+          echo "📂 Content directory:"
+          ls -la content/ || echo "content/ not found"
+          echo ""
+          echo "📂 Content pages:"
+          ls -la content/pages/ || echo "content/pages/ not found"
       
       - name: Convert Markdown to JSON
-        run: npm run sync
+        run: |
+          echo "🔄 Running sync script..."
+          npm run sync
       
       - name: Commit JSON files
         run: |

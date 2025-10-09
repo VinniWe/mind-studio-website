@@ -6,15 +6,34 @@
  */
 
 const fs = require('fs');
-const yaml = require('js-yaml');
 const path = require('path');
+
+// Try to load js-yaml with error handling
+let yaml;
+try {
+  yaml = require('js-yaml');
+  console.log('✓ js-yaml loaded successfully');
+} catch (error) {
+  console.error('❌ Error loading js-yaml:', error.message);
+  console.error('Make sure to run: npm install');
+  process.exit(1);
+}
 
 // Function to parse markdown with frontmatter
 function parseMarkdown(content) {
   const match = content.match(/^---\s*\n([\s\S]*?)\n---/);
   if (!match) return null;
-  return yaml.load(match[1]);
+  try {
+    return yaml.load(match[1]);
+  } catch (error) {
+    console.error('Error parsing YAML:', error.message);
+    return null;
+  }
 }
+
+// Main execution wrapped in try-catch
+try {
+  console.log('🚀 Starting CMS content sync...\n');
 
 // ========== SLIDER CONTENT ==========
 console.log('📊 Processing slider content...');
@@ -78,4 +97,10 @@ fs.writeFileSync('data/content.json', JSON.stringify(pageContent, null, 2));
 console.log(`✅ Converted ${Object.keys(pageContent).length} pages to JSON\n`);
 
 console.log('🎉 All content synced successfully!');
+
+} catch (error) {
+  console.error('\n❌ Fatal error during sync:');
+  console.error(error);
+  process.exit(1);
+}
 

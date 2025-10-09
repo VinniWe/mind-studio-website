@@ -22,10 +22,10 @@ Ihre Website nutzt **Netlify CMS** für Content-Management mit **GitHub OAuth** 
 
 ## ✏️ Content bearbeiten
 
-### Slider bearbeiten:
+### 📊 Slider bearbeiten:
 
-1. **Slider** in Sidebar anklicken
-2. Slide auswählen
+1. **"Slider"** in Sidebar anklicken
+2. Slide auswählen oder **"New Slide"** erstellen
 3. Felder bearbeiten:
    - **Title**: Hauptüberschrift
    - **Subtitle**: Unterüberschrift
@@ -35,26 +35,48 @@ Ihre Website nutzt **Netlify CMS** für Content-Management mit **GitHub OAuth** 
    - **Mobile Image**: Bild für Mobile (optional)
    - **CTA Text**: Button-Text
    - **CTA Link**: Button-Ziel
-   - **Order**: Reihenfolge (1, 2, 3...)
+   - **Order**: Reihenfolge (0, 1, 2...)
    - **Active**: An/Aus Schalter
 4. **"Publish"** klicken
 5. Warten (~2 Minuten)
 6. Änderungen sind live! 🎊
 
-### Neue Slides hinzufügen:
+### 📄 Seiteninhalte bearbeiten:
 
-1. **"New Slide"** klicken
-2. Alle Felder ausfüllen
-3. **Order** setzen (bestimmt Position)
-4. **"Publish"**
-5. Slide erscheint automatisch!
+Unter **"Seiten Inhalte"** können Sie alle Texte und Inhalte der Website bearbeiten:
 
-### Slides löschen:
+#### **Startseite:**
+- **Statistiken**: Die 3 Statistik-Blöcke unter dem Slider
+- **Angebot Sektion**: Überschrift, Untertitel und beide Service-Cards
+- **Ansatz Sektion**: Die 3 Prinzipien-Cards (Haltung, Arbeitsweise, Format)
+- **Testimonials**: Überschrift und alle Zitate
 
-1. Slide öffnen
-2. **"Delete"** klicken
-3. Bestätigen
-4. Slide verschwindet von der Website
+#### **Leistungen Einzelpersonen:**
+- **Hero**: Eyebrow, Titel, Lead-Text, CTA Button
+- **Typische Anliegen**: Titel und Liste der Anliegen
+- **Ablauf**: Titel und Ablauf-Schritte
+
+#### **Leistungen Organisationen:**
+- **Hero**: Eyebrow, Titel, Lead-Text, CTA Button
+- **Formate**: Titel und Liste der Formate
+- **Vorgehen**: Titel und Vorgehen-Schritte
+
+#### **Ansatz:**
+- **Hero**: Eyebrow, Titel, Lead-Text
+- **Prinzipien**: 3 Cards (Ressourcenorientiert, Kontextsensibel, Lösungsfokussiert)
+- **Rahmen**: Titel und Liste
+- **Methoden**: Titel und Liste
+
+#### **Über mich:**
+- **Hero**: Eyebrow, Name, Lead-Text
+- **Kurzbiografie**: Titel, Text, Qualifikationen-Liste
+- **Arbeitsweise**: Titel, Liste, Haltung-Titel, Haltung-Text, CTA Button
+
+#### **Kontakt:**
+- **Hero**: Eyebrow, Titel, Lead-Text
+- **Kontakt Informationen**: Titel, Name, E-Mail, Telefon, Info-Text
+
+**Wichtig:** Nach jeder Änderung **"Publish"** klicken und ~2 Minuten warten.
 
 ---
 
@@ -100,14 +122,38 @@ CMS Edit → GitHub → GitHub Action → JSON Update → Netlify → Live!
 - **Build:** Automatic bei jedem Push
 
 ### Content-Flow:
-- **Markdown** (content/slider/*.md) → **GitHub Action** → **JSON** (data/slides.json) → **JavaScript** → **Website**
+- **Markdown** (content/slider/*.md & content/pages/*.md) → **GitHub Action** → **JSON** (data/slides.json & data/content.json) → **JavaScript** → **Website**
 
-### Files:
+### Wichtige Dateien:
 - `admin/config.yml` - CMS Konfiguration
 - `admin/index.html` - CMS Interface
 - `data/slides.json` - Slider-Daten (auto-generiert)
-- `assets/js/cms-loader.js` - Lädt CMS-Inhalte
-- `.github/workflows/sync-cms-to-json.yml` - Auto-Sync
+- `data/content.json` - Seiten-Inhalte (auto-generiert)
+- `assets/js/cms-loader.js` - Lädt CMS-Inhalte dynamisch
+- `.github/workflows/sync-cms-to-json.yml` - Auto-Sync Workflow
+
+### Markdown-Dateien:
+- `content/slider/*.md` - Slider-Slides
+- `content/pages/home.md` - Startseite
+- `content/pages/services-individual.md` - Leistungen Einzelpersonen
+- `content/pages/services-organizations.md` - Leistungen Organisationen
+- `content/pages/approach.md` - Ansatz
+- `content/pages/about.md` - Über mich
+- `content/pages/contact.md` - Kontakt
+
+---
+
+## 🎨 Design-Hinweise
+
+### Kein Flash-of-Content:
+- Der Slider wird **ohne statisches HTML** geladen, um einen "Flash" zu vermeiden
+- Alle anderen Inhalte haben minimales Fallback-HTML
+- Content wird dynamisch aus JSON geladen
+
+### Mobile-First:
+- Alle Inhalte sind responsive
+- Mobile und Desktop werden automatisch angepasst
+- Slider unterstützt separate Mobile/Desktop-Bilder
 
 ---
 
@@ -120,6 +166,7 @@ CMS Edit → GitHub → GitHub Action → JSON Update → Netlify → Live!
 2. Hard Refresh: Cmd+Shift+R (Mac) oder Ctrl+Shift+R (Windows)
 3. Prüfe Browser Console (F12) für Fehler
 4. Prüfe GitHub Actions: https://github.com/VinniWe/mind-studio-website/actions
+5. Prüfe Netlify Deploy: https://app.netlify.com/sites/mind-studio/deploys
 
 ### Login funktioniert nicht:
 
@@ -136,14 +183,33 @@ CMS Edit → GitHub → GitHub Action → JSON Update → Netlify → Live!
 3. Stelle sicher dass Upload abgeschlossen ist
 4. Prüfe Pfad (sollte `/uploads/...` sein)
 
+### Content lädt nicht:
+
+**Lösung:**
+1. Öffne Browser Console (F12)
+2. Suche nach Fehlermeldungen
+3. Prüfe ob `data/content.json` und `data/slides.json` existieren
+4. Prüfe GitHub Actions Logs für Fehler bei der Konvertierung
+
+---
+
+## 🌐 Mehrsprachigkeit
+
+- **Deutsche Version**: Alle Hauptseiten (/, /leistungen-einzel.html, etc.)
+- **Englische Version**: `/en/` Verzeichnis
+- CMS unterstützt aktuell nur deutsche Inhalte
+- Englische Inhalte müssen manuell im Code aktualisiert werden
+
+**Hinweis:** Falls Sie auch englische Inhalte über CMS verwalten möchten, kann dies als zukünftige Erweiterung implementiert werden.
+
 ---
 
 ## 📞 Support
 
 Bei Problemen:
 1. Browser Console prüfen (F12)
-2. GitHub Actions Logs prüfen
-3. Netlify Deploy Logs prüfen
+2. GitHub Actions Logs prüfen: https://github.com/VinniWe/mind-studio-website/actions
+3. Netlify Deploy Logs prüfen: https://app.netlify.com/sites/mind-studio/deploys
 
 **Alles läuft über:**
 - Repository: https://github.com/VinniWe/mind-studio-website
@@ -151,5 +217,27 @@ Bei Problemen:
 
 ---
 
+## ✅ Was wurde integriert
+
+### Vollständig CMS-verwaltbar:
+- ✅ **Slider** (mit Bildern, Text, CTAs, Order, Active-Status)
+- ✅ **Startseite** (Stats, Services, Approach, Testimonials)
+- ✅ **Leistungen Einzelpersonen** (Hero, Anliegen, Ablauf)
+- ✅ **Leistungen Organisationen** (Hero, Formate, Vorgehen)
+- ✅ **Ansatz** (Hero, Prinzipien, Rahmen, Methoden)
+- ✅ **Über mich** (Hero, Biografie, Arbeitsweise)
+- ✅ **Kontakt** (Hero, Kontaktinformationen)
+
+### Technische Features:
+- ✅ Kein Flash-of-Content beim Laden
+- ✅ Automatische GitHub Action für JSON-Konvertierung
+- ✅ Dynamisches Laden aller Inhalte
+- ✅ Fallback-Inhalte falls CMS nicht lädt
+- ✅ Mobile-responsive
+- ✅ SEO-optimiert
+
+---
+
 Erstellt mit ❤️ für Mind Studio
 
+**Letzte Aktualisierung:** Oktober 2024

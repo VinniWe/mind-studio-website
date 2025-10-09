@@ -29,3 +29,224 @@ collections:
       - {label: "CTA Link", name: "cta_link", widget: "string"}
       - {label: "Order", name: "order", widget: "number", default: 0, value_type: "int", min: 0}
       - {label: "Active", name: "active", widget: "boolean", default: true}
+  
+  # Site Content - Single file collection for all page content
+  - name: "pages"
+    label: "Seiten Inhalte"
+    files:
+      # Homepage
+      - label: "Startseite"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - label: "Statistiken"
+            name: "stats"
+            widget: "list"
+            fields:
+              - {label: "Text", name: "text", widget: "text"}
+              - {label: "Quelle", name: "source", widget: "string"}
+          - label: "Angebot Sektion"
+            name: "services_section"
+            widget: "object"
+            fields:
+              - {label: "Überschrift", name: "title", widget: "string"}
+              - {label: "Untertitel", name: "subtitle", widget: "text"}
+              - label: "Einzelpersonen"
+                name: "individual"
+                widget: "object"
+                fields:
+                  - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+                  - {label: "Titel", name: "title", widget: "string"}
+                  - {label: "Beschreibung", name: "description", widget: "text"}
+                  - {label: "Link", name: "link", widget: "string", default: "leistungen-einzel.html"}
+              - label: "Organisationen"
+                name: "organizations"
+                widget: "object"
+                fields:
+                  - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+                  - {label: "Titel", name: "title", widget: "string"}
+                  - {label: "Beschreibung", name: "description", widget: "text"}
+                  - {label: "Link", name: "link", widget: "string", default: "leistungen-organisationen.html"}
+          - label: "Ansatz Sektion"
+            name: "approach_section"
+            widget: "list"
+            max: 3
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Beschreibung", name: "description", widget: "text"}
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - {label: "Überschrift", name: "title", widget: "string"}
+              - {label: "Untertitel", name: "subtitle", widget: "text"}
+              - label: "Zitate"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Zitat", name: "quote", widget: "text"}
+                  - {label: "Autor", name: "author", widget: "string"}
+                  - {label: "Rolle", name: "role", widget: "string"}
+      
+      # Services Individual Page
+      - label: "Leistungen Einzelpersonen"
+        name: "services_individual"
+        file: "content/pages/services-individual.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+              - {label: "CTA Text", name: "cta_text", widget: "string"}
+              - {label: "CTA Link", name: "cta_link", widget: "string"}
+          - label: "Typische Anliegen"
+            name: "concerns"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - label: "Liste"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+          - label: "Ablauf"
+            name: "process"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - label: "Liste"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+      
+      # Services Organizations Page
+      - label: "Leistungen Organisationen"
+        name: "services_organizations"
+        file: "content/pages/services-organizations.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+              - {label: "CTA Text", name: "cta_text", widget: "string"}
+              - {label: "CTA Link", name: "cta_link", widget: "string"}
+          - label: "Formate"
+            name: "formats"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - label: "Liste"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+          - label: "Vorgehen"
+            name: "procedure"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - label: "Liste"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+      
+      # Approach Page
+      - label: "Ansatz"
+        name: "approach"
+        file: "content/pages/approach.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+          - label: "Prinzipien"
+            name: "principles"
+            widget: "list"
+            max: 3
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Beschreibung", name: "description", widget: "text"}
+          - label: "Rahmen"
+            name: "framework"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - label: "Liste"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+          - label: "Methoden"
+            name: "methods"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - label: "Liste"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+      
+      # About Page
+      - label: "Über mich"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+          - label: "Kurzbiografie"
+            name: "biography"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Text", name: "text", widget: "text"}
+              - label: "Qualifikationen"
+                name: "qualifications"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+          - label: "Arbeitsweise"
+            name: "working_style"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - label: "Liste"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+              - {label: "Haltung Titel", name: "attitude_title", widget: "string"}
+              - {label: "Haltung Text", name: "attitude_text", widget: "text"}
+              - {label: "CTA Text", name: "cta_text", widget: "string"}
+              - {label: "CTA Link", name: "cta_link", widget: "string"}
+      
+      # Contact Page
+      - label: "Kontakt"
+        name: "contact"
+        file: "content/pages/contact.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+          - label: "Kontakt Informationen"
+            name: "contact_info"
+            widget: "object"
+            fields:
+              - {label: "Titel", name: "title", widget: "string"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "E-Mail", name: "email", widget: "string"}
+              - {label: "Telefon", name: "phone", widget: "string"}
+              - {label: "Info Text", name: "info_text", widget: "text"}

@@ -5,6 +5,6 @@ description: Zusammenarbeit gestalten, Kultur stärken und Veränderungen wirksa
 image_desktop: /uploads/businesscard_mind-studio_front_websitecolor.jpg
 cta_text: Mehr erfahren
 cta_link: https://mind-studio.netlify.app/leistungen-organisationen
-order: 3
+order: 0
 active: true
 ---

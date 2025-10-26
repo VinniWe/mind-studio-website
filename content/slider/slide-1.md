@@ -1,9 +1,9 @@
 ---
-title: TEST Die Beziehung zu Dir bestimmt die Qualität
-subtitle: Deines Lebens!
+title: Starte Deine Reise zu Deinem besseren ich.
+subtitle: Dein Ich
 description: ""
 meta: ""
-image_desktop: /uploads/screenshot-2025-09-25-at-11.44.26.png
+image_desktop: /uploads/img_4598.jpg
 image_mobile: ""
 cta_text: Erstgespräch Buchen
 cta_link: mailto:hello@mind-studio.me

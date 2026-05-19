@@ -3,6 +3,11 @@ hero:
   eyebrow: HALTUNG & ARBEITSWEISE
   title: Systemisch denken, gemeinsam bewegen
   lead: Ich arbeite ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit Blick auf Wechselwirkungen und Beziehungen.
+marquee_items:
+  - "Ressourcenorientiert"
+  - "Kontextsensibel"
+  - "Lösungsfokussiert"
+  - "Systemisch"
 principles:
   - icon: "🌿"
     title: Ressourcenorientiert

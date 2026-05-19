@@ -27,6 +27,16 @@ collections:
               - {label: "Text", name: "text", widget: "string", required: false}
               - {label: "Link Text", name: "link_text", widget: "string", required: false}
               - {label: "Link URL", name: "link_url", widget: "string", required: false}
+          - label: "Laufband 1 – Orange (Startseite oben)"
+            name: "marquee_primary"
+            widget: "list"
+            hint: "Texte für das orange Laufband nach dem Hero"
+            field: {label: "Text", name: "item", widget: "string"}
+          - label: "Laufband 2 – Dunkel (Startseite mitte)"
+            name: "marquee_secondary"
+            widget: "list"
+            hint: "Texte für das dunkle Laufband zwischen Angebot und Ansatz"
+            field: {label: "Text", name: "item", widget: "string"}
 
   # Slider Collection
   - name: "slider"
@@ -121,6 +131,11 @@ collections:
               - {label: "Lead Text", name: "lead", widget: "text"}
               - {label: "CTA Text", name: "cta_text", widget: "string"}
               - {label: "CTA Link", name: "cta_link", widget: "string"}
+          - label: "Laufband"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texte für das Laufband nach dem Hero"
+            field: {label: "Text", name: "item", widget: "string"}
           - label: "Typische Anliegen"
             name: "concerns"
             widget: "object"
@@ -154,6 +169,11 @@ collections:
               - {label: "Lead Text", name: "lead", widget: "text"}
               - {label: "CTA Text", name: "cta_text", widget: "string"}
               - {label: "CTA Link", name: "cta_link", widget: "string"}
+          - label: "Laufband"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texte für das Laufband nach dem Hero"
+            field: {label: "Text", name: "item", widget: "string"}
           - label: "Formate"
             name: "formats"
             widget: "object"
@@ -185,6 +205,11 @@ collections:
               - {label: "Eyebrow", name: "eyebrow", widget: "string"}
               - {label: "Titel", name: "title", widget: "string"}
               - {label: "Lead Text", name: "lead", widget: "text"}
+          - label: "Laufband"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texte für das Laufband nach dem Hero"
+            field: {label: "Text", name: "item", widget: "string"}
           - label: "Prinzipien"
             name: "principles"
             widget: "list"
@@ -226,6 +251,11 @@ collections:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Lead Text", name: "lead", widget: "text"}
               - {label: "Profilfoto", name: "photo", widget: "image", required: false, hint: "Quadratisches Bild empfohlen (wird rund angezeigt)"}
+          - label: "Laufband"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texte für das Laufband nach dem Hero"
+            field: {label: "Text", name: "item", widget: "string"}
           - label: "Kurzbiografie"
             name: "biography"
             widget: "object"

@@ -3,6 +3,11 @@ hero:
   eyebrow: ÜBER MICH
   name: Elisa Wendler‑Rabbiolo
   lead: Systemische Psychologin – klar, empathisch und ressourcenorientiert. Ich unterstütze Menschen und Organisationen dabei, hilfreiche Bewegung in komplexen Situationen zu ermöglichen. Mein Fokus liegt darauf, Perspektiven zu öffnen, Ressourcen sichtbar zu machen und gemeinsam konkrete nächste Schritte zu entwickeln – für Einzelpersonen, Teams und ganze Organisationen.
+marquee_items:
+  - "Systemische Psychologie"
+  - "Klinische Psychologie"
+  - "Organisationsentwicklung"
+  - "Hamburg & Online"
 biography:
   title: Kurzbiografie
   text: Mit einer fundierten Ausbildung in Psychologie, Klinischer Psychologie und Psychotherapie sowie in systemischer Beratung und Organisationsentwicklung, bringe ich Erfahrung in Beratung, HR, Produktentwicklung und Organisationsprozessen mit. Ich arbeite sowohl mit Teams als auch individuell – vor Ort in Hamburg oder online.

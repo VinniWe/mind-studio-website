@@ -56,10 +56,34 @@ if (fs.existsSync(sliderDir)) {
   });
 }
 
-// Write slides to JSON
+// Write DE slides to JSON
 fs.mkdirSync('data', { recursive: true });
 fs.writeFileSync('data/slides.json', JSON.stringify(slides, null, 2));
-console.log(`✅ Converted ${slides.length} slides to JSON\n`);
+console.log(`✅ Converted ${slides.length} DE slides to JSON\n`);
+
+// ========== EN SLIDER CONTENT ==========
+console.log('🇬🇧 Processing EN slider content...');
+
+const enSliderDir = 'content/slider/en';
+const enSlides = [];
+
+if (fs.existsSync(enSliderDir)) {
+  const enFiles = fs.readdirSync(enSliderDir)
+    .filter(f => f.endsWith('.md'))
+    .sort();
+
+  enFiles.forEach(file => {
+    const content = fs.readFileSync(path.join(enSliderDir, file), 'utf8');
+    const data = parseMarkdown(content);
+    if (data) {
+      enSlides.push(data);
+      console.log(`  ✓ Processed EN slide: ${file}`);
+    }
+  });
+}
+
+fs.writeFileSync('data/slides-en.json', JSON.stringify(enSlides, null, 2));
+console.log(`✅ Converted ${enSlides.length} EN slides to JSON\n`);
 
 // ========== PAGE CONTENT ==========
 console.log('📄 Processing page content...');

@@ -24,9 +24,12 @@ async function loadSliderContent() {
   const sliderWrap = document.querySelector('.slider-container');
   if (!slider) return;
 
+  const isEN = /\/en(\/|$)/.test(window.location.pathname);
+  const jsonFile = isEN ? 'slides-en.json' : 'slides.json';
+
   try {
-    let res = await fetch('/data/slides.json');
-    if (!res.ok) res = await fetch('data/slides.json');
+    let res = await fetch(`/data/${jsonFile}`);
+    if (!res.ok) res = await fetch(`data/${jsonFile}`);
     const slides = await res.json();
 
     const active = slides
@@ -368,27 +371,11 @@ async function loadContactContent(content) {
   }
 }
 
-/* ─── EN: Startseiten-Hero befüllen ──────────────────────── */
-function fillENHomeHero(hero) {
-  if (!hero) return;
-  const h1  = document.querySelector('.hero-title');
-  const h2  = document.querySelector('.hero-subtitle');
-  const cta = document.querySelector('.hero-cta a');
-  if (h1) h1.textContent = hero.title || '';
-  if (h2) h2.textContent = hero.subtitle || '';
-  if (cta && hero.cta_text) {
-    cta.textContent = hero.cta_text;
-    if (hero.cta_link) cta.href = hero.cta_link;
-  }
-}
-
 /* ─── EN: STARTSEITE ─────────────────────────────────────── */
 async function loadENHomeContent(content) {
   const en = content?.en;
   if (!en) return;
-
-  // Hero
-  fillENHomeHero(en.home?.hero);
+  // Hero is handled by the slider (loadSliderContent)
 
   // Globale EN-Einstellungen (Marquees, Announcement Bar)
   if (en.settings) {
@@ -629,7 +616,7 @@ async function loadPageContent() {
 
   const path = window.location.pathname;
   const cls  = document.body.className;
-  const isEN = path.includes('/en/');
+  const isEN = /\/en(\/|$)/.test(path);
 
   // ── EN-Routing ──────────────────────────────────────────
   if (isEN) {
@@ -660,6 +647,7 @@ async function loadPageContent() {
 
 /* ─── INIT ────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', async () => {
+  // Slider laden (DE + EN Startseite)
   if (document.querySelector('.slider-container')) await loadSliderContent();
   await loadPageContent();
 });

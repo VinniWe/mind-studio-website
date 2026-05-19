@@ -52,12 +52,34 @@
     </header>
 
     <main>
-      <section class="hero section-hero">
-        <div class="container">
-          <h1 class="hero-title">The relationship with yourself determines the quality</h1>
-          <h2 class="hero-subtitle">Of your life.</h2>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Book initial consultation</a>
+
+      <!-- Hero Slider – Content loaded dynamically from CMS -->
+      <section class="section-hero">
+        <div class="slider-container">
+          <div class="slider" data-cms-content="slider">
+            <!-- Fallback – replaced by CMS -->
+            <div class="slide">
+              <div class="slide-content">
+                <div class="slide-image">
+                  <img src="/uploads/img_4598.jpg" alt="Mind Studio" class="desktop-only">
+                  <img src="/uploads/img_4597-2.jpg" alt="Mind Studio" class="mobile-only">
+                </div>
+                <div class="slide-text">
+                  <h1 class="hero-title">Start your journey to a better you.</h1>
+                  <h2 class="hero-subtitle">Your Self.</h2>
+                  <div class="hero-cta">
+                    <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Book initial consultation</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-controls" style="display:none;">
+            <button class="slider-btn" data-direction="prev" aria-label="Previous slide">‹</button>
+            <button class="slider-btn" data-direction="next" aria-label="Next slide">›</button>
+          </div>
+          <div class="slider-dots" style="display:none;">
+            <div class="slider-dot active"></div>
           </div>
         </div>
       </section>

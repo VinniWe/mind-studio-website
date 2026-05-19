@@ -1,9 +1,4 @@
 ---
-hero:
-  title: The relationship with yourself determines the quality
-  subtitle: Of your life.
-  cta_text: Book initial consultation
-  cta_link: "mailto:hello@mind-studio.me"
 stats:
   - text: "1 in 4 people struggles with psychological challenges each year."
     source: Federal Statistical Office (2023)

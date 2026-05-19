@@ -111,15 +111,16 @@ header.site-header {
   top: 0;
   z-index: 100;
   background: var(--color-bg);
-  border-bottom: 1.5px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 32px;
+  padding: 10px 32px;
   gap: 20px;
+  min-height: 56px;
 }
 
 .brand {
@@ -130,14 +131,19 @@ header.site-header {
   display: flex;
   align-items: center;
   gap: 10px;
-  line-height: 1.2;
+  line-height: 1;
   letter-spacing: -0.01em;
+  flex-shrink: 0;
 }
-.brand-mark img { height: 36px; }
+.brand-mark img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
 
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: 24px;
   align-items: center;
 }
 .nav-links a {
@@ -146,9 +152,10 @@ header.site-header {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--color-text);
-  padding-bottom: 3px;
+  padding-bottom: 2px;
   border-bottom: 2px solid transparent;
   transition: border-color 0.18s;
+  white-space: nowrap;
 }
 .nav-links a:hover,
 .nav-links a.active {
@@ -163,40 +170,44 @@ header.site-header {
   letter-spacing: 0.12em;
   color: var(--color-muted);
   display: flex;
-  gap: 6px;
+  gap: 5px;
   align-items: center;
+  flex-shrink: 0;
 }
 .lang-switch a { color: var(--color-text); }
 
+/* Hamburger – kein Border-Box, nur Icon */
 .mobile-toggle {
   display: none;
-  width: 40px; height: 40px;
-  border: 1.5px solid var(--color-border);
-  border-radius: 10px;
+  width: 36px; height: 36px;
+  border: none;
+  border-radius: 0;
   background: transparent;
   color: var(--color-text);
-  font-size: 17px;
+  font-size: 20px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  line-height: 1;
 }
 
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 68px;
-  left: 16px; right: 16px;
+  top: 56px; /* matcht min-height der Nav */
+  left: 12px; right: 12px;
   background: var(--color-bg);
-  border: 1.5px solid var(--color-border);
-  border-radius: 20px;
-  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 8px 0;
   z-index: 200;
-  box-shadow: 0 16px 48px rgba(30, 52, 170, 0.18);
+  box-shadow: 0 12px 40px rgba(45, 27, 0, 0.12);
 }
 .mobile-menu.open { display: block; }
 .mobile-menu a {
   display: block;
-  padding: 12px 10px;
+  padding: 12px 20px;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -468,7 +479,7 @@ section { padding: 100px 0; }
   color: var(--color-text);
 }
 .service-card:hover {
-  border-color: rgba(30, 52, 170, 0.45);
+  border-color: rgba(230, 126, 34, 0.5);
   transform: translateY(-3px);
   opacity: 1;
 }
@@ -483,7 +494,7 @@ section { padding: 100px 0; }
   padding: 40px;
   transition: border-color 0.2s;
 }
-.card:hover { border-color: rgba(30, 52, 170, 0.4); }
+.card:hover { border-color: rgba(230, 126, 34, 0.45); }
 
 /* ---- Approach (flat icon items) ---- */
 .section-approach { padding: 100px 0; }
@@ -641,15 +652,21 @@ footer.site-footer {
   .nav {
     position: relative;
     justify-content: center;
-    padding: 12px 20px;
+    padding: 8px 16px;
+    min-height: 52px;
   }
   .nav-links, .lang-switch { display: none; }
   .mobile-toggle {
     display: inline-flex;
     position: absolute;
-    left: 20px;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
   }
-  .brand-mark img { height: 32px; }
+  .brand-mark img { height: 28px; }
+
+  /* Mobile menu öffnet genau unter dem Header */
+  .mobile-menu { top: 52px; }
 
   section { padding: 60px 0; }
   .container { padding: 0 20px; }

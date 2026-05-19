@@ -6,12 +6,17 @@
     <title>Kontakt – Mind Studio</title>
     <meta name="description" content="Kontakt Mind Studio – Elisa Wendler-Rabbiolo. Termin anfragen oder Nachricht senden.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" href="assets/css/styles-v17.css?v=15">
-    <script defer src="assets/js/site.js?v=15"></script>
-    <script defer src="assets/js/cms-loader.js?v=15"></script>
+    <link rel="stylesheet" href="assets/css/styles-v18.css?v=1">
+    <script defer src="assets/js/site.js?v=35"></script>
+    <script defer src="assets/js/cms-loader.js?v=35"></script>
   </head>
-  <body class="page-contact">
+  <body>
+
+    <div class="announcement-bar">
+      Erstgespräch kostenlos &amp; unverbindlich –
+      <a href="mailto:hello@mind-studio.me">Jetzt anfragen</a>
+    </div>
+
     <header class="site-header">
       <div class="container nav">
         <button class="mobile-toggle" aria-label="Menü öffnen" data-mobile-toggle>☰</button>
@@ -39,17 +44,17 @@
         <a href="ansatz.html">Ansatz</a>
         <a href="ueber-mich.html">Über mich</a>
         <a class="active" href="kontakt.html">Kontakt</a>
-        <hr style="border-color: var(--color-border); opacity: .4;">
         <a href="en/">English</a>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+
+      <section class="page-hero">
         <div class="container">
           <div class="eyebrow">Kontakt</div>
-          <h1>Kontakt</h1>
-          <p class="lead">Ich freue mich auf Ihre Nachricht. Sie erreichen mich per E-Mail, Telefon oder über das Kontaktformular unten.</p>
+          <h1>Schreib mir</h1>
+          <p class="lead">Ich freue mich auf deine Nachricht. Du erreichst mich per E-Mail oder über das Kontaktformular.</p>
         </div>
       </section>
 
@@ -58,15 +63,15 @@
           <div class="card">
             <h3>Direkter Kontakt</h3>
             <div class="spacer-sm"></div>
-            <div class="muted">Elisa Wendler-Rabbiolo</div>
-            <div class="spacer-sm"></div>
-            <div><a href="mailto:hello@mind-studio.me">hello@mind-studio.me</a></div>
-            <div><a href="tel:+4912345678901">+49 123 45678901</a></div>
+            <p class="muted">Elisa Wendler-Rabbiolo</p>
+            <p><a href="mailto:hello@mind-studio.me">hello@mind-studio.me</a></p>
+            <p><a href="tel:+4912345678901">+49 123 45678901</a></p>
             <div class="spacer"></div>
-            <p class="muted">Für dringende Anliegen rufen Sie bitte direkt an. Für Terminanfragen können Sie auch das Kontaktformular nutzen.</p>
+            <p class="muted">Für dringende Anliegen ruf bitte direkt an. Für Terminanfragen kannst du auch das Kontaktformular nutzen.</p>
           </div>
           <div class="card">
             <h3>Kontaktformular</h3>
+            <div class="spacer-sm"></div>
             <form action="https://formsubmit.co/hello@mind-studio.me" method="POST" target="_blank">
               <input type="hidden" name="_subject" value="Kontakt von Mind Studio Website">
               <input type="hidden" name="_next" value="https://vinniwe.github.io/mind-studio-website/danke.html">
@@ -76,29 +81,27 @@
                 <label for="name">Name</label>
                 <input id="name" type="text" name="Name" required>
               </div>
-              <div class="spacer-sm"></div>
               <div class="field">
                 <label for="email">E‑Mail</label>
                 <input id="email" type="email" name="Email" required>
               </div>
-              <div class="spacer-sm"></div>
               <div class="field">
-                <label for="anliegen">Ihr Anliegen</label>
+                <label for="anliegen">Dein Anliegen</label>
                 <textarea id="anliegen" name="Anliegen" required></textarea>
               </div>
-              <div class="spacer-sm"></div>
               <div class="field">
                 <label for="captcha">Sicherheitsfrage: <span id="captcha-question"></span></label>
                 <input id="captcha" name="captcha" type="number" required>
               </div>
-              <div class="spacer"></div>
+              <div class="spacer-sm"></div>
               <button class="btn btn-primary" type="submit">Senden</button>
             </form>
             <div class="spacer-sm"></div>
-            <p class="muted" style="font-size: 12px;">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben gemäß <a href="datenschutz.html">Datenschutz</a> zu.</p>
+            <p class="muted" style="font-size: 12px;">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben gemäß <a href="datenschutz.html">Datenschutz</a> zu.</p>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer class="site-footer">
@@ -110,59 +113,32 @@
         </nav>
       </div>
     </footer>
+
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
-      
-      // CAPTCHA functionality
+
       let captchaAnswer = 0;
-      
       function generateCaptcha() {
-        const num1 = Math.floor(Math.random() * 10) + 1;
-        const num2 = Math.floor(Math.random() * 10) + 1;
-        const operations = ['+', '-', '*'];
-        const operation = operations[Math.floor(Math.random() * operations.length)];
-        
-        let question = '';
-        let answer = 0;
-        
-        switch(operation) {
-          case '+':
-            question = `${num1} + ${num2}`;
-            answer = num1 + num2;
-            break;
-          case '-':
-            // Ensure positive result
-            const larger = Math.max(num1, num2);
-            const smaller = Math.min(num1, num2);
-            question = `${larger} - ${smaller}`;
-            answer = larger - smaller;
-            break;
-          case '*':
-            question = `${num1} × ${num2}`;
-            answer = num1 * num2;
-            break;
-        }
-        
-        document.getElementById('captcha-question').textContent = question + ' = ?';
-        captchaAnswer = answer;
+        const a = Math.floor(Math.random() * 10) + 1;
+        const b = Math.floor(Math.random() * 10) + 1;
+        const ops = ['+', '-', '×'];
+        const op = ops[Math.floor(Math.random() * ops.length)];
+        let q = '', ans = 0;
+        if (op === '+') { q = `${a} + ${b}`; ans = a + b; }
+        else if (op === '-') { const x = Math.max(a,b), y = Math.min(a,b); q = `${x} - ${y}`; ans = x - y; }
+        else { q = `${a} × ${b}`; ans = a * b; }
+        document.getElementById('captcha-question').textContent = q + ' = ?';
+        captchaAnswer = ans;
       }
-      
-      // Generate CAPTCHA on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        generateCaptcha();
-      });
-      
-      // Form validation
+      document.addEventListener('DOMContentLoaded', generateCaptcha);
       document.querySelector('form').addEventListener('submit', function(e) {
-        const userAnswer = parseInt(document.getElementById('captcha').value);
-        if (userAnswer !== captchaAnswer) {
+        if (parseInt(document.getElementById('captcha').value) !== captchaAnswer) {
           e.preventDefault();
-          alert('Die Antwort auf die Sicherheitsfrage ist falsch. Bitte versuchen Sie es erneut.');
-          generateCaptcha(); // Generate new CAPTCHA
+          alert('Die Antwort ist falsch. Bitte erneut versuchen.');
+          generateCaptcha();
           document.getElementById('captcha').value = '';
-          return false;
         }
       });
     </script>
   </body>
-  </html>
+</html>

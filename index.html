@@ -11,12 +11,17 @@
     <meta property="og:url" content="https://mind-studio.me/">
     <meta property="og:image" content="assets/img/social.png">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" href="assets/css/styles-v17.css?v=34">
-    <script defer src="assets/js/site.js?v=34"></script>
-    <script defer src="assets/js/cms-loader.js?v=34"></script>
+    <link rel="stylesheet" href="assets/css/styles-v18.css?v=1">
+    <script defer src="assets/js/site.js?v=35"></script>
+    <script defer src="assets/js/cms-loader.js?v=35"></script>
   </head>
   <body>
+
+    <div class="announcement-bar">
+      Erstgespräch kostenlos &amp; unverbindlich –
+      <a href="mailto:hello@mind-studio.me">Jetzt anfragen</a>
+    </div>
+
     <header class="site-header">
       <div class="container nav">
         <button class="mobile-toggle" aria-label="Menü öffnen" data-mobile-toggle>☰</button>
@@ -44,121 +49,149 @@
         <a href="ansatz.html">Ansatz</a>
         <a href="ueber-mich.html">Über mich</a>
         <a href="kontakt.html">Kontakt</a>
-        <hr style="border-color: var(--color-border); opacity: .4;">
         <a href="en/">English</a>
       </div>
     </header>
 
     <main>
-        <!-- Hero Slider Section - Content loaded dynamically from CMS -->
-        <section class="hero section-hero">
-          <div class="slider-container">
-            <div class="slider" data-cms-content="slider">
-              <!-- Minimal fallback - will be replaced by CMS content -->
-              <div class="slide">
-                <div class="slide-content">
-                  <div class="slide-image">
-                    <img src="/uploads/screenshot-2025-09-25-at-11.44.26.png" alt="Mind Studio" class="desktop-only">
-                    <img src="/uploads/screenshot-2025-09-25-at-11.44.26.png" alt="Mind Studio" class="mobile-only">
-                  </div>
-                  <div class="slide-text">
-                    <h1 class="hero-title">Die Beziehung zu Dir bestimmt die Qualität</h1>
-                    <h2 class="hero-subtitle">Deines Lebens.</h2>
-                    <div class="hero-cta">
-                      <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Erstgespräch Buchen</a>
-                    </div>
+
+      <!-- Hero Slider – Content loaded dynamically from CMS -->
+      <section class="section-hero">
+        <div class="slider-container">
+          <div class="slider" data-cms-content="slider">
+            <!-- Fallback – replaced by CMS -->
+            <div class="slide">
+              <div class="slide-content">
+                <div class="slide-image">
+                  <img src="/uploads/screenshot-2025-09-25-at-11.44.26.png" alt="Mind Studio" class="desktop-only">
+                  <img src="/uploads/screenshot-2025-09-25-at-11.44.26.png" alt="Mind Studio" class="mobile-only">
+                </div>
+                <div class="slide-text">
+                  <h1 class="hero-title">Die Beziehung zu Dir bestimmt die Qualität</h1>
+                  <h2 class="hero-subtitle">Deines Lebens.</h2>
+                  <div class="hero-cta">
+                    <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Erstgespräch Buchen</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="slider-controls" style="display: none;">
-              <button class="slider-btn" data-direction="prev" aria-label="Vorheriger Slide">‹</button>
-              <button class="slider-btn" data-direction="next" aria-label="Nächster Slide">›</button>
-            </div>
-            <div class="slider-dots" style="display: none;">
-              <div class="slider-dot active"></div>
-            </div>
           </div>
-        </section>
-
-      <section class="stats-section section-stats">
-        <div class="container">
-          <div class="stats-grid">
-            <blockquote class="stat-block">
-              <p><strong>1 von 4 Personen kämpft mit psychischen Herausforderungen im Jahr.</strong></p>
-              <cite>Statistisches Bundesamt (2023)</cite>
-            </blockquote>
-            <blockquote class="stat-block">
-              <p><strong>Systemische Therapie zeigt nachweislich positive Effekte auf Lebensqualität.</strong></p>
-              <cite>DGSF (2022)</cite>
-            </blockquote>
-            <blockquote class="stat-block">
-              <p><strong>Weil wir alle unsere Themen haben.</strong></p>
-              <cite>Mind Studio</cite>
-            </blockquote>
+          <div class="slider-controls" style="display:none;">
+            <button class="slider-btn" data-direction="prev" aria-label="Vorheriger Slide">‹</button>
+            <button class="slider-btn" data-direction="next" aria-label="Nächster Slide">›</button>
+          </div>
+          <div class="slider-dots" style="display:none;">
+            <div class="slider-dot active"></div>
           </div>
         </div>
       </section>
 
+      <!-- Marquee 1 -->
+      <div class="marquee-band">
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-item">Be kind to your mind <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Systemische Psychologie <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Klarheit &amp; Verbindung <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Hamburg &amp; Online <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Be kind to your mind <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Systemische Psychologie <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Klarheit &amp; Verbindung <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Hamburg &amp; Online <span class="marquee-sep">☺</span></div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <section class="stats-section section-stats">
+        <div class="stats-grid container">
+          <blockquote class="stat-block">
+            <p>1 von 4 Personen kämpft mit psychischen Herausforderungen im Jahr.</p>
+            <cite>Statistisches Bundesamt (2023)</cite>
+          </blockquote>
+          <blockquote class="stat-block">
+            <p>Systemische Therapie zeigt nachweislich positive Effekte auf Lebensqualität.</p>
+            <cite>DGSF (2022)</cite>
+          </blockquote>
+          <blockquote class="stat-block">
+            <p>Weil wir alle unsere Themen haben.</p>
+            <cite>Mind Studio</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Services -->
       <section class="section-services">
         <div class="container">
           <h2>Angebot</h2>
           <p class="lead">Zwei Wege, ein Ziel: mehr Klarheit, Verbindung und Wirksamkeit.</p>
           <div class="grid-2">
-            <a class="card service-card" href="leistungen-einzel.html">
-              <div class="eyebrow">FÜR EINZELPERSONEN</div>
-              <h3>Therapie & psychologische Beratung</h3>
+            <a class="service-card" href="leistungen-einzel.html">
+              <div class="eyebrow">Für Einzelpersonen</div>
+              <h3>Therapie &amp; psychologische Beratung</h3>
               <p>Systemische Therapie, Beratung und Begleitung in herausfordernden Lebensphasen – persönlich und online.</p>
             </a>
-            <a class="card service-card" href="leistungen-organisationen.html">
-              <div class="eyebrow">FÜR ORGANISATIONEN</div>
-              <h3>Teams & Organisationen</h3>
+            <a class="service-card" href="leistungen-organisationen.html">
+              <div class="eyebrow">Für Organisationen</div>
+              <h3>Teams &amp; Organisationen</h3>
               <p>Workshops, Moderation und Organisationsentwicklung – für Zusammenarbeit, Kultur und gesunde Leistung.</p>
             </a>
           </div>
         </div>
       </section>
 
+      <!-- Marquee 2 (alt / blue band) -->
+      <div class="marquee-band alt slow">
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-item">Wir haben alle eine mentale Gesundheit, um die wir uns kümmern müssen <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Ressourcenorientiert · Kontextsensibel · Lösungsfokussiert <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Wir haben alle eine mentale Gesundheit, um die wir uns kümmern müssen <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Ressourcenorientiert · Kontextsensibel · Lösungsfokussiert <span class="marquee-sep">☺</span></div>
+        </div>
+      </div>
+
+      <!-- Approach – flat icon items -->
       <section class="section-approach">
-        <div class="container grid-3">
-          <div class="card">
-            <div class="eyebrow">HALTUNG</div>
-            <h3>Systemisch</h3>
-            <p class="muted">Ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit Blick auf Beziehungsmuster.</p>
-          </div>
-          <div class="card">
-            <div class="eyebrow">ARBEITSWEISE</div>
-            <h3>Klar & empathisch</h3>
-            <p class="muted">Strukturiert, transparent und zugewandt – in einem Raum von Sicherheit und Entwicklung.</p>
-          </div>
-          <div class="card">
-            <div class="eyebrow">FORMAT</div>
-            <h3>Vor Ort & online</h3>
-            <p class="muted">Flexibel in Hamburg und digital – je nach Anliegen und Bedarf.</p>
+        <div class="container">
+          <div class="approach-grid">
+            <div class="approach-item">
+              <div class="approach-icon">☑</div>
+              <h3>Systemisch</h3>
+              <p>Ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit Blick auf Beziehungsmuster.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">♡</div>
+              <h3>Empathisch</h3>
+              <p>Strukturiert, transparent und zugewandt – in einem Raum von Sicherheit und Entwicklung.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">🔒</div>
+              <h3>Vertraulich</h3>
+              <p>Was im Raum bleibt, bleibt im Raum. Absolute Vertraulichkeit ist die Basis unserer Arbeit.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">✦</div>
+              <h3>Flexibel</h3>
+              <p>Vor Ort in Hamburg und digital – je nach Anliegen und Bedarf.</p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Testimonials – centered big quote -->
       <section class="section-testimonials">
         <div class="container">
-          <h2>Stimmen</h2>
-          <p class="lead">Ausschnitte aus Feedback von Organisationen und Fachpartnern.</p>
-          <div class="grid-3">
-            <figure class="card">
-              <blockquote class="muted">„Die Workshop-Reihe hat unsere Zusammenarbeit spürbar verbessert – klar, empathisch und wirksam moderiert."</blockquote>
-              <figcaption><strong>Unternehmen A</strong> – People & Culture</figcaption>
-            </figure>
-            <figure class="card">
-              <blockquote class="muted">„Pragmatische Tools, die im Alltag tragen. Das Team fühlte sich gesehen und kam in gute Bewegung."</blockquote>
-              <figcaption><strong>Unternehmen B</strong> – Team Lead</figcaption>
-            </figure>
-            <figure class="card">
-              <blockquote class="muted">„Verlässliche, systemische Begleitung. Wir empfehlen die Zusammenarbeit regelmäßig weiter."</blockquote>
-              <figcaption><strong>Klinik C</strong> – Fachliche Empfehlung</figcaption>
-            </figure>
+          <div class="testimonial-big" id="testimonial-display">
+            <div class="testimonial-icon">"</div>
+            <blockquote id="testimonial-quote">„Die Workshop-Reihe hat unsere Zusammenarbeit spürbar verbessert – klar, empathisch und wirksam moderiert."</blockquote>
+            <cite id="testimonial-cite">Unternehmen A – People &amp; Culture</cite>
+          </div>
+          <div class="testimonial-nav">
+            <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+            <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+            <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer class="site-footer">
@@ -170,10 +203,28 @@
         </nav>
       </div>
     </footer>
+
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Testimonial rotator
+      const testimonials = [
+        { quote: '„Die Workshop-Reihe hat unsere Zusammenarbeit spürbar verbessert – klar, empathisch und wirksam moderiert."', cite: 'Unternehmen A – People & Culture' },
+        { quote: '„Pragmatische Tools, die im Alltag tragen. Das Team fühlte sich gesehen und kam in gute Bewegung."',          cite: 'Unternehmen B – Team Lead' },
+        { quote: '„Verlässliche, systemische Begleitung. Wir empfehlen die Zusammenarbeit regelmäßig weiter."',                cite: 'Klinik C – Fachliche Empfehlung' },
+      ];
+      const quoteEl = document.getElementById('testimonial-quote');
+      const citeEl  = document.getElementById('testimonial-cite');
+      const dots    = document.querySelectorAll('.testimonial-dot');
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const i = parseInt(dot.dataset.index);
+          quoteEl.textContent = testimonials[i].quote;
+          citeEl.innerHTML    = testimonials[i].cite;
+          dots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+        });
+      });
     </script>
   </body>
-  </html>
-
-
+</html>

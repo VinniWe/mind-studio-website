@@ -24,7 +24,7 @@ async function loadSliderContent() {
   const sliderWrap = document.querySelector('.slider-container');
   if (!slider) return;
 
-  const isEN = window.location.pathname.includes('/en/');
+  const isEN = /\/en(\/|$)/.test(window.location.pathname);
   const jsonFile = isEN ? 'slides-en.json' : 'slides.json';
 
   try {
@@ -616,7 +616,7 @@ async function loadPageContent() {
 
   const path = window.location.pathname;
   const cls  = document.body.className;
-  const isEN = path.includes('/en/');
+  const isEN = /\/en(\/|$)/.test(path);
 
   // ── EN-Routing ──────────────────────────────────────────
   if (isEN) {

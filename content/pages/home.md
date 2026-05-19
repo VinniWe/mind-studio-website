@@ -27,15 +27,19 @@ services_section:
       Zusammenarbeit, Kultur und gesunde Leistung.
     link: https://mind-studio.netlify.app/leistungen-organisationen
 approach_section:
-  - eyebrow: HALTUNG
+  - icon: "🌿"
     title: Systemisch
     description: Ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit
       Blick auf Beziehungsmuster.
-  - eyebrow: ARBEITSWEISE
+  - icon: "🤝"
     title: Klar & empathisch
     description: Strukturiert, transparent und zugewandt – in einem Raum von
       Sicherheit und Entwicklung.
-  - eyebrow: FORMAT
+  - icon: "💡"
+    title: Lösungsfokussiert
+    description: Konkrete Schritte, neue Perspektiven und nachhaltige Veränderung
+      statt endloser Problemanalyse.
+  - icon: "🗺️"
     title: Vor Ort & online
     description: Flexibel in Hamburg und digital – je nach Anliegen und Bedarf.
 testimonials:

@@ -74,7 +74,8 @@ if (fs.existsSync(pagesDir)) {
     'services-organizations.md': 'services_organizations',
     'approach.md': 'approach',
     'about.md': 'about',
-    'contact.md': 'contact'
+    'contact.md': 'contact',
+    'settings.md': 'settings'
   };
   
   Object.entries(pageFiles).forEach(([filename, key]) => {

@@ -7,18 +7,18 @@
 
 /* ---- Tokens ---- */
 :root {
-  --color-bg:         #FAB8CB;
-  --color-text:       #1E34AA;
-  --color-heading:    #E85020;
-  --color-muted:      #4055C4;
-  --color-border:     rgba(30, 52, 170, 0.18);
-  --color-btn:        #1E34AA;
-  --color-btn-text:   #FFFFFF;
-  --color-card-bg:    rgba(255, 255, 255, 0.18);
-  --color-ticker-bg:  #FFD700;
-  --color-ticker-txt: #1E34AA;
-  --color-bar-bg:     #1E34AA;
-  --color-bar-txt:    #FFFFFF;
+  --color-bg:         #FFF8F3;  /* warm cream – original Mind Studio */
+  --color-text:       #2D1B00;  /* warm dark brown */
+  --color-heading:    #E67E22;  /* warm orange */
+  --color-muted:      #8B6F47;  /* warm brown */
+  --color-border:     #F4E6D7;  /* warm sand */
+  --color-btn:        #2D1B00;  /* dark brown buttons */
+  --color-btn-text:   #FFF8F3;  /* cream text on buttons */
+  --color-card-bg:    rgba(255, 255, 255, 0.55);
+  --color-ticker-bg:  #E67E22;  /* orange ticker band */
+  --color-ticker-txt: #FFF8F3;  /* cream text on orange */
+  --color-bar-bg:     #2D1B00;  /* dark brown announcement bar */
+  --color-bar-txt:    #FFF8F3;  /* cream text */
   --max-w: 1200px;
 }
 

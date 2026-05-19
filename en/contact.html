@@ -6,12 +6,15 @@
     <title>Contact – Mind Studio</title>
     <meta name="description" content="Contact Mind Studio – Elisa Wendler-Rabbiolo. Request an appointment or send us a message.">
     <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" href="../assets/css/styles-v17.css?v=15">
+    <link rel="stylesheet" href="../assets/css/styles-v18.css?v=1">
     <script defer src="../assets/js/site.js"></script>
     <script defer src="../assets/js/cms-loader.js?v=15"></script>
   </head>
   <body class="page-contact">
+    <div class="announcement-bar">
+      Free &amp; non-binding first consultation –
+      <a href="mailto:hello@mind-studio.me">Get in touch</a>
+    </div>
     <header class="site-header">
       <div class="container nav">
         <button class="mobile-toggle" aria-label="Open menu" data-mobile-toggle>☰</button>
@@ -33,19 +36,31 @@
         <a href="approach.html">Approach</a>
         <a href="about.html">About</a>
         <a class="active" href="contact.html">Contact</a>
-        <hr style="border-color: var(--color-border); opacity: .4;">
         <a href="../">Deutsch</a>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="page-hero">
         <div class="container">
           <div class="eyebrow">Contact</div>
           <h1>Get in touch</h1>
           <p class="lead">I look forward to your message. You can reach me via email, phone or the contact form below.</p>
         </div>
       </section>
+
+      <div class="marquee-band">
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-item">Free first consultation <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Hamburg &amp; Online <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Non-binding &amp; confidential <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Get in touch <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Free first consultation <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Hamburg &amp; Online <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Non-binding &amp; confidential <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Get in touch <span class="marquee-sep">☺</span></div>
+        </div>
+      </div>
 
       <section>
         <div class="container grid-2">
@@ -106,19 +121,19 @@
     </footer>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
-      
+
       // CAPTCHA functionality
       let captchaAnswer = 0;
-      
+
       function generateCaptcha() {
         const num1 = Math.floor(Math.random() * 10) + 1;
         const num2 = Math.floor(Math.random() * 10) + 1;
         const operations = ['+', '-', '*'];
         const operation = operations[Math.floor(Math.random() * operations.length)];
-        
+
         let question = '';
         let answer = 0;
-        
+
         switch(operation) {
           case '+':
             question = `${num1} + ${num2}`;
@@ -136,16 +151,16 @@
             answer = num1 * num2;
             break;
         }
-        
+
         document.getElementById('captcha-question').textContent = question + ' = ?';
         captchaAnswer = answer;
       }
-      
+
       // Generate CAPTCHA on page load
       document.addEventListener('DOMContentLoaded', function() {
         generateCaptcha();
       });
-      
+
       // Form validation
       document.querySelector('form').addEventListener('submit', function(e) {
         const userAnswer = parseInt(document.getElementById('captcha').value);

@@ -6,12 +6,17 @@
     <title>Für Einzelpersonen – Therapie & psychologische Beratung | Mind Studio</title>
     <meta name="description" content="Systemische Therapie und psychologische Beratung für Einzelpersonen. In Präsenz in Hamburg und online.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" href="assets/css/styles-v17.css?v=15">
-    <script defer src="assets/js/site.js?v=15"></script>
-    <script defer src="assets/js/cms-loader.js?v=15"></script>
+    <link rel="stylesheet" href="assets/css/styles-v18.css?v=1">
+    <script defer src="assets/js/site.js?v=35"></script>
+    <script defer src="assets/js/cms-loader.js?v=35"></script>
   </head>
-  <body class="page-individual">
+  <body>
+
+    <div class="announcement-bar">
+      Erstgespräch kostenlos &amp; unverbindlich –
+      <a href="mailto:hello@mind-studio.me">Jetzt anfragen</a>
+    </div>
+
     <header class="site-header">
       <div class="container nav">
         <button class="mobile-toggle" aria-label="Menü öffnen" data-mobile-toggle>☰</button>
@@ -39,16 +44,16 @@
         <a href="ansatz.html">Ansatz</a>
         <a href="ueber-mich.html">Über mich</a>
         <a href="kontakt.html">Kontakt</a>
-        <hr style="border-color: var(--color-border); opacity: .4;">
         <a href="en/">English</a>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+
+      <section class="page-hero">
         <div class="container">
-          <div class="eyebrow">FÜR EINZELPERSONEN</div>
-          <h1>Therapie & psychologische Beratung</h1>
+          <div class="eyebrow">Für Einzelpersonen</div>
+          <h1>Therapie &amp; psychologische Beratung</h1>
           <p class="lead">Orientierung, Entlastung und Entwicklung in herausfordernden Lebensphasen.</p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="mailto:hello@mind-studio.me">Termin anfragen</a>
@@ -56,29 +61,43 @@
         </div>
       </section>
 
+      <div class="marquee-band">
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-item">Beziehungen &amp; Kommunikation <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Stress &amp; Erschöpfung <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Selbstwert &amp; Ängste <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Entscheidungen &amp; Veränderung <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Beziehungen &amp; Kommunikation <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Stress &amp; Erschöpfung <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Selbstwert &amp; Ängste <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Entscheidungen &amp; Veränderung <span class="marquee-sep">☺</span></div>
+        </div>
+      </div>
+
       <section>
-        <div class="container">
-          <div class="grid-2">
-            <div class="card">
-              <h3>Typische Anliegen</h3>
-              <ul class="feature-list">
-                <li>Beziehungen & Kommunikation</li>
-                <li>Stress, Erschöpfung, Burn-out-Prävention</li>
-                <li>Ängste, Selbstwert, Perfektionismus</li>
-                <li>Entscheidungen & Veränderung</li>
-              </ul>
-            </div>
-            <div class="card">
-              <h3>Ablauf</h3>
-              <ul class="feature-list">
-                <li>Kennenlernen (30 Min, online)</li>
-                <li>Einzel-Sessions (50 Min), wöchentlich oder zweiwöchentlich</li>
-                <li>In Präsenz in Hamburg oder online</li>
-              </ul>
-            </div>
+        <div class="container grid-2">
+          <div class="card">
+            <h3>Typische Anliegen</h3>
+            <div class="spacer-sm"></div>
+            <ul class="feature-list">
+              <li>Beziehungen &amp; Kommunikation</li>
+              <li>Stress, Erschöpfung, Burn-out-Prävention</li>
+              <li>Ängste, Selbstwert, Perfektionismus</li>
+              <li>Entscheidungen &amp; Veränderung</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Ablauf</h3>
+            <div class="spacer-sm"></div>
+            <ul class="feature-list">
+              <li>Kennenlernen (30 Min, online)</li>
+              <li>Einzel-Sessions (50 Min), wöchentlich oder zweiwöchentlich</li>
+              <li>In Präsenz in Hamburg oder online</li>
+            </ul>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer class="site-footer">
@@ -92,4 +111,4 @@
     </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </body>
-  </html>
+</html>

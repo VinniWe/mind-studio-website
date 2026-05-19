@@ -6,12 +6,17 @@
     <title>Haltung & Arbeitsweise – Systemisch denken, gemeinsam bewegen | Mind Studio</title>
     <meta name="description" content="Systemischer Ansatz: ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit Blick auf Wechselwirkungen und Beziehungen.">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" href="assets/css/styles-v17.css?v=15">
-    <script defer src="assets/js/site.js?v=15"></script>
-    <script defer src="assets/js/cms-loader.js?v=15"></script>
+    <link rel="stylesheet" href="assets/css/styles-v18.css?v=1">
+    <script defer src="assets/js/site.js?v=35"></script>
+    <script defer src="assets/js/cms-loader.js?v=35"></script>
   </head>
-  <body class="page-approach">
+  <body>
+
+    <div class="announcement-bar">
+      Erstgespräch kostenlos &amp; unverbindlich –
+      <a href="mailto:hello@mind-studio.me">Jetzt anfragen</a>
+    </div>
+
     <header class="site-header">
       <div class="container nav">
         <button class="mobile-toggle" aria-label="Menü öffnen" data-mobile-toggle>☰</button>
@@ -39,33 +44,56 @@
         <a class="active" href="ansatz.html">Ansatz</a>
         <a href="ueber-mich.html">Über mich</a>
         <a href="kontakt.html">Kontakt</a>
-        <hr style="border-color: var(--color-border); opacity: .4;">
         <a href="en/">English</a>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+
+      <section class="page-hero">
         <div class="container">
-          <div class="eyebrow">HALTUNG & ARBEITSWEISE</div>
+          <div class="eyebrow">Haltung &amp; Arbeitsweise</div>
           <h1>Systemisch denken, gemeinsam bewegen</h1>
           <p class="lead">Ich arbeite ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit Blick auf Wechselwirkungen und Beziehungen.</p>
         </div>
       </section>
 
+      <div class="marquee-band alt slow">
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-item">Ressourcenorientiert <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Kontextsensibel <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Lösungsfokussiert <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Systemisch <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Ressourcenorientiert <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Kontextsensibel <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Lösungsfokussiert <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Systemisch <span class="marquee-sep">☺</span></div>
+        </div>
+      </div>
+
       <section>
-        <div class="container grid-3">
-          <div class="card">
-            <h3>Ressourcenorientiert</h3>
-            <p class="muted">Im Mittelpunkt stehen Stärken, gelingende Ausnahmen und vorhandene Kompetenzen.</p>
-          </div>
-          <div class="card">
-            <h3>Kontextsensibel</h3>
-            <p class="muted">Verhalten entsteht im Kontext. Wir betrachten Muster und Rahmenbedingungen gemeinsam.</p>
-          </div>
-          <div class="card">
-            <h3>Lösungsfokussiert</h3>
-            <p class="muted">Weniger Problemursachen, mehr nächste hilfreiche Schritte – konkret und alltagstauglich.</p>
+        <div class="container">
+          <div class="approach-grid">
+            <div class="approach-item">
+              <div class="approach-icon">✦</div>
+              <h3>Ressourcenorientiert</h3>
+              <p>Im Mittelpunkt stehen Stärken, gelingende Ausnahmen und vorhandene Kompetenzen.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">◎</div>
+              <h3>Kontextsensibel</h3>
+              <p>Verhalten entsteht im Kontext. Wir betrachten Muster und Rahmenbedingungen gemeinsam.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">→</div>
+              <h3>Lösungsfokussiert</h3>
+              <p>Weniger Problemursachen, mehr nächste hilfreiche Schritte – konkret und alltagstauglich.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">♡</div>
+              <h3>Wertschätzend</h3>
+              <p>Transparent, vertraulich und zugewandt – Ihre Anliegen werden ernst genommen.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -74,6 +102,7 @@
         <div class="container grid-2">
           <div class="card">
             <h3>Rahmen</h3>
+            <div class="spacer-sm"></div>
             <ul class="feature-list">
               <li>Wertschätzend, transparent, vertraulich</li>
               <li>Wissenschaftlich fundiert und praxisnah</li>
@@ -82,15 +111,17 @@
           </div>
           <div class="card">
             <h3>Methoden (Auszug)</h3>
+            <div class="spacer-sm"></div>
             <ul class="feature-list">
               <li>Systemische Gesprächsführung</li>
               <li>Hypothesengestützte Reflexion</li>
               <li>Skalierungs- und Perspektivwechsel</li>
-              <li>Struktur- & Ressourcenarbeit</li>
+              <li>Struktur- &amp; Ressourcenarbeit</li>
             </ul>
           </div>
         </div>
       </section>
+
     </main>
 
     <footer class="site-footer">
@@ -104,4 +135,4 @@
     </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </body>
-  </html>
+</html>

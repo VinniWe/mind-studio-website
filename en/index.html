@@ -11,12 +11,15 @@
     <meta property="og:url" content="https://mind-studio.me/en/">
     <meta property="og:image" content="../assets/img/social.png">
     <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css">
-    <link rel="stylesheet" href="../assets/css/styles-v17.css?v=15">
+    <link rel="stylesheet" href="../assets/css/styles-v18.css?v=1">
     <script defer src="../assets/js/site.js"></script>
     <script defer src="../assets/js/cms-loader.js?v=15"></script>
   </head>
   <body>
+    <div class="announcement-bar">
+      Free &amp; non-binding first consultation –
+      <a href="mailto:hello@mind-studio.me">Get in touch</a>
+    </div>
     <header class="site-header">
       <div class="container nav">
         <button class="mobile-toggle" aria-label="Open menu" data-mobile-toggle>☰</button>
@@ -44,7 +47,6 @@
         <a href="approach.html">Approach</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <hr style="border-color: var(--color-border); opacity: .4;">
         <a href="../">Deutsch</a>
       </div>
     </header>
@@ -59,6 +61,19 @@
           </div>
         </div>
       </section>
+
+      <div class="marquee-band">
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-item">Be kind to your mind <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Systemic Psychology <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Clarity &amp; Connection <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Hamburg &amp; Online <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Be kind to your mind <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Systemic Psychology <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Clarity &amp; Connection <span class="marquee-sep">☺</span></div>
+          <div class="marquee-item">Hamburg &amp; Online <span class="marquee-sep">☺</span></div>
+        </div>
+      </div>
 
       <section class="stats-section section-stats">
         <div class="container">
@@ -84,12 +99,12 @@
           <h2>Services</h2>
           <p class="lead">Two paths, one goal: more clarity, connection and effectiveness.</p>
           <div class="grid-2">
-            <a class="card service-card" href="services-individual.html">
+            <a class="service-card" href="services-individual.html">
               <div class="eyebrow">FOR INDIVIDUALS</div>
               <h3>Therapy & psychological counseling</h3>
               <p>Systemic therapy, counseling and support in challenging life phases – in-person and online.</p>
             </a>
-            <a class="card service-card" href="services-organizations.html">
+            <a class="service-card" href="services-organizations.html">
               <div class="eyebrow">FOR ORGANIZATIONS</div>
               <h3>Teams & Organizations</h3>
               <p>Workshops, facilitation and organizational development – for collaboration, culture and healthy performance.</p>
@@ -99,42 +114,43 @@
       </section>
 
       <section class="section-approach">
-        <div class="container grid-3">
-          <div class="card">
-            <div class="eyebrow">APPROACH</div>
-            <h3>Systemic</h3>
-            <p class="muted">Resource-oriented, context-sensitive and solution-focused – with a view to relationship patterns.</p>
-          </div>
-          <div class="card">
-            <div class="eyebrow">WORKING STYLE</div>
-            <h3>Clear & empathetic</h3>
-            <p class="muted">Structured, transparent and approachable – in a space of safety and development.</p>
-          </div>
-          <div class="card">
-            <div class="eyebrow">FORMAT</div>
-            <h3>On-site & online</h3>
-            <p class="muted">Flexible in Hamburg and digital – depending on needs and requirements.</p>
+        <div class="container">
+          <div class="approach-grid">
+            <div class="approach-item">
+              <div class="approach-icon">☑</div>
+              <h3>Systemic</h3>
+              <p>Resource-oriented, context-sensitive and solution-focused – with attention to relationship patterns.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">♡</div>
+              <h3>Empathetic</h3>
+              <p>Structured, transparent and caring – in a space of safety and growth.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">🔒</div>
+              <h3>Confidential</h3>
+              <p>What stays in the room, stays in the room. Absolute confidentiality is the foundation of our work.</p>
+            </div>
+            <div class="approach-item">
+              <div class="approach-icon">✦</div>
+              <h3>Flexible</h3>
+              <p>In-person in Hamburg and online – depending on your needs.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section-testimonials">
         <div class="container">
-          <h2>Testimonials</h2>
-          <p class="lead">Excerpts from feedback from organizations and professional partners.</p>
-          <div class="grid-3">
-            <figure class="card">
-              <blockquote class="muted">"The workshop series has noticeably improved our collaboration – clearly, empathetically and effectively facilitated."</blockquote>
-              <figcaption><strong>Company A</strong> – People & Culture</figcaption>
-            </figure>
-            <figure class="card">
-              <blockquote class="muted">"Practical tools that work in everyday life. The team felt seen and came into good momentum."</blockquote>
-              <figcaption><strong>Company B</strong> – Team Lead</figcaption>
-            </figure>
-            <figure class="card">
-              <blockquote class="muted">"Reliable, systemic support. We regularly recommend the collaboration to others."</blockquote>
-              <figcaption><strong>Clinic C</strong> – Professional recommendation</figcaption>
-            </figure>
+          <div class="testimonial-big" id="testimonial-display">
+            <div class="testimonial-icon">"</div>
+            <blockquote id="testimonial-quote">"The workshop series noticeably improved our collaboration – clear, empathetic and effectively facilitated."</blockquote>
+            <cite id="testimonial-cite">Company A – People &amp; Culture</cite>
+          </div>
+          <div class="testimonial-nav">
+            <button class="testimonial-dot active" data-index="0" aria-label="Testimonial 1"></button>
+            <button class="testimonial-dot" data-index="1" aria-label="Testimonial 2"></button>
+            <button class="testimonial-dot" data-index="2" aria-label="Testimonial 3"></button>
           </div>
         </div>
       </section>
@@ -151,6 +167,25 @@
     </footer>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+      const testimonials = [
+        { quote: '"The workshop series noticeably improved our collaboration – clear, empathetic and effectively facilitated."', cite: 'Company A – People & Culture' },
+        { quote: '"Practical tools that hold up in everyday life. The team felt seen and got into good motion."', cite: 'Company B – Team Lead' },
+        { quote: '"Reliable, systemic support. We regularly recommend the collaboration."', cite: 'Clinic C – Professional Reference' },
+      ];
+      const quoteEl = document.getElementById('testimonial-quote');
+      const citeEl  = document.getElementById('testimonial-cite');
+      const dots    = document.querySelectorAll('.testimonial-dot');
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const i = parseInt(dot.dataset.index);
+          quoteEl.textContent = testimonials[i].quote;
+          citeEl.innerHTML    = testimonials[i].cite;
+          dots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+        });
+      });
     </script>
   </body>
   </html>

@@ -256,5 +256,277 @@
       "Wir haben alle eine mentale Gesundheit, um die wir uns kümmern müssen",
       "Ressourcenorientiert · Kontextsensibel · Lösungsfokussiert"
     ]
+  },
+  "en": {
+    "home": {
+      "hero": {
+        "title": "The relationship with yourself determines the quality",
+        "subtitle": "Of your life.",
+        "cta_text": "Book initial consultation",
+        "cta_link": "mailto:hello@mind-studio.me"
+      },
+      "stats": [
+        {
+          "text": "1 in 4 people struggles with psychological challenges each year.",
+          "source": "Federal Statistical Office (2023)"
+        },
+        {
+          "text": "Systemic therapy shows proven positive effects on quality of life.",
+          "source": "DGSF (2022)"
+        },
+        {
+          "text": "Because we all have our topics.",
+          "source": "Mind Studio"
+        }
+      ],
+      "services_section": {
+        "title": "Services",
+        "subtitle": "Two paths, one goal: more clarity, connection and effectiveness.",
+        "individual": {
+          "eyebrow": "FOR INDIVIDUALS",
+          "title": "Therapy & psychological counseling",
+          "description": "Systemic therapy, counseling and support in challenging life phases – in-person and online.",
+          "link": "services-individual.html"
+        },
+        "organizations": {
+          "eyebrow": "FOR ORGANIZATIONS",
+          "title": "Teams & Organizations",
+          "description": "Workshops, facilitation and organizational development – for collaboration, culture and healthy performance.",
+          "link": "services-organizations.html"
+        }
+      },
+      "approach_section": [
+        {
+          "icon": "🌿",
+          "title": "Systemic",
+          "description": "Resource-oriented, context-sensitive and solution-focused – with attention to relationship patterns."
+        },
+        {
+          "icon": "🤝",
+          "title": "Empathetic",
+          "description": "Structured, transparent and caring – in a space of safety and growth."
+        },
+        {
+          "icon": "💡",
+          "title": "Solution-focused",
+          "description": "Less problem analysis, more next helpful steps – concrete and practical for everyday life."
+        },
+        {
+          "icon": "🗺️",
+          "title": "Flexible",
+          "description": "In-person in Hamburg and online – depending on your needs."
+        }
+      ],
+      "testimonials": {
+        "title": "Voices",
+        "subtitle": "Excerpts from feedback by organizations and professional partners.",
+        "items": [
+          {
+            "quote": "\"The workshop series noticeably improved our collaboration – clear, empathetic and effectively facilitated.\"",
+            "author": "Company A",
+            "role": "People & Culture"
+          },
+          {
+            "quote": "\"Practical tools that hold up in everyday life. The team felt seen and got into good motion.\"",
+            "author": "Company B",
+            "role": "Team Lead"
+          },
+          {
+            "quote": "\"Reliable, systemic support. We regularly recommend the collaboration.\"",
+            "author": "Clinic C",
+            "role": "Professional Reference"
+          }
+        ]
+      }
+    },
+    "services_individual": {
+      "hero": {
+        "eyebrow": "FOR INDIVIDUALS",
+        "title": "Therapy & psychological counseling",
+        "lead": "Guidance, relief and development in challenging life phases.",
+        "cta_text": "Request appointment",
+        "cta_link": "mailto:hello@mind-studio.me"
+      },
+      "marquee_items": [
+        "Relationships & Communication",
+        "Stress & Exhaustion",
+        "Self-worth & Anxiety",
+        "Decisions & Change"
+      ],
+      "concerns": {
+        "title": "Typical Topics",
+        "items": [
+          "Relationships & Communication",
+          "Stress, exhaustion, burn-out prevention",
+          "Anxiety, self-worth, perfectionism",
+          "Decisions & change"
+        ]
+      },
+      "process": {
+        "title": "Process",
+        "items": [
+          "Getting to know each other (30 min, online)",
+          "Individual sessions (50 min), weekly or bi-weekly",
+          "In-person in Hamburg or online"
+        ]
+      }
+    },
+    "services_organizations": {
+      "hero": {
+        "eyebrow": "FOR ORGANIZATIONS",
+        "title": "Workshops & Organizational Development",
+        "lead": "Shape collaboration, strengthen culture and make change effective.",
+        "cta_text": "Send inquiry",
+        "cta_link": "mailto:hello@mind-studio.me"
+      },
+      "marquee_items": [
+        "Team Workshops",
+        "Organizational Development",
+        "Leadership & Culture",
+        "Facilitation & Change"
+      ],
+      "formats": {
+        "title": "Formats",
+        "items": [
+          "Team workshops & offsites",
+          "Facilitation & conflict resolution",
+          "Leadership development",
+          "Culture & change processes"
+        ]
+      },
+      "procedure": {
+        "title": "Approach",
+        "items": [
+          "Contract clarification with stakeholders",
+          "Co-design of measures",
+          "Implementation & reflection",
+          "Transfer & follow-up"
+        ]
+      }
+    },
+    "approach": {
+      "hero": {
+        "eyebrow": "APPROACH & WORKING STYLE",
+        "title": "Think systemically, move together",
+        "lead": "I work resource-oriented, context-sensitive and solution-focused – with a view to interactions and relationships."
+      },
+      "marquee_items": [
+        "Resource-oriented",
+        "Solution-focused",
+        "Systemic Thinking",
+        "Context-sensitive"
+      ],
+      "principles": [
+        {
+          "icon": "🌿",
+          "title": "Resource-oriented",
+          "description": "The focus is on strengths, successful exceptions and existing competencies."
+        },
+        {
+          "icon": "🔭",
+          "title": "Context-sensitive",
+          "description": "Behavior emerges in context. We look at patterns and framework conditions together."
+        },
+        {
+          "icon": "💡",
+          "title": "Solution-focused",
+          "description": "Less problem causes, more next helpful steps – concrete and practical."
+        },
+        {
+          "icon": "🤝",
+          "title": "Relationship-based",
+          "description": "Trust, transparency and appreciation form the foundation of every collaboration."
+        }
+      ],
+      "framework": {
+        "title": "Framework",
+        "items": [
+          "Appreciative, transparent, confidential",
+          "Scientifically grounded and practice-oriented",
+          "On-site in Hamburg and online"
+        ]
+      },
+      "methods": {
+        "title": "Methods (Selection)",
+        "items": [
+          "Systemic conversation guidance",
+          "Hypothesis-based reflection",
+          "Scaling and perspective changes",
+          "Structure & resource work"
+        ]
+      }
+    },
+    "about": {
+      "hero": {
+        "eyebrow": "ABOUT",
+        "name": "Elisa Wendler‑Rabbiolo",
+        "lead": "Systemic Psychologist – clear, empathetic and resource-oriented. I support people and organizations in enabling helpful movement in complex situations. My focus is on opening perspectives, making resources visible, and developing concrete next steps together – for individuals, teams, and entire organizations."
+      },
+      "marquee_items": [
+        "Elisa Wendler-Rabbiolo",
+        "Systemic Psychologist",
+        "Hamburg & Online",
+        "Resource-oriented"
+      ],
+      "biography": {
+        "title": "Short Biography",
+        "text": "With a solid education in Psychology, Clinical Psychology and Psychotherapy as well as in systemic counseling and organizational development, I bring experience in counseling, HR, product development and organizational processes. I work with both teams and individuals – on-site in Hamburg or online.",
+        "qualifications": [
+          "Systemic therapy & counseling",
+          "Communication, leadership and change management",
+          "Psychological diagnostics and intervention"
+        ]
+      },
+      "working_style": {
+        "title": "My Working Style:",
+        "items": [
+          "Structured, transparent and appreciative",
+          "Context-sensitive and solution-focused",
+          "Resource-oriented and practically implementable"
+        ],
+        "attitude_title": "Attitude – Solution-oriented & Resource-focused",
+        "attitude_text": "I believe that every person and every organization has their own strengths and resources. My work aims to make these potentials visible and translate them into concrete, implementable steps. I stand by your side in an advisory and reflective capacity, without imposing ready-made solutions.",
+        "cta_text": "Request initial consultation",
+        "cta_link": "contact.html"
+      }
+    },
+    "contact": {
+      "hero": {
+        "eyebrow": "CONTACT",
+        "title": "Get in touch",
+        "lead": "I look forward to your message. You can reach me via email or phone."
+      },
+      "marquee_items": [
+        "Free first consultation",
+        "Hamburg & Online",
+        "Non-binding & confidential",
+        "Get in touch"
+      ],
+      "contact_info": {
+        "title": "Direct contact",
+        "name": "Elisa Wendler‑Rabbiolo",
+        "email": "hello@mind-studio.me",
+        "phone": "+49 123 45678901",
+        "info_text": "For urgent matters, please call directly. For appointment requests, you can also use the contact form."
+      }
+    },
+    "settings": {
+      "announcement_bar": {
+        "active": false,
+        "text": "New appointments available – book your free initial consultation",
+        "link_text": "Learn more",
+        "link_url": "/en/contact.html"
+      },
+      "marquee_primary": [
+        "Be kind to your mind",
+        "Systemic Psychology",
+        "Clarity & Connection",
+        "Hamburg & Online"
+      ],
+      "marquee_secondary": [
+        "We all have mental health we need to take care of",
+        "Resource-oriented · Context-sensitive · Solution-focused"
+      ]
+    }
   }
 }

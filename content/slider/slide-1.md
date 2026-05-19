@@ -1,6 +1,6 @@
 ---
 title: Starte Deine Reise zu Deinem besseren ich.
-subtitle: Dein Ich
+subtitle: ""
 description: ""
 meta: ""
 image_desktop: /uploads/img_3825.jpg

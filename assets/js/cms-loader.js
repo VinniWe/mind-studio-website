@@ -82,15 +82,29 @@ async function loadSliderContent() {
   }
 }
 
-/* ─── GLOBALE EINSTELLUNGEN (Announcement Bar) ─────────────── */
+/* ─── GLOBALE EINSTELLUNGEN (Announcement Bar + Marquees) ─── */
 async function loadGlobalSettings(content) {
   if (!content?.settings) return;
-  const bar = content.settings.announcement_bar;
-  if (!bar || !bar.active) return;
+  const s = content.settings;
 
-  const el = document.querySelector('.announcement-bar');
-  if (!el) return;
-  el.innerHTML = `${bar.text} – <a href="${bar.link_url}">${bar.link_text}</a>`;
+  // Announcement Bar
+  const bar = s.announcement_bar;
+  if (bar?.active) {
+    const el = document.querySelector('.announcement-bar');
+    if (el) el.innerHTML = `${bar.text} – <a href="${bar.link_url}">${bar.link_text}</a>`;
+  }
+
+  // Homepage: Laufband 1 (orange, nicht .alt)
+  if (s.marquee_primary?.length) {
+    const band = document.querySelector('.marquee-band:not(.alt)');
+    fillMarqueeBand(band, s.marquee_primary);
+  }
+
+  // Homepage: Laufband 2 (dunkel, .alt)
+  if (s.marquee_secondary?.length) {
+    const band = document.querySelector('.marquee-band.alt');
+    fillMarqueeBand(band, s.marquee_secondary);
+  }
 }
 
 /* ─── STARTSEITE ──────────────────────────────────────────── */
@@ -180,6 +194,18 @@ async function loadHomeContent(content) {
   }
 }
 
+/* ─── HELPER: Marquee-Band befüllen ──────────────────────── */
+function fillMarqueeBand(band, items) {
+  if (!band || !items?.length) return;
+  const track = band.querySelector('.marquee-track');
+  if (!track) return;
+  // Duplizieren für nahtlose Endlosschleife
+  const html = [...items, ...items].map(text =>
+    `<div class="marquee-item">${text} <span class="marquee-sep">☺</span></div>`
+  ).join('');
+  track.innerHTML = html;
+}
+
 /* ─── HELPER: Page-Hero befüllen ─────────────────────────── */
 function fillPageHero(hero) {
   // v18 nutzt .page-hero statt .hero
@@ -205,6 +231,7 @@ async function loadServicesIndividualContent(content) {
   const page = content.services_individual;
 
   fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
 
   const cards = document.querySelectorAll('.grid-2 .card');
   if (cards[0] && page.concerns) {
@@ -227,6 +254,7 @@ async function loadServicesOrganizationsContent(content) {
   const page = content.services_organizations;
 
   fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
 
   const cards = document.querySelectorAll('.grid-2 .card');
   if (cards[0] && page.formats) {
@@ -249,6 +277,7 @@ async function loadApproachContent(content) {
   const page = content.approach;
 
   fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
 
   // Prinzipien → approach-grid (v18)
   if (page.principles) {
@@ -284,6 +313,7 @@ async function loadAboutContent(content) {
   const page = content.about;
 
   fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
 
   // Profil-Foto (optional)
   if (page.hero?.photo) {

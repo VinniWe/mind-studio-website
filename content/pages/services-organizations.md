@@ -5,6 +5,11 @@ hero:
   lead: Zusammenarbeit gestalten, Kultur stärken und Veränderungen wirksam machen.
   cta_text: Anfrage senden
   cta_link: mailto:hello@mind-studio.me
+marquee_items:
+  - "Teamworkshops & Offsites"
+  - "Moderation & Konfliktklärung"
+  - "Führungskräfte-Entwicklung"
+  - "Kultur & Veränderung"
 formats:
   title: Formate
   items:

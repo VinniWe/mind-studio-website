@@ -5,6 +5,11 @@ hero:
   lead: Orientierung, Entlastung und Entwicklung in herausfordernden Lebensphasen.
   cta_text: Termin anfragen
   cta_link: mailto:hello@mind-studio.me
+marquee_items:
+  - "Beziehungen & Kommunikation"
+  - "Stress & Erschöpfung"
+  - "Selbstwert & Ängste"
+  - "Entscheidungen & Veränderung"
 concerns:
   title: Typische Anliegen
   items:

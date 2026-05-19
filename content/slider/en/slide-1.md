@@ -1,7 +1,7 @@
 ---
 title: Start your journey to a better you.
-subtitle: Your Self.
-description: ""
+subtitle: ""
+description: Everyone whishes to be a better version of themselves - start today!
 meta: ""
 image_desktop: /uploads/img_3825.jpg
 image_mobile: /uploads/img_3825.jpg

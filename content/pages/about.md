@@ -11,7 +11,7 @@ biography:
     - Kommunikation, Führung und Change-Management
     - Psychologische Diagnostik und Intervention
 working_style:
-  title: Meine Arbeitsweise:
+  title: "Meine Arbeitsweise:"
   items:
     - Strukturiert, transparent und wertschätzend
     - Kontextsensibel und lösungsfokussiert

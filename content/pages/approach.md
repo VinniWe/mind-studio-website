@@ -4,12 +4,18 @@ hero:
   title: Systemisch denken, gemeinsam bewegen
   lead: Ich arbeite ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit Blick auf Wechselwirkungen und Beziehungen.
 principles:
-  - title: Ressourcenorientiert
+  - icon: "🌿"
+    title: Ressourcenorientiert
     description: Im Mittelpunkt stehen Stärken, gelingende Ausnahmen und vorhandene Kompetenzen.
-  - title: Kontextsensibel
+  - icon: "🔭"
+    title: Kontextsensibel
     description: Verhalten entsteht im Kontext. Wir betrachten Muster und Rahmenbedingungen gemeinsam.
-  - title: Lösungsfokussiert
+  - icon: "💡"
+    title: Lösungsfokussiert
     description: Weniger Problemursachen, mehr nächste hilfreiche Schritte – konkret und alltagstauglich.
+  - icon: "🤝"
+    title: Beziehungsbasiert
+    description: Vertrauen, Transparenz und Wertschätzung bilden das Fundament jeder Zusammenarbeit.
 framework:
   title: Rahmen
   items:

@@ -11,6 +11,23 @@ public_folder: "/uploads" # The src attribute for uploaded media
 locale: "de" # Set German as default language
 
 collections:
+  # Global Settings
+  - name: "settings"
+    label: "Einstellungen"
+    files:
+      - label: "Globale Einstellungen"
+        name: "settings"
+        file: "content/pages/settings.md"
+        fields:
+          - label: "Ankündigungs-Banner"
+            name: "announcement_bar"
+            widget: "object"
+            fields:
+              - {label: "Aktiv", name: "active", widget: "boolean", default: false}
+              - {label: "Text", name: "text", widget: "string", required: false}
+              - {label: "Link Text", name: "link_text", widget: "string", required: false}
+              - {label: "Link URL", name: "link_url", widget: "string", required: false}
+
   # Slider Collection
   - name: "slider"
     label: "Slider"
@@ -23,13 +40,13 @@ collections:
       - {label: "Subtitle", name: "subtitle", widget: "string", required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Meta Text", name: "meta", widget: "string", required: false}
-      - {label: "Desktop Image", name: "image_desktop", widget: "image", required: false}
-      - {label: "Mobile Image", name: "image_mobile", widget: "image", required: false}
+      - {label: "Desktop Bild", name: "image_desktop", widget: "image", required: false}
+      - {label: "Mobil Bild", name: "image_mobile", widget: "image", required: false}
       - {label: "CTA Text", name: "cta_text", widget: "string", default: "Mehr erfahren"}
       - {label: "CTA Link", name: "cta_link", widget: "string"}
-      - {label: "Order", name: "order", widget: "number", default: 0, value_type: "int", min: 0}
-      - {label: "Active", name: "active", widget: "boolean", default: true}
-  
+      - {label: "Reihenfolge", name: "order", widget: "number", default: 0, value_type: "int", min: 0}
+      - {label: "Aktiv", name: "active", widget: "boolean", default: true}
+
   # Site Content - Single file collection for all page content
   - name: "pages"
     label: "Seiten Inhalte"
@@ -70,9 +87,10 @@ collections:
           - label: "Ansatz Sektion"
             name: "approach_section"
             widget: "list"
-            max: 3
+            min: 1
+            max: 4
             fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Icon (Emoji)", name: "icon", widget: "string", default: "✦", hint: "z. B. ✦ 🌿 🤝 💡"}
               - {label: "Titel", name: "title", widget: "string"}
               - {label: "Beschreibung", name: "description", widget: "text"}
           - label: "Testimonials"
@@ -88,7 +106,7 @@ collections:
                   - {label: "Zitat", name: "quote", widget: "text"}
                   - {label: "Autor", name: "author", widget: "string"}
                   - {label: "Rolle", name: "role", widget: "string"}
-      
+
       # Services Individual Page
       - label: "Leistungen Einzelpersonen"
         name: "services_individual"
@@ -121,7 +139,7 @@ collections:
                 name: "items"
                 widget: "list"
                 field: {label: "Item", name: "item", widget: "string"}
-      
+
       # Services Organizations Page
       - label: "Leistungen Organisationen"
         name: "services_organizations"
@@ -154,7 +172,7 @@ collections:
                 name: "items"
                 widget: "list"
                 field: {label: "Item", name: "item", widget: "string"}
-      
+
       # Approach Page
       - label: "Ansatz"
         name: "approach"
@@ -170,8 +188,10 @@ collections:
           - label: "Prinzipien"
             name: "principles"
             widget: "list"
-            max: 3
+            min: 1
+            max: 4
             fields:
+              - {label: "Icon (Emoji)", name: "icon", widget: "string", default: "✦", hint: "z. B. ✦ 🌿 🤝 💡"}
               - {label: "Titel", name: "title", widget: "string"}
               - {label: "Beschreibung", name: "description", widget: "text"}
           - label: "Rahmen"
@@ -192,7 +212,7 @@ collections:
                 name: "items"
                 widget: "list"
                 field: {label: "Item", name: "item", widget: "string"}
-      
+
       # About Page
       - label: "Über mich"
         name: "about"
@@ -205,6 +225,7 @@ collections:
               - {label: "Eyebrow", name: "eyebrow", widget: "string"}
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Lead Text", name: "lead", widget: "text"}
+              - {label: "Profilfoto", name: "photo", widget: "image", required: false, hint: "Quadratisches Bild empfohlen (wird rund angezeigt)"}
           - label: "Kurzbiografie"
             name: "biography"
             widget: "object"
@@ -228,7 +249,7 @@ collections:
               - {label: "Haltung Text", name: "attitude_text", widget: "text"}
               - {label: "CTA Text", name: "cta_text", widget: "string"}
               - {label: "CTA Link", name: "cta_link", widget: "string"}
-      
+
       # Contact Page
       - label: "Kontakt"
         name: "contact"

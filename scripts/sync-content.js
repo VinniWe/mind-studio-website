@@ -93,9 +93,43 @@ if (fs.existsSync(pagesDir)) {
   });
 }
 
+// ========== EN PAGE CONTENT ==========
+console.log('🇬🇧 Processing EN page content...');
+
+const enPagesDir = 'content/pages/en';
+const enPageFiles = {
+  'home.md': 'home',
+  'services-individual.md': 'services_individual',
+  'services-organizations.md': 'services_organizations',
+  'approach.md': 'approach',
+  'about.md': 'about',
+  'contact.md': 'contact',
+  'settings.md': 'settings'
+};
+
+const enContent = {};
+if (fs.existsSync(enPagesDir)) {
+  Object.entries(enPageFiles).forEach(([filename, key]) => {
+    const filePath = path.join(enPagesDir, filename);
+    if (fs.existsSync(filePath)) {
+      const content = fs.readFileSync(filePath, 'utf8');
+      const data = parseMarkdown(content);
+      if (data) {
+        enContent[key] = data;
+        console.log(`  ✓ Processed EN page: ${filename}`);
+      }
+    } else {
+      console.log(`  ⚠ EN page not found: ${filename}`);
+    }
+  });
+}
+
+pageContent.en = enContent;
+console.log(`✅ Converted ${Object.keys(enContent).length} EN pages to JSON\n`);
+
 // Write page content to JSON
 fs.writeFileSync('data/content.json', JSON.stringify(pageContent, null, 2));
-console.log(`✅ Converted ${Object.keys(pageContent).length} pages to JSON\n`);
+console.log(`✅ Total pages in content.json: ${Object.keys(pageContent).length} (incl. EN)\n`);
 
 console.log('🎉 All content synced successfully!');
 

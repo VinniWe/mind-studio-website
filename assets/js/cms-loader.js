@@ -368,16 +368,281 @@ async function loadContactContent(content) {
   }
 }
 
+/* ─── EN: Startseiten-Hero befüllen ──────────────────────── */
+function fillENHomeHero(hero) {
+  if (!hero) return;
+  const h1  = document.querySelector('.hero-title');
+  const h2  = document.querySelector('.hero-subtitle');
+  const cta = document.querySelector('.hero-cta a');
+  if (h1) h1.textContent = hero.title || '';
+  if (h2) h2.textContent = hero.subtitle || '';
+  if (cta && hero.cta_text) {
+    cta.textContent = hero.cta_text;
+    if (hero.cta_link) cta.href = hero.cta_link;
+  }
+}
+
+/* ─── EN: STARTSEITE ─────────────────────────────────────── */
+async function loadENHomeContent(content) {
+  const en = content?.en;
+  if (!en) return;
+
+  // Hero
+  fillENHomeHero(en.home?.hero);
+
+  // Globale EN-Einstellungen (Marquees, Announcement Bar)
+  if (en.settings) {
+    const bar = en.settings.announcement_bar;
+    if (bar?.active) {
+      const el = document.querySelector('.announcement-bar');
+      if (el) el.innerHTML = `${bar.text} – <a href="${bar.link_url}">${bar.link_text}</a>`;
+    }
+    if (en.settings.marquee_primary?.length)
+      fillMarqueeBand(document.querySelector('.marquee-band:not(.alt)'), en.settings.marquee_primary);
+    if (en.settings.marquee_secondary?.length)
+      fillMarqueeBand(document.querySelector('.marquee-band.alt'), en.settings.marquee_secondary);
+  }
+
+  const home = en.home;
+  if (!home) return;
+
+  // Statistiken
+  if (home.stats) {
+    const grid = document.querySelector('.stats-grid');
+    if (grid) {
+      grid.innerHTML = home.stats.map(s => `
+        <blockquote class="stat-block">
+          <p>${s.text}</p>
+          <cite>${s.source}</cite>
+        </blockquote>`).join('');
+    }
+  }
+
+  // Angebot-Sektion
+  if (home.services_section) {
+    const s = home.services_section;
+    const sec = document.querySelector('.section-services .container');
+    if (sec) {
+      const h2   = sec.querySelector('h2');
+      const lead = sec.querySelector('.lead');
+      if (h2) h2.textContent = s.title;
+      if (lead) lead.textContent = s.subtitle;
+      const grid = sec.querySelector('.grid-2');
+      if (grid) {
+        grid.innerHTML = `
+          <a class="service-card" href="${s.individual.link}">
+            <div class="eyebrow">${s.individual.eyebrow}</div>
+            <h3>${s.individual.title}</h3>
+            <p>${s.individual.description}</p>
+          </a>
+          <a class="service-card" href="${s.organizations.link}">
+            <div class="eyebrow">${s.organizations.eyebrow}</div>
+            <h3>${s.organizations.title}</h3>
+            <p>${s.organizations.description}</p>
+          </a>`;
+      }
+    }
+  }
+
+  // Approach-Grid
+  if (home.approach_section) {
+    const grid = document.querySelector('.approach-grid');
+    if (grid) {
+      grid.innerHTML = home.approach_section.map(item => `
+        <div class="approach-item">
+          <div class="approach-icon">${item.icon || '✦'}</div>
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+        </div>`).join('');
+    }
+  }
+
+  // Testimonials
+  if (home.testimonials?.items?.length) {
+    const items   = home.testimonials.items;
+    const quoteEl = document.getElementById('testimonial-quote');
+    const citeEl  = document.getElementById('testimonial-cite');
+    const navEl   = document.querySelector('.testimonial-nav');
+    if (quoteEl) quoteEl.textContent = items[0].quote;
+    if (citeEl)  citeEl.innerHTML = `${items[0].author}${items[0].role ? ' – ' + items[0].role : ''}`;
+    if (navEl) {
+      navEl.innerHTML = items.map((_, i) =>
+        `<button class="testimonial-dot ${i === 0 ? 'active' : ''}" data-index="${i}" aria-label="Testimonial ${i + 1}"></button>`
+      ).join('');
+      navEl.querySelectorAll('.testimonial-dot').forEach(dot => {
+        dot.addEventListener('click', () => {
+          const i = parseInt(dot.dataset.index);
+          if (quoteEl) quoteEl.textContent = items[i].quote;
+          if (citeEl)  citeEl.innerHTML = `${items[i].author}${items[i].role ? ' – ' + items[i].role : ''}`;
+          navEl.querySelectorAll('.testimonial-dot').forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+        });
+      });
+    }
+  }
+}
+
+/* ─── EN: INNER PAGES (helper) ───────────────────────────── */
+function loadENPageSettings(en) {
+  if (!en?.settings) return;
+  const bar = en.settings.announcement_bar;
+  if (bar?.active) {
+    const el = document.querySelector('.announcement-bar');
+    if (el) el.innerHTML = `${bar.text} – <a href="${bar.link_url}">${bar.link_text}</a>`;
+  }
+}
+
+async function loadENServicesIndividualContent(content) {
+  const page = content?.en?.services_individual;
+  if (!page) return;
+  loadENPageSettings(content.en);
+  fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
+  const cards = document.querySelectorAll('.grid-2 .card');
+  if (cards[0] && page.concerns) {
+    const h3   = cards[0].querySelector('h3');
+    const list = cards[0].querySelector('.feature-list');
+    if (h3) h3.textContent = page.concerns.title;
+    if (list) list.innerHTML = page.concerns.items.map(i => `<li>${i}</li>`).join('');
+  }
+  if (cards[1] && page.process) {
+    const h3   = cards[1].querySelector('h3');
+    const list = cards[1].querySelector('.feature-list');
+    if (h3) h3.textContent = page.process.title;
+    if (list) list.innerHTML = page.process.items.map(i => `<li>${i}</li>`).join('');
+  }
+}
+
+async function loadENServicesOrganizationsContent(content) {
+  const page = content?.en?.services_organizations;
+  if (!page) return;
+  loadENPageSettings(content.en);
+  fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
+  const cards = document.querySelectorAll('.grid-2 .card');
+  if (cards[0] && page.formats) {
+    const h3   = cards[0].querySelector('h3');
+    const list = cards[0].querySelector('.feature-list');
+    if (h3) h3.textContent = page.formats.title;
+    if (list) list.innerHTML = page.formats.items.map(i => `<li>${i}</li>`).join('');
+  }
+  if (cards[1] && page.procedure) {
+    const h3   = cards[1].querySelector('h3');
+    const list = cards[1].querySelector('.feature-list');
+    if (h3) h3.textContent = page.procedure.title;
+    if (list) list.innerHTML = page.procedure.items.map(i => `<li>${i}</li>`).join('');
+  }
+}
+
+async function loadENApproachContent(content) {
+  const page = content?.en?.approach;
+  if (!page) return;
+  loadENPageSettings(content.en);
+  fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
+  if (page.principles) {
+    const grid = document.querySelector('.approach-grid');
+    if (grid) {
+      grid.innerHTML = page.principles.map(p => `
+        <div class="approach-item">
+          <div class="approach-icon">${p.icon || '✦'}</div>
+          <h3>${p.title}</h3>
+          <p>${p.description}</p>
+        </div>`).join('');
+    }
+  }
+  const cards = document.querySelectorAll('.grid-2 .card');
+  if (cards[0] && page.framework) {
+    const h3   = cards[0].querySelector('h3');
+    const list = cards[0].querySelector('.feature-list');
+    if (h3) h3.textContent = page.framework.title;
+    if (list) list.innerHTML = page.framework.items.map(i => `<li>${i}</li>`).join('');
+  }
+  if (cards[1] && page.methods) {
+    const h3   = cards[1].querySelector('h3');
+    const list = cards[1].querySelector('.feature-list');
+    if (h3) h3.textContent = page.methods.title;
+    if (list) list.innerHTML = page.methods.items.map(i => `<li>${i}</li>`).join('');
+  }
+}
+
+async function loadENAboutContent(content) {
+  const page = content?.en?.about;
+  if (!page) return;
+  loadENPageSettings(content.en);
+  fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
+  if (page.hero?.photo) {
+    const img = document.querySelector('.about-photo');
+    if (img) { img.src = page.hero.photo; img.style.display = ''; }
+  }
+  const cards = document.querySelectorAll('.grid-2 .card');
+  if (cards[0] && page.biography) {
+    const h3   = cards[0].querySelector('h3');
+    const text = cards[0].querySelector('p.muted');
+    const list = cards[0].querySelector('.feature-list');
+    if (h3)   h3.textContent   = page.biography.title;
+    if (text) text.textContent = page.biography.text;
+    if (list) list.innerHTML   = page.biography.qualifications.map(i => `<li>${i}</li>`).join('');
+  }
+  if (cards[1] && page.working_style) {
+    const ws = page.working_style;
+    const titles = cards[1].querySelectorAll('h3');
+    const lists  = cards[1].querySelectorAll('.feature-list');
+    const text   = cards[1].querySelector('p.muted');
+    const cta    = cards[1].querySelector('a.btn');
+    if (titles[0]) titles[0].textContent = ws.title;
+    if (lists[0])  lists[0].innerHTML    = ws.items.map(i => `<li>${i}</li>`).join('');
+    if (titles[1]) titles[1].textContent = ws.attitude_title;
+    if (text)      text.textContent      = ws.attitude_text;
+    if (cta)       { cta.textContent = ws.cta_text; cta.href = ws.cta_link || '#'; }
+  }
+}
+
+async function loadENContactContent(content) {
+  const page = content?.en?.contact;
+  if (!page) return;
+  loadENPageSettings(content.en);
+  fillPageHero(page.hero);
+  fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
+  if (page.contact_info) {
+    const ci    = page.contact_info;
+    const cards = document.querySelectorAll('.grid-2 .card');
+    if (cards[0]) {
+      const h3    = cards[0].querySelector('h3');
+      const name  = cards[0].querySelector('.muted');
+      const links = cards[0].querySelectorAll('a');
+      const info  = cards[0].querySelector('p.muted');
+      if (h3)      h3.textContent      = ci.title;
+      if (name)    name.textContent    = ci.name;
+      if (links[0]) { links[0].textContent = ci.email; links[0].href = `mailto:${ci.email}`; }
+      if (links[1]) { links[1].textContent = ci.phone; links[1].href = `tel:${ci.phone}`; }
+      if (info)    info.textContent    = ci.info_text;
+    }
+  }
+}
+
 /* ─── ROUTING ─────────────────────────────────────────────── */
 async function loadPageContent() {
   const content = await loadContent();
   if (!content) return;
 
-  // Globale Einstellungen (Announcement Bar etc.)
-  await loadGlobalSettings(content);
-
-  const cls  = document.body.className;
   const path = window.location.pathname;
+  const cls  = document.body.className;
+  const isEN = path.includes('/en/');
+
+  // ── EN-Routing ──────────────────────────────────────────
+  if (isEN) {
+    if (path.includes('services-individual'))  return loadENServicesIndividualContent(content);
+    if (path.includes('services-organizations')) return loadENServicesOrganizationsContent(content);
+    if (path.includes('approach'))             return loadENApproachContent(content);
+    if (path.includes('about'))                return loadENAboutContent(content);
+    if (path.includes('contact'))              return loadENContactContent(content);
+    return loadENHomeContent(content);
+  }
+
+  // ── DE-Routing ──────────────────────────────────────────
+  await loadGlobalSettings(content);
 
   if (cls.includes('page-individual') || path.includes('leistungen-einzel'))
     return loadServicesIndividualContent(content);

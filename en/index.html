@@ -168,24 +168,6 @@
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-    <script>
-      const testimonials = [
-        { quote: '"The workshop series noticeably improved our collaboration – clear, empathetic and effectively facilitated."', cite: 'Company A – People & Culture' },
-        { quote: '"Practical tools that hold up in everyday life. The team felt seen and got into good motion."', cite: 'Company B – Team Lead' },
-        { quote: '"Reliable, systemic support. We regularly recommend the collaboration."', cite: 'Clinic C – Professional Reference' },
-      ];
-      const quoteEl = document.getElementById('testimonial-quote');
-      const citeEl  = document.getElementById('testimonial-cite');
-      const dots    = document.querySelectorAll('.testimonial-dot');
-      dots.forEach(dot => {
-        dot.addEventListener('click', () => {
-          const i = parseInt(dot.dataset.index);
-          quoteEl.textContent = testimonials[i].quote;
-          citeEl.innerHTML    = testimonials[i].cite;
-          dots.forEach(d => d.classList.remove('active'));
-          dot.classList.add('active');
-        });
-      });
-    </script>
+    <!-- Testimonials are managed via CMS (cms-loader.js) -->
   </body>
   </html>

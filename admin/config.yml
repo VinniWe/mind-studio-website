@@ -280,7 +280,7 @@ collections:
               - {label: "CTA Text", name: "cta_text", widget: "string"}
               - {label: "CTA Link", name: "cta_link", widget: "string"}
 
-      # Contact Page
+      # Contact Page (DE)
       - label: "Kontakt"
         name: "contact"
         file: "content/pages/contact.md"
@@ -300,4 +300,286 @@ collections:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "E-Mail", name: "email", widget: "string"}
               - {label: "Telefon", name: "phone", widget: "string"}
+              - {label: "Info Text", name: "info_text", widget: "text"}
+
+  # ── ENGLISH CONTENT ──────────────────────────────────────
+  - name: "pages_en"
+    label: "Pages (English)"
+    files:
+      # EN Settings
+      - label: "EN – Global Settings"
+        name: "settings_en"
+        file: "content/pages/en/settings.md"
+        fields:
+          - label: "Announcement Bar"
+            name: "announcement_bar"
+            widget: "object"
+            fields:
+              - {label: "Active", name: "active", widget: "boolean", default: false}
+              - {label: "Text", name: "text", widget: "string", required: false}
+              - {label: "Link Text", name: "link_text", widget: "string", required: false}
+              - {label: "Link URL", name: "link_url", widget: "string", required: false}
+          - label: "Ticker Band 1 – Orange (Homepage top)"
+            name: "marquee_primary"
+            widget: "list"
+            hint: "Texts for the orange ticker band after the hero"
+            field: {label: "Text", name: "item", widget: "string"}
+          - label: "Ticker Band 2 – Dark (Homepage middle)"
+            name: "marquee_secondary"
+            widget: "list"
+            hint: "Texts for the dark ticker band between services and approach"
+            field: {label: "Text", name: "item", widget: "string"}
+
+      # EN Homepage
+      - label: "EN – Homepage"
+        name: "home_en"
+        file: "content/pages/en/home.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - {label: "CTA Text", name: "cta_text", widget: "string"}
+              - {label: "CTA Link", name: "cta_link", widget: "string"}
+          - label: "Statistics"
+            name: "stats"
+            widget: "list"
+            fields:
+              - {label: "Text", name: "text", widget: "text"}
+              - {label: "Source", name: "source", widget: "string"}
+          - label: "Services Section"
+            name: "services_section"
+            widget: "object"
+            fields:
+              - {label: "Heading", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - label: "Individuals"
+                name: "individual"
+                widget: "object"
+                fields:
+                  - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Link", name: "link", widget: "string"}
+              - label: "Organizations"
+                name: "organizations"
+                widget: "object"
+                fields:
+                  - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Link", name: "link", widget: "string"}
+          - label: "Approach Section"
+            name: "approach_section"
+            widget: "list"
+            min: 1
+            max: 4
+            fields:
+              - {label: "Icon (Emoji)", name: "icon", widget: "string", default: "✦"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "object"
+            fields:
+              - {label: "Heading", name: "title", widget: "string"}
+              - {label: "Subtitle", name: "subtitle", widget: "text"}
+              - label: "Quotes"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Quote", name: "quote", widget: "text"}
+                  - {label: "Author", name: "author", widget: "string"}
+                  - {label: "Role", name: "role", widget: "string"}
+
+      # EN Services Individual
+      - label: "EN – Services (Individuals)"
+        name: "services_individual_en"
+        file: "content/pages/en/services-individual.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+              - {label: "CTA Text", name: "cta_text", widget: "string"}
+              - {label: "CTA Link", name: "cta_link", widget: "string"}
+          - label: "Ticker Band"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texts for the ticker band after the hero"
+            field: {label: "Text", name: "item", widget: "string"}
+          - label: "Typical Topics"
+            name: "concerns"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+          - label: "Process"
+            name: "process"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+
+      # EN Services Organizations
+      - label: "EN – Services (Organizations)"
+        name: "services_organizations_en"
+        file: "content/pages/en/services-organizations.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+              - {label: "CTA Text", name: "cta_text", widget: "string"}
+              - {label: "CTA Link", name: "cta_link", widget: "string"}
+          - label: "Ticker Band"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texts for the ticker band after the hero"
+            field: {label: "Text", name: "item", widget: "string"}
+          - label: "Formats"
+            name: "formats"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+          - label: "Approach"
+            name: "procedure"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+
+      # EN Approach
+      - label: "EN – Approach"
+        name: "approach_en"
+        file: "content/pages/en/approach.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+          - label: "Ticker Band"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texts for the ticker band after the hero"
+            field: {label: "Text", name: "item", widget: "string"}
+          - label: "Principles"
+            name: "principles"
+            widget: "list"
+            min: 1
+            max: 4
+            fields:
+              - {label: "Icon (Emoji)", name: "icon", widget: "string", default: "✦"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Framework"
+            name: "framework"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+          - label: "Methods"
+            name: "methods"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+
+      # EN About
+      - label: "EN – About"
+        name: "about_en"
+        file: "content/pages/en/about.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+              - {label: "Profile Photo", name: "photo", widget: "image", required: false, hint: "Square image recommended (displayed as circle)"}
+          - label: "Ticker Band"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texts for the ticker band after the hero"
+            field: {label: "Text", name: "item", widget: "string"}
+          - label: "Short Biography"
+            name: "biography"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Text", name: "text", widget: "text"}
+              - label: "Qualifications"
+                name: "qualifications"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+          - label: "Working Style"
+            name: "working_style"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: {label: "Item", name: "item", widget: "string"}
+              - {label: "Attitude Title", name: "attitude_title", widget: "string"}
+              - {label: "Attitude Text", name: "attitude_text", widget: "text"}
+              - {label: "CTA Text", name: "cta_text", widget: "string"}
+              - {label: "CTA Link", name: "cta_link", widget: "string"}
+
+      # EN Contact
+      - label: "EN – Contact"
+        name: "contact_en"
+        file: "content/pages/en/contact.md"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Lead Text", name: "lead", widget: "text"}
+          - label: "Ticker Band"
+            name: "marquee_items"
+            widget: "list"
+            hint: "Texts for the ticker band after the hero"
+            field: {label: "Text", name: "item", widget: "string"}
+          - label: "Contact Information"
+            name: "contact_info"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Email", name: "email", widget: "string"}
+              - {label: "Phone", name: "phone", widget: "string"}
               - {label: "Info Text", name: "info_text", widget: "text"}

@@ -17,8 +17,8 @@ services_section:
   individual:
     eyebrow: FÜR EINZELPERSONEN
     title: "Therapie & psychologische Beratung "
-    description: Systemische Therapie, Beratung und Begleitung in herausfordernden
-      Lebensphasen – persönlich und online.
+    description: Systemische Psychotherapie, Beratung und Begleitung in
+      herausfordernden Lebensphasen – persönlich und online.
     link: https://mind-studio.netlify.app/leistungen-einzel
   organizations:
     eyebrow: FÜR ORGANISATIONEN
@@ -27,19 +27,19 @@ services_section:
       Zusammenarbeit, Kultur und gesunde Leistung.
     link: https://mind-studio.netlify.app/leistungen-organisationen
 approach_section:
-  - icon: "🌿"
+  - icon: 🌿
     title: Systemisch
     description: Ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit
       Blick auf Beziehungsmuster.
-  - icon: "🤝"
+  - icon: 🤝
     title: Klar & empathisch
     description: Strukturiert, transparent und zugewandt – in einem Raum von
       Sicherheit und Entwicklung.
-  - icon: "💡"
+  - icon: 💡
     title: Lösungsfokussiert
     description: Konkrete Schritte, neue Perspektiven und nachhaltige Veränderung
       statt endloser Problemanalyse.
-  - icon: "🗺️"
+  - icon: 🗺️
     title: Vor Ort & online
     description: Flexibel in Hamburg und digital – je nach Anliegen und Bedarf.
 testimonials:

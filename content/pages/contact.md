@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "Kontakt – Mind Studio"
+  description: "Kontakt zu Mind Studio – Elisa Wendler-Rabbiolo. Termin anfragen oder Nachricht senden."
 hero:
   eyebrow: Kontakt
   title: Kontakt

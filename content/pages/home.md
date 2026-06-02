@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "Mind Studio – Systemische Psychologie in Hamburg"
+  description: "Systemische Psychologie für Einzelpersonen und Organisationen. Therapie, Beratung, Workshops und Organisationsentwicklung in Hamburg und online."
 stats:
   - text: 🧠 Über 60 % der Klient:innen erleben nach systemischer Therapie eine
       deutliche Verbesserung ihres Wohlbefindens.

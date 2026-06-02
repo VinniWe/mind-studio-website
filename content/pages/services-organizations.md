@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "Für Organisationen – Workshops & Organisationsentwicklung | Mind Studio"
+  description: "Unterstützung für Teams & Organisationen: Workshops, Moderation, Kultur- und Organisationsentwicklung."
 hero:
   eyebrow: FÜR UNTERNEHMEN
   title: Workshops & Organisationsentwicklung

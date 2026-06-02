@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "For Individuals – Therapy & Psychological Counseling | Mind Studio"
+  description: "Systemic therapy and psychological counseling for individuals. In person in Hamburg and online."
 hero:
   eyebrow: FOR INDIVIDUALS
   title: "Therapy & psychological counseling"

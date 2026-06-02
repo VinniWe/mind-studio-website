@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "Für Einzelpersonen – Therapie & psychologische Beratung | Mind Studio"
+  description: "Systemische Therapie und psychologische Beratung für Einzelpersonen. In Präsenz in Hamburg und online."
 hero:
   eyebrow: FÜR EINZELPERSONEN
   title: Therapie & psychologische Beratung

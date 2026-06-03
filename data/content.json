@@ -1,5 +1,9 @@
 {
   "home": {
+    "seo": {
+      "title": "Mind Studio – Systemische Psychologie in Hamburg",
+      "description": "Systemische Psychologie für Einzelpersonen und Organisationen. Therapie, Beratung, Workshops und Organisationsentwicklung in Hamburg und online."
+    },
     "stats": [
       {
         "text": "🧠 Über 60 % der Klient:innen erleben nach systemischer Therapie eine deutliche Verbesserung ihres Wohlbefindens.",
@@ -75,6 +79,10 @@
     }
   },
   "services_individual": {
+    "seo": {
+      "title": "Für Einzelpersonen – Therapie & psychologische Beratung | Mind Studio",
+      "description": "Systemische Therapie und psychologische Beratung für Einzelpersonen. In Präsenz in Hamburg und online."
+    },
     "hero": {
       "eyebrow": "FÜR EINZELPERSONEN",
       "title": "Therapie & psychologische Beratung",
@@ -107,6 +115,10 @@
     }
   },
   "services_organizations": {
+    "seo": {
+      "title": "Für Organisationen – Workshops & Organisationsentwicklung | Mind Studio",
+      "description": "Unterstützung für Teams & Organisationen: Workshops, Moderation, Kultur- und Organisationsentwicklung."
+    },
     "hero": {
       "eyebrow": "FÜR UNTERNEHMEN",
       "title": "Workshops & Organisationsentwicklung",
@@ -140,6 +152,10 @@
     }
   },
   "approach": {
+    "seo": {
+      "title": "Haltung & Arbeitsweise – Systemisch denken, gemeinsam bewegen | Mind Studio",
+      "description": "Systemischer Ansatz: ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit Blick auf Wechselwirkungen und Beziehungen."
+    },
     "hero": {
       "eyebrow": "HALTUNG & ARBEITSWEISE",
       "title": "Systemisch denken, gemeinsam bewegen",
@@ -192,6 +208,10 @@
     }
   },
   "about": {
+    "seo": {
+      "title": "Über mich – Elisa Wendler-Rabbiolo | Mind Studio",
+      "description": "Elisa Wendler-Rabbiolo – Systemische Psychologin. Hintergrund, Ausbildung und Arbeitsweise."
+    },
     "hero": {
       "eyebrow": "ÜBER MICH",
       "name": "Elisa Wendler‑Rabbiolo",
@@ -226,6 +246,10 @@
     }
   },
   "contact": {
+    "seo": {
+      "title": "Kontakt – Mind Studio",
+      "description": "Kontakt zu Mind Studio – Elisa Wendler-Rabbiolo. Termin anfragen oder Nachricht senden."
+    },
     "hero": {
       "eyebrow": "Kontakt",
       "title": "Kontakt",
@@ -259,6 +283,10 @@
   },
   "en": {
     "home": {
+      "seo": {
+        "title": "Mind Studio – Systemic Psychology in Hamburg",
+        "description": "Systemic psychology for individuals and organizations. Therapy, counseling, workshops and organizational development in Hamburg and online."
+      },
       "stats": [
         {
           "text": "1 in 4 people struggles with psychological challenges each year.",
@@ -334,6 +362,10 @@
       }
     },
     "services_individual": {
+      "seo": {
+        "title": "For Individuals – Therapy & Psychological Counseling | Mind Studio",
+        "description": "Systemic therapy and psychological counseling for individuals. In person in Hamburg and online."
+      },
       "hero": {
         "eyebrow": "FOR INDIVIDUALS",
         "title": "Therapy & psychological counseling",
@@ -366,6 +398,10 @@
       }
     },
     "services_organizations": {
+      "seo": {
+        "title": "For Organizations – Workshops & Organizational Development | Mind Studio",
+        "description": "Support for teams & organizations: workshops, facilitation, culture and organizational development."
+      },
       "hero": {
         "eyebrow": "FOR ORGANIZATIONS",
         "title": "Workshops & Organizational Development",
@@ -399,6 +435,10 @@
       }
     },
     "approach": {
+      "seo": {
+        "title": "Approach & Working Style – Systemic Thinking, Moving Together | Mind Studio",
+        "description": "Systemic approach: resource-oriented, context-sensitive and solution-focused – with a view to interactions and relationships."
+      },
       "hero": {
         "eyebrow": "APPROACH & WORKING STYLE",
         "title": "Think systemically, move together",
@@ -451,6 +491,10 @@
       }
     },
     "about": {
+      "seo": {
+        "title": "About – Elisa Wendler-Rabbiolo | Mind Studio",
+        "description": "Elisa Wendler-Rabbiolo – Systemic psychologist. Background, training and working style."
+      },
       "hero": {
         "eyebrow": "ABOUT",
         "name": "Elisa Wendler‑Rabbiolo",
@@ -485,6 +529,10 @@
       }
     },
     "contact": {
+      "seo": {
+        "title": "Contact – Mind Studio",
+        "description": "Get in touch with Mind Studio – Elisa Wendler-Rabbiolo. Book an appointment or send a message."
+      },
       "hero": {
         "eyebrow": "CONTACT",
         "title": "Get in touch",

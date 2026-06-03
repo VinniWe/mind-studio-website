@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "Mind Studio – Systemic Psychology in Hamburg"
+  description: "Systemic psychology for individuals and organizations. Therapy, counseling, workshops and organizational development in Hamburg and online."
 stats:
   - text: "1 in 4 people struggles with psychological challenges each year."
     source: Federal Statistical Office (2023)

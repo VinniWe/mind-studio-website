@@ -66,6 +66,12 @@ collections:
         name: "home"
         file: "content/pages/home.md"
         fields:
+          - label: "SEO / Browser-Titel"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Seiten-Titel (Browser-Tab)", name: "title", widget: "string", hint: "z. B. Mind Studio – Systemische Psychologie in Hamburg"}
+              - {label: "Meta-Beschreibung (Suchmaschinen)", name: "description", widget: "text", hint: "Ca. 150–160 Zeichen. Erscheint als Teaser in Google-Suchergebnissen."}
           - label: "Statistiken"
             name: "stats"
             widget: "list"
@@ -122,6 +128,12 @@ collections:
         name: "services_individual"
         file: "content/pages/services-individual.md"
         fields:
+          - label: "SEO / Browser-Titel"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Seiten-Titel (Browser-Tab)", name: "title", widget: "string"}
+              - {label: "Meta-Beschreibung (Suchmaschinen)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -160,6 +172,12 @@ collections:
         name: "services_organizations"
         file: "content/pages/services-organizations.md"
         fields:
+          - label: "SEO / Browser-Titel"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Seiten-Titel (Browser-Tab)", name: "title", widget: "string"}
+              - {label: "Meta-Beschreibung (Suchmaschinen)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -198,6 +216,12 @@ collections:
         name: "approach"
         file: "content/pages/approach.md"
         fields:
+          - label: "SEO / Browser-Titel"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Seiten-Titel (Browser-Tab)", name: "title", widget: "string"}
+              - {label: "Meta-Beschreibung (Suchmaschinen)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -243,6 +267,12 @@ collections:
         name: "about"
         file: "content/pages/about.md"
         fields:
+          - label: "SEO / Browser-Titel"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Seiten-Titel (Browser-Tab)", name: "title", widget: "string"}
+              - {label: "Meta-Beschreibung (Suchmaschinen)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -285,6 +315,12 @@ collections:
         name: "contact"
         file: "content/pages/contact.md"
         fields:
+          - label: "SEO / Browser-Titel"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Seiten-Titel (Browser-Tab)", name: "title", widget: "string"}
+              - {label: "Meta-Beschreibung (Suchmaschinen)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -354,6 +390,12 @@ collections:
         name: "home_en"
         file: "content/pages/en/home.md"
         fields:
+          - label: "SEO / Browser Title"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Page Title (Browser Tab)", name: "title", widget: "string", hint: "e.g. Mind Studio – Systemic Psychology in Hamburg"}
+              - {label: "Meta Description (Search engines)", name: "description", widget: "text", hint: "Approx. 150–160 characters. Appears as a snippet in Google search results."}
           - label: "Statistics"
             name: "stats"
             widget: "list"
@@ -410,6 +452,12 @@ collections:
         name: "services_individual_en"
         file: "content/pages/en/services-individual.md"
         fields:
+          - label: "SEO / Browser Title"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Page Title (Browser Tab)", name: "title", widget: "string"}
+              - {label: "Meta Description (Search engines)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -448,6 +496,12 @@ collections:
         name: "services_organizations_en"
         file: "content/pages/en/services-organizations.md"
         fields:
+          - label: "SEO / Browser Title"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Page Title (Browser Tab)", name: "title", widget: "string"}
+              - {label: "Meta Description (Search engines)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -486,6 +540,12 @@ collections:
         name: "approach_en"
         file: "content/pages/en/approach.md"
         fields:
+          - label: "SEO / Browser Title"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Page Title (Browser Tab)", name: "title", widget: "string"}
+              - {label: "Meta Description (Search engines)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -531,6 +591,12 @@ collections:
         name: "about_en"
         file: "content/pages/en/about.md"
         fields:
+          - label: "SEO / Browser Title"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Page Title (Browser Tab)", name: "title", widget: "string"}
+              - {label: "Meta Description (Search engines)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"
@@ -573,6 +639,12 @@ collections:
         name: "contact_en"
         file: "content/pages/en/contact.md"
         fields:
+          - label: "SEO / Browser Title"
+            name: "seo"
+            widget: "object"
+            fields:
+              - {label: "Page Title (Browser Tab)", name: "title", widget: "string"}
+              - {label: "Meta Description (Search engines)", name: "description", widget: "text"}
           - label: "Hero"
             name: "hero"
             widget: "object"

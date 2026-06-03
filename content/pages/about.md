@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "Über mich – Elisa Wendler-Rabbiolo | Mind Studio"
+  description: "Elisa Wendler-Rabbiolo – Systemische Psychologin. Hintergrund, Ausbildung und Arbeitsweise."
 hero:
   eyebrow: ÜBER MICH
   name: Elisa Wendler‑Rabbiolo

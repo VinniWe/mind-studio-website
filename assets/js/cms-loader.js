@@ -115,6 +115,8 @@ async function loadHomeContent(content) {
   if (!content?.home) return;
   const home = content.home;
 
+  fillSEO(home.seo);
+
   // Statistiken
   if (home.stats) {
     const grid = document.querySelector('.stats-grid');
@@ -197,6 +199,22 @@ async function loadHomeContent(content) {
   }
 }
 
+/* ─── HELPER: SEO Meta-Tags setzen ──────────────────────── */
+function fillSEO(seo) {
+  if (!seo) return;
+  if (seo.title) {
+    document.title = seo.title;
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', seo.title);
+  }
+  if (seo.description) {
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute('content', seo.description);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute('content', seo.description);
+  }
+}
+
 /* ─── HELPER: Marquee-Band befüllen ──────────────────────── */
 function fillMarqueeBand(band, items) {
   if (!band || !items?.length) return;
@@ -234,6 +252,7 @@ async function loadServicesIndividualContent(content) {
   const page = content.services_individual;
 
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
 
   const cards = document.querySelectorAll('.grid-2 .card');
@@ -257,6 +276,7 @@ async function loadServicesOrganizationsContent(content) {
   const page = content.services_organizations;
 
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
 
   const cards = document.querySelectorAll('.grid-2 .card');
@@ -280,6 +300,7 @@ async function loadApproachContent(content) {
   const page = content.approach;
 
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
 
   // Prinzipien → approach-grid (v18)
@@ -316,6 +337,7 @@ async function loadAboutContent(content) {
   const page = content.about;
 
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
 
   // Profil-Foto (optional)
@@ -353,6 +375,7 @@ async function loadContactContent(content) {
   const page = content.contact;
 
   fillPageHero(page.hero);
+  fillSEO(page.seo);
 
   if (page.contact_info) {
     const ci    = page.contact_info;
@@ -376,6 +399,7 @@ async function loadENHomeContent(content) {
   const en = content?.en;
   if (!en) return;
   // Hero is handled by the slider (loadSliderContent)
+  fillSEO(en.home?.seo);
 
   // Globale EN-Einstellungen (Marquees, Announcement Bar)
   if (en.settings) {
@@ -484,6 +508,7 @@ async function loadENServicesIndividualContent(content) {
   if (!page) return;
   loadENPageSettings(content.en);
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
   const cards = document.querySelectorAll('.grid-2 .card');
   if (cards[0] && page.concerns) {
@@ -505,6 +530,7 @@ async function loadENServicesOrganizationsContent(content) {
   if (!page) return;
   loadENPageSettings(content.en);
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
   const cards = document.querySelectorAll('.grid-2 .card');
   if (cards[0] && page.formats) {
@@ -526,6 +552,7 @@ async function loadENApproachContent(content) {
   if (!page) return;
   loadENPageSettings(content.en);
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
   if (page.principles) {
     const grid = document.querySelector('.approach-grid');
@@ -558,6 +585,7 @@ async function loadENAboutContent(content) {
   if (!page) return;
   loadENPageSettings(content.en);
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
   if (page.hero?.photo) {
     const img = document.querySelector('.about-photo');
@@ -591,6 +619,7 @@ async function loadENContactContent(content) {
   if (!page) return;
   loadENPageSettings(content.en);
   fillPageHero(page.hero);
+  fillSEO(page.seo);
   fillMarqueeBand(document.querySelector('.marquee-band'), page.marquee_items);
   if (page.contact_info) {
     const ci    = page.contact_info;

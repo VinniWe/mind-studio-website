@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "Approach & Working Style – Systemic Thinking, Moving Together | Mind Studio"
+  description: "Systemic approach: resource-oriented, context-sensitive and solution-focused – with a view to interactions and relationships."
 hero:
   eyebrow: APPROACH & WORKING STYLE
   title: Think systemically, move together

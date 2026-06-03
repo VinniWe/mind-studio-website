@@ -1,4 +1,7 @@
 ---
+seo:
+  title: "Haltung & Arbeitsweise – Systemisch denken, gemeinsam bewegen | Mind Studio"
+  description: "Systemischer Ansatz: ressourcenorientiert, kontextsensibel und lösungsfokussiert – mit Blick auf Wechselwirkungen und Beziehungen."
 hero:
   eyebrow: HALTUNG & ARBEITSWEISE
   title: Systemisch denken, gemeinsam bewegen

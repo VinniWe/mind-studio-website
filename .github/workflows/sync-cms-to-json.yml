@@ -4,8 +4,10 @@ on:
   push:
     paths:
       - 'content/**/*.md'
+      - '.github/workflows/sync-cms-to-json.yml'
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write

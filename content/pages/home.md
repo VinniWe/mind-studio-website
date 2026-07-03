@@ -1,7 +1,9 @@
 ---
 seo:
-  title: "Mind Studio – Systemische Psychologie in Hamburg"
-  description: "Systemische Psychologie für Einzelpersonen und Organisationen. Therapie, Beratung, Workshops und Organisationsentwicklung in Hamburg und online."
+  title: Mind Studio – Systemische Psychologie in Hamburg
+  description: Systemische Psychologie für Einzelpersonen und Organisationen.
+    Therapie, Beratung, Workshops und Organisationsentwicklung in Hamburg und
+    online.
 stats:
   - text: 🧠 Über 60 % der Klient:innen erleben nach systemischer Therapie eine
       deutliche Verbesserung ihres Wohlbefindens.
@@ -51,14 +53,14 @@ testimonials:
   items:
     - quote: „Die Workshop-Reihe hat unsere Zusammenarbeit spürbar verbessert – klar,
         empathisch und wirksam moderiert."
-      author: Unternehmen A
+      author: Praxis ScW.
       role: People & Culture
     - quote: „Pragmatische Tools, die im Alltag tragen. Das Team fühlte sich gesehen
         und kam in gute Bewegung."
-      author: Unternehmen B
+      author: Larese
       role: Team Lead
     - quote: „Verlässliche, systemische Begleitung. Wir empfehlen die Zusammenarbeit
         regelmäßig weiter."
-      author: Klinik C
+      author: "Frau B. "
       role: Fachliche Empfehlung
 ---

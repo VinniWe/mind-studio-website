@@ -1,7 +1,8 @@
 ---
 seo:
-  title: "Kontakt – Mind Studio"
-  description: "Kontakt zu Mind Studio – Elisa Wendler-Rabbiolo. Termin anfragen oder Nachricht senden."
+  title: Kontakt – Mind Studio
+  description: Kontakt zu Mind Studio – Elisa Wendler-Rabbiolo. Termin anfragen
+    oder Nachricht senden.
 hero:
   eyebrow: Kontakt
   title: Kontakt
@@ -12,6 +13,6 @@ contact_info:
   name: Elisa Wendler-Rabbiolo
   email: hello@mind-studio.me
   phone: +49 156 79715031
-  info_text: Für dringende Anliegen rufen Sie bitte an. Für Terminanfragen können
-    Sie auch das Kontaktformular nutzen.
+  info_text: Für dringende Anliegen rufen Sie bitte an. Für Terminanfragen nutzen
+    Sie bitte das Kontaktformular nutzen.
 ---
